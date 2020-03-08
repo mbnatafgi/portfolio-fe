@@ -1,4 +1,4 @@
-.hero{
+.hero-main{
     width: 100vw; 
     height: 100vh;
     display: flex;
@@ -6,25 +6,22 @@
     align-items: center;
 }
 
-.hero .hero-welcome{
+.hero-main .hero-welcome{
     color: white;
     max-width: 80vw;
-    width: 60rem;
     padding: 2rem;
-    filter: none;
-    z-index: 10;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
+    border-radius: 4rem;
 }
 
-.hero .hero-welcome p{
+.hero-main .hero-welcome p{
     margin: 0;
     font-size: 4rem;
     line-height: 6rem;
 }
 
-.hero .hero-welcome  p.name{
+.hero-main .hero-welcome  p.name{
     color: #ffee00;
 }
