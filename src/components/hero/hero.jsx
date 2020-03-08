@@ -25,8 +25,8 @@ class Hero extends Component {
       }
       render() {
         return (
-            <div ref={this.vantaRef} className=' hero-main'>  
-                <div className="hero-welcome bungee">
+            <div ref={this.vantaRef} className='hero-main'>  
+                <div className="hero-welcome">
                         <p>Hello! I'm</p>
                         <p className='name'>Mohamad Belal Natafgi,</p>
                         <p>a software engineer.</p>

@@ -1,0 +1,25 @@
+@import '../common/variables';
+
+.hero-main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .hero-welcome{
+        font-family: $font-family-secondary;
+        color: white;
+        max-width: 80vw;
+        padding: 2rem;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 4rem;
+        p{
+            margin: 0;
+            font-size: 4rem;
+            line-height: 6rem;
+            &.name{
+                color: $colorful-secondary;
+            }
+        }
+    }
+}

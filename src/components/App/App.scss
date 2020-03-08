@@ -1,0 +1,9 @@
+@import '../common/variables';
+
+body{
+  font-family: $font-family-primary;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  background-color: $light-primary;
+}

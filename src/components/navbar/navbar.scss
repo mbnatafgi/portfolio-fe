@@ -1,0 +1,29 @@
+@import '../common/variables';
+
+.navbar-main{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: $dark-primary;
+    .nav-link{
+        color: $light-primary;
+        margin: 0 1rem;
+        padding: 0.5rem;
+        text-decoration: none;
+        font-weight: $font-weight-bold;
+        &.resume{
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background-color: $colorful-secondary;
+            color: $dark-primary;
+        }
+    }
+}
+
+
+.grad-line{
+    height: 4px;
+    background-color: red;
+    background-image: radial-gradient($colorful-tertiary 40%, $colorful-primary 60%)
+}
+
