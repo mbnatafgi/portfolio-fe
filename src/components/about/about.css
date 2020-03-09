@@ -1,0 +1,22 @@
+.about-main .header {
+  margin: 0 auto;
+  width: 70vw;
+  max-width: 300px;
+  text-align: center;
+}
+
+.about-main .header h2.dark {
+  color: #2f3b4a;
+  font-weight: 700;
+}
+
+.about-main .header div.dark {
+  height: 3px;
+  background-color: #2f3b4a;
+}
+
+.about-main p.dark {
+  font-weight: 300;
+  color: #2f3b4a;
+}
+/*# sourceMappingURL=about.css.map */

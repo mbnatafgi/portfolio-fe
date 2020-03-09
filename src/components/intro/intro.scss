@@ -1,0 +1,12 @@
+@import '../common/variables';
+
+.intro-main{
+    max-width: 80vw;
+    width: 400px;
+    .colorful{
+        color: $colorful-primary;
+    }
+    p{
+        text-align: justify;     
+    }
+}

@@ -1,0 +1,13 @@
+.intro-main {
+  max-width: 80vw;
+  width: 400px;
+}
+
+.intro-main .colorful {
+  color: #4cf68f;
+}
+
+.intro-main p {
+  text-align: justify;
+}
+/*# sourceMappingURL=intro.css.map */

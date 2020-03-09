@@ -1,0 +1,22 @@
+@import '../common/variables';
+
+.about-main{
+    .header{
+        margin: 0 auto;
+        width: 70vw;
+        max-width: 300px;
+        text-align: center;
+        h2.dark{
+            color: $dark-primary;
+            font-weight: $font-weight-bold;
+        }
+        div.dark{
+            height: 3px;
+            background-color: $dark-primary;
+        }
+    }
+    p.dark{
+        font-weight: $font-weigh-light;
+        color: $dark-primary;
+    }
+}

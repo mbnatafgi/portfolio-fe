@@ -1,0 +1,14 @@
+@import '../common/variables';
+
+.image-main{
+    display: flex;
+    justify-content: center;
+    clip-path: circle(123px at center);
+    background-color: $colorful-primary;
+    img{
+        clip-path: circle(120px at center);
+        width: 400px;
+        max-width: 400px;
+        transform: rotate(90deg);
+    }
+}
