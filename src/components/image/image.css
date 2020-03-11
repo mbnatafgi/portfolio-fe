@@ -13,8 +13,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-clip-path: circle(153px at center);
-          clip-path: circle(153px at center);
+  -webkit-clip-path: circle(154px at center);
+          clip-path: circle(154px at center);
   background-color: #4cf68f;
   height: 100%;
 }

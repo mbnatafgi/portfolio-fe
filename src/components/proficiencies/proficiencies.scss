@@ -1,0 +1,39 @@
+@import '../common/variables';
+
+.proficiencies-main{
+    max-width: 80vw;
+    width: 400px;
+    .proficiency-main{
+        padding: 5px;
+        display: flex;
+        border-radius: 5px 20px 20px 5px;
+        .title{
+            color: $light-primary;
+            background-color: $dark-primary;
+            padding: 5px 15px 5px 10px;
+            flex: 2;
+            height: 25px;
+            z-index: 2;
+            border-radius: inherit;
+        }
+        .scale{
+            border-radius: inherit;
+            transform: translateX(-20px);
+            flex: 6;
+            display: flex;
+            .active{
+                flex: 3;
+                background-image: linear-gradient(to right, $colorful-primary 30%, $colorful-tertiary);
+                border-radius: inherit;
+                z-index: 1;
+            }
+            .passive{
+                flex: 1;
+                border-radius: inherit;
+                background-color: $light-secondary;
+                transform: inherit;
+                z-index: 0;
+            }
+        }
+    }
+}

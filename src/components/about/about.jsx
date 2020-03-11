@@ -2,12 +2,13 @@ import React from 'react';
 import './about.css';
 import Intro from '../intro/intro';
 import Image from '../image/image';
+import Proficiencies from '../proficiencies/proficiencies';
 
 const About = (props) => {
     return ( 
         <div className="about-main">
             <div className="header">
-                <h2 className="dark">About Me</h2>  
+                <h1 className="dark">About Me</h1>  
                 <div className="dark"></div>  
             </div>
             <br/>
@@ -17,6 +18,9 @@ const About = (props) => {
                 </div>
                 <div className="column">
                     <Image/>
+                </div>
+                <div className="column">
+                    <Proficiencies/>
                 </div>
             </div>
         </div>
