@@ -31,7 +31,7 @@ const Proficiencies = (props) => {
             <div className="header">
                 <h2 className="dark">What Am I Proficient In?</h2>
             </div>
-                {profs.map(prof => <Proficiency {...prof}/>)}
+                {profs.map(prof => <Proficiency key={prof.title} {...prof}/>)}
             <br/>           
         </div>
      );

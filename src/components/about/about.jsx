@@ -3,6 +3,7 @@ import './about.css';
 import Intro from '../intro/intro';
 import Image from '../image/image';
 import Proficiencies from '../proficiencies/proficiencies';
+import Skills from '../skills/skills';
 
 const About = (props) => {
     return ( 
@@ -21,6 +22,9 @@ const About = (props) => {
                 </div>
                 <div className="column">
                     <Proficiencies/>
+                </div>
+                <div className="column">
+                    <Skills/>
                 </div>
             </div>
         </div>

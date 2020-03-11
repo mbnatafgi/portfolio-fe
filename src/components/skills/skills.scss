@@ -1,0 +1,23 @@
+@import '../common/variables';
+
+.skills-main{
+    .skill-main{
+        text-align: center;
+        svg{
+            width: 100px;
+            .polygon{
+                fill: $colorful-tertiary;
+            }
+            .icon, .icon *{
+                fill: $light-primary;
+            }
+        }
+        .title{
+            color: $dark-secondary;
+            margin: 5px 0;
+        }
+        p{
+            margin: 0 0 20px 0;
+        }
+    }
+}

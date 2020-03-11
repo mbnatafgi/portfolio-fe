@@ -1,0 +1,25 @@
+.skills-main .skill-main {
+  text-align: center;
+}
+
+.skills-main .skill-main svg {
+  width: 100px;
+}
+
+.skills-main .skill-main svg .polygon {
+  fill: #55F2F2;
+}
+
+.skills-main .skill-main svg .icon, .skills-main .skill-main svg .icon * {
+  fill: white;
+}
+
+.skills-main .skill-main .title {
+  color: #000;
+  margin: 5px 0;
+}
+
+.skills-main .skill-main p {
+  margin: 0 0 20px 0;
+}
+/*# sourceMappingURL=skills.css.map */
