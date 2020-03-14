@@ -16,12 +16,17 @@
 }
 
 .values-main .chart {
-  height: 500px;
   text-align: center;
 }
 
 .values-main .chart svg {
-  height: 100%;
+  max-width: 500px;
+  width: 100%;
+}
+
+.values-main .chart svg path {
+  stroke: white;
+  stroke-width: 5px;
 }
 
 .values-main .chart svg text {

@@ -102,7 +102,7 @@ const Skills = (props) => {
             <div className="header">
                 <h2 className="dark">What Am I Good At?</h2>
             </div>
-            {skills.map(skill => <Skill {...skill}/>)}
+            {skills.map(skill => <Skill key={skill.title} {...skill}/>)}
         </div>
      );
 }

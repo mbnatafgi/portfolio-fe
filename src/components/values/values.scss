@@ -2,10 +2,14 @@
 
 .values-main{
     .chart{
-        height: 500px;
         text-align: center;
         svg{
-            height: 100%;
+            max-width: 500px;
+            width: 100%;
+            path{
+                stroke: $light-primary;
+                stroke-width: 5px;
+            }
             text{
                 font-family: $font-family-secondary;
                 font-size: 30pt;
