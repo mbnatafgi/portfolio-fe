@@ -1,3 +1,20 @@
+:export {
+  colorfulprimary: #4cf68f;
+  colorfulsecondary: #ffee00;
+  colorfultertiary: #55F2F2;
+  darkprimary: #2f3b4a;
+  darksecondary: #000;
+  lightprimary: white;
+  lightsecondary: #ECF1F1;
+  fontfamilyprimary: "Roboto";
+  fontfamilysecondary: "Bungee Inline";
+  fontweighlight: 300;
+  fontweightregular: 400;
+  fontweightmedium: 500;
+  fontweightbold: 700;
+  fontweightblack: 900;
+}
+
 .image-main {
   margin: 0 auto;
   height: 350px;

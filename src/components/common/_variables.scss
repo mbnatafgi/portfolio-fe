@@ -12,3 +12,20 @@ $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 $font-weight-black: 900;
+
+:export{
+    colorfulprimary: $colorful-primary;
+    colorfulsecondary: $colorful-secondary ;
+    colorfultertiary: $colorful-tertiary ;
+    darkprimary : $dark-primary ;
+    darksecondary: $dark-secondary ;
+    lightprimary: $light-primary ;
+    lightsecondary: $light-secondary ;
+    fontfamilyprimary: $font-family-primary;
+    fontfamilysecondary: $font-family-secondary;
+    fontweighlight: $font-weigh-light;
+    fontweightregular: $font-weight-regular ;
+    fontweightmedium: $font-weight-medium ;
+    fontweightbold: $font-weight-bold ;
+    fontweightblack: $font-weight-black;
+}

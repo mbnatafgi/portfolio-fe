@@ -1,0 +1,71 @@
+:export {
+  colorfulprimary: #4cf68f;
+  colorfulsecondary: #ffee00;
+  colorfultertiary: #55F2F2;
+  darkprimary: #2f3b4a;
+  darksecondary: #000;
+  lightprimary: white;
+  lightsecondary: #ECF1F1;
+  fontfamilyprimary: "Roboto";
+  fontfamilysecondary: "Bungee Inline";
+  fontweighlight: 300;
+  fontweightregular: 400;
+  fontweightmedium: 500;
+  fontweightbold: 700;
+  fontweightblack: 900;
+}
+
+.values-main .chart {
+  height: 500px;
+  text-align: center;
+}
+
+.values-main .chart svg {
+  height: 100%;
+}
+
+.values-main .chart svg text {
+  font-family: "Bungee Inline";
+  font-size: 30pt;
+}
+
+.values-main .chart svg g:nth-child(5n+1) path {
+  fill: #ffee00;
+}
+
+.values-main .chart svg g:nth-child(5n+1) text {
+  fill: #2f3b4a;
+}
+
+.values-main .chart svg g:nth-child(5n+2) path {
+  fill: #000;
+}
+
+.values-main .chart svg g:nth-child(5n+2) text {
+  fill: white;
+}
+
+.values-main .chart svg g:nth-child(5n+3) path {
+  fill: #2f3b4a;
+}
+
+.values-main .chart svg g:nth-child(5n+3) text {
+  fill: white;
+}
+
+.values-main .chart svg g:nth-child(5n+4) path {
+  fill: #55F2F2;
+}
+
+.values-main .chart svg g:nth-child(5n+4) text {
+  fill: #2f3b4a;
+}
+
+.values-main .chart svg g:nth-child(5n+5) path {
+  fill: #4cf68f;
+}
+
+.values-main .chart svg g:nth-child(5n+5) text {
+  fill: white;
+}
+/*# sourceMappingURL=values.css.map */
