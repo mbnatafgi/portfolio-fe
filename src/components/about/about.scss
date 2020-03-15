@@ -1,26 +1,7 @@
 @import '../common/variables';
 
 .about-main{
-    .header{
-        margin: 0 auto;
-        width: 70vw;
-        max-width: 500px;
-        min-width: 300px;
-        text-align: center;
-        h2{
-            font-weight: $font-weight-bold;
-        }
-        h2.dark{
-            color: $dark-primary;
-        }
-        h2.light{
-            color: $light-primary;
-        }
-        div.dark{
-            height: 3px;
-            background-color: $dark-primary;
-        }
-    }
+
     p.dark{
         font-weight: $font-weigh-light;
         color: $dark-primary;

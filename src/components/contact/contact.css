@@ -1,0 +1,58 @@
+:export {
+  colorfulprimary: #4cf68f;
+  colorfulsecondary: #ffee00;
+  colorfultertiary: #55F2F2;
+  darkprimary: #2f3b4a;
+  darksecondary: #000;
+  lightprimary: white;
+  lightsecondary: #ECF1F1;
+  fontfamilyprimary: "Roboto";
+  fontfamilysecondary: "Bungee Inline";
+  fontweighlight: 300;
+  fontweightregular: 400;
+  fontweightmedium: 500;
+  fontweightbold: 700;
+  fontweightblack: 900;
+}
+
+.contact-main {
+  background-color: #2f3b4a;
+  padding: 50px 0;
+}
+
+.contact-main h4 {
+  color: #ffee00;
+  text-align: center;
+  margin: 70px;
+}
+
+.contact-main .media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  max-width: 700px;
+  margin: 100px auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-main .media svg {
+  margin-right: 10px;
+  fill: #ECF1F1;
+  height: 70px;
+}
+
+.contact-main .media svg .transparent {
+  fill: #2f3b4a;
+}
+
+.contact-main .media svg:hover:nth-child(odd) {
+  fill: #4cf68f;
+}
+
+.contact-main .media svg:hover:nth-child(even) {
+  fill: #55F2F2;
+}
+/*# sourceMappingURL=contact.css.map */

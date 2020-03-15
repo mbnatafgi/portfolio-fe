@@ -1,0 +1,32 @@
+@import '../common/variables';
+
+.contact-main{
+    background-color: $dark-primary;
+    padding: 50px 0;
+    h4{
+        color: $colorful-secondary;
+        text-align: center;
+        margin: 70px;
+    }
+    .media{
+        display: flex;
+        width: 70%;
+        max-width: 700px;
+        margin: 100px auto;
+        justify-content: space-between;
+        svg{
+            margin-right: 10px;
+            fill: $light-secondary;
+            .transparent{
+                fill: $dark-primary;
+            }
+            height: 70px;
+        }
+        svg:hover:nth-child(odd){
+            fill: $colorful-primary;
+        }
+        svg:hover:nth-child(even){
+            fill: $colorful-tertiary;
+        }
+    }
+}

@@ -6,4 +6,28 @@ body{
   margin: 0;
   padding: 0;
   background-color: $light-primary;
+  .header{
+    margin: 0 auto;
+    width: 70vw;
+    max-width: 500px;
+    min-width: 300px;
+    text-align: center;
+    h2{
+        font-weight: $font-weight-bold;
+    }
+    h2.dark{
+        color: $dark-primary;
+    }
+    h2.light{
+        color: $light-primary;
+    }
+    div.dark{
+        height: 3px;
+        background-color: $dark-primary;
+    }
+    div.light{
+        height: 3px;
+        background-color: $light-primary;
+    }
+  }
 }

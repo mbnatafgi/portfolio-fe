@@ -7,7 +7,7 @@ const Values = (props) => {
         <div className="values-main">
             <div className="header">
                 <h2 className="dark">
-                    Why Makes Me a Good Fit?
+                    What Makes Me a Good Fit?
                 </h2>
             </div>
             <div className="chart">

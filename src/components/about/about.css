@@ -15,31 +15,6 @@
   fontweightblack: 900;
 }
 
-.about-main .header {
-  margin: 0 auto;
-  width: 70vw;
-  max-width: 500px;
-  min-width: 300px;
-  text-align: center;
-}
-
-.about-main .header h2 {
-  font-weight: 700;
-}
-
-.about-main .header h2.dark {
-  color: #2f3b4a;
-}
-
-.about-main .header h2.light {
-  color: white;
-}
-
-.about-main .header div.dark {
-  height: 3px;
-  background-color: #2f3b4a;
-}
-
 .about-main p.dark {
   font-weight: 300;
   color: #2f3b4a;
