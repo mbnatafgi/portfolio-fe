@@ -1,14 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "./image.css";
-import me from "./me.jpg";
-
-console.log("hi", me);
+import me from "./me.jpeg";
 
 const Image = props => {
   return (
     <div className="image-main">
       <div className="image-wrapper">
-        <img src={me} className="clipped" />
+        <img src={me} className="clipped" alt="" />
       </div>
     </div>
   );

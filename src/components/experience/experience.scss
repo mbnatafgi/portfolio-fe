@@ -1,7 +1,6 @@
 @import '../common/variables';
 
 .experience-main{
-    padding: 50px 0;
     background-color: $dark-primary;
     .timeline{
         .entry{
@@ -11,9 +10,9 @@
             .job{
                 display: flex;
                 justify-content: center;
+                flex-wrap: wrap;
                 .date{  
                     width: 250px;
-                    margin-right: 50px;                 
                     svg{
                         text{
                             font-size: 30pt;
@@ -22,8 +21,8 @@
                     }
                 }
                 .info{
-                    width: 50%;
-                    max-width: 600px;
+                    width: 600px;
+                    margin: 0 20px 20px 20px;
                     .description{
                         h3{
                             margin: 10px 0;

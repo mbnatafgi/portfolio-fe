@@ -1,18 +1,15 @@
 @import "../common/variables";
 
 .image-main {
-  margin: 0 auto;
-  height: 350px;
-  width: 350px;
   .image-wrapper {
     display: flex;
     justify-content: center;
     clip-path: circle(154px at center);
     background-color: $colorful-primary;
-    height: 100%;
+    height: 310px;
     img {
       clip-path: circle(150px at center);
-      width: 100%;
+      width: 310px;
       transform: rotate(90deg);
       object-fit: cover;
     }

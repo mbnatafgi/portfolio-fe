@@ -15,7 +15,7 @@
   fontweightblack: 900;
 }
 
-body {
+html body {
   font-family: "Roboto";
   font-size: 1.2rem;
   margin: 0;
@@ -23,33 +23,43 @@ body {
   background-color: white;
 }
 
-body .header {
+html body .app .grad-line {
+  height: 4px;
+  background-image: radial-gradient(#55F2F2 40%, #4cf68f 60%);
+}
+
+html body .app .body > div {
+  padding: 50px 10px;
+}
+
+html body .app .body > div.grad-line {
+  padding: 0;
+  margin: 0;
+  height: 2px;
+}
+
+html body .app .header {
   margin: 0 auto;
-  width: 70vw;
+  width: 70%;
   max-width: 500px;
   min-width: 300px;
   text-align: center;
 }
 
-body .header h2 {
+html body .app .header h1 {
+  padding-bottom: 30px;
+  border-bottom: solid 3px;
+}
+
+html body .app .header h2 {
   font-weight: 700;
 }
 
-body .header h2.dark {
+html body .app .header.dark {
   color: #2f3b4a;
 }
 
-body .header h2.light {
+html body .app .header.light {
   color: white;
-}
-
-body .header div.dark {
-  height: 3px;
-  background-color: #2f3b4a;
-}
-
-body .header div.light {
-  height: 3px;
-  background-color: white;
 }
 /*# sourceMappingURL=app.css.map */

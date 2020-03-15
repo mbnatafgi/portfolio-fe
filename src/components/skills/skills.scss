@@ -1,24 +1,33 @@
 @import '../common/variables';
 
 .skills-main{
-    margin-bottom: 50px;
-    .skill-main{
-        text-align: center;
-        svg{
-            width: 100px;
-            .polygon{
-                fill: $colorful-tertiary;
+    .skills{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .skill-main{
+            text-align: center;
+            flex-basis: 90%;
+            @media (min-width: 1200px){
+                flex-basis: 40%;
             }
-            .icon, .icon *{
-                fill: $light-primary;
+            svg{
+                width: 100px;
+                .polygon{
+                    fill: $colorful-tertiary;
+                }
+                .icon, .icon *{
+                    fill: $light-primary;
+                }
             }
-        }
-        .title{
-            color: $dark-secondary;
-            margin: 5px 0;
-        }
-        p{
-            margin: 0 0 20px 0;
+            .title{
+                color: $dark-secondary;
+                margin: 5px 0;
+            }
+            p{
+                text-align: center;
+                margin: 0 0 20px 0;
+            }
         }
     }
 }

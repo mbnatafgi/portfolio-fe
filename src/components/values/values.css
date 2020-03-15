@@ -20,8 +20,8 @@
 }
 
 .values-main .chart svg {
-  max-width: 500px;
   width: 100%;
+  max-width: 500px;
 }
 
 .values-main .chart svg path {

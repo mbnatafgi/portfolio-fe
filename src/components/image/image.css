@@ -15,12 +15,6 @@
   fontweightblack: 900;
 }
 
-.image-main {
-  margin: 0 auto;
-  height: 350px;
-  width: 350px;
-}
-
 .image-main .image-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,13 +25,13 @@
   -webkit-clip-path: circle(154px at center);
           clip-path: circle(154px at center);
   background-color: #4cf68f;
-  height: 100%;
+  height: 310px;
 }
 
 .image-main .image-wrapper img {
   -webkit-clip-path: circle(150px at center);
           clip-path: circle(150px at center);
-  width: 100%;
+  width: 310px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   -o-object-fit: cover;

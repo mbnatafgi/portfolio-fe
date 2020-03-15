@@ -55,18 +55,28 @@ const GitHub = (props) => {
   
 const Contact = (props) => {
     return ( 
-        <div className="contact-main">
-            <div className="header">
-                <h2 className="light">Contact Me</h2>
-                <div className="light"></div>
+        <div id="contact" className="contact-main">
+            <div className="header light">
+                <h1>Contact Me</h1>
             </div>
-            <h4>Liked what you saw and want to work together?<br/>Get in touch.</h4>
+            <h4>Liked what you saw and want to work together? <span className='colorful'>Get in touch!</span></h4>
+            <br/>
             <div className="media">
-                <Email/>
-                <Facebook/>
-                <GitHub/>
-                <LinkedIn/>
-                <Instagram/>
+                <a href="https://www.linkedin.com/in/mohamad-belal-natafgi-7517b2137/" target="_blank">
+                    <LinkedIn/>
+                </a>
+                <a href="https://github.com/mbnatafgi" target="_blank">
+                    <GitHub/>
+                </a>
+                <a href="mailto:bilal.natafji@icloud.com" target="_blank">
+                    <Email/>
+                </a>
+                <a href="https://www.facebook.com/billo.natafji" target="_blank">
+                    <Facebook/>
+                </a>
+                <a href="https://www.instagram.com/billonatafji/" target="_blank">
+                    <Instagram/>
+                </a>
             </div>
         </div>
      );

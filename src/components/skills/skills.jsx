@@ -99,10 +99,12 @@ const Skills = (props) => {
 
     return ( 
         <div className="skills-main">
-            <div className="header">
-                <h2 className="dark">What Am I Good At?</h2>
+            <div className="header dark">
+                <h2>What Am I Good At?</h2>
             </div>
-            {skills.map(skill => <Skill key={skill.title} {...skill}/>)}
+            <div className="skills">
+                {skills.map(skill => <Skill key={skill.title} {...skill}/>)}
+            </div>
         </div>
      );
 }

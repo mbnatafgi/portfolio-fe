@@ -16,7 +16,6 @@
 }
 
 .experience-main {
-  padding: 50px 0;
   background-color: #2f3b4a;
 }
 
@@ -34,11 +33,12 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .experience-main .timeline .entry .job .date {
   width: 250px;
-  margin-right: 50px;
 }
 
 .experience-main .timeline .entry .job .date svg text {
@@ -47,8 +47,8 @@
 }
 
 .experience-main .timeline .entry .job .info {
-  width: 50%;
-  max-width: 600px;
+  width: 600px;
+  margin: 0 20px 20px 20px;
 }
 
 .experience-main .timeline .entry .job .info .description h3 {

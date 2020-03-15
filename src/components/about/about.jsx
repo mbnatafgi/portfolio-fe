@@ -5,47 +5,41 @@ import Image from '../image/image';
 import Proficiencies from '../proficiencies/proficiencies';
 import Skills from '../skills/skills';
 import Values from '../values/values';
-import Experience from '../experience/experience';
-import More from '../more/more';
+
 
 const About = (props) => {
     return ( 
-        <div className="about-main">
-            <div className="header">
-                <h1 className="dark">About Me</h1>  
-                <div className="dark"></div>  
+        <React.Fragment>
+        <div id="about" className="about-main">
+            <div className="header dark">
+                <h1>About Me</h1>    
             </div>
-            <br/>
-            <div className="row">
-                <div className="column">
-                    <Intro/>
+            <div className='rows'>
+                <div className="row">
+                    <div id='intro' className="column">
+                        <Intro/>
+                    </div>
+                    <div id="image" className="column">
+                        <Image/>
+                    </div>
                 </div>
-                <div className="column">
-                    <Image/>
+                <div className="row">
+                    <div id="proficiencies" className="column">
+                        <Proficiencies/>
+                    </div>
                 </div>
-                <div className="column">
-                    <Proficiencies/>
-                </div>
-            </div>
-            <div className="row">
-                <div className="column">
-                    <Skills/>
-                </div>
-                <div className="column">
-                    <Values/>
-                </div>
-            </div>
-            <div className="row">
-                <div className="column">
-                    <Experience/>
-                </div>
-            </div>
-            <div className="row">
-                <div className="column">
-                    <More/>
+                <div className="row">
+                    <div id="skills" className="column">
+                        <Skills/>
+                    </div>
+                    <div id="values" className="column">
+                        <Values/>
+                    </div>
                 </div>
             </div>
         </div>
+        <div className="grad-line"></div>
+        </React.Fragment>
      );
 }
  

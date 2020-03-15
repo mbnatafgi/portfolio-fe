@@ -1,33 +1,46 @@
 @import '../common/variables';
 
-body{
-  font-family: $font-family-primary;
-  font-size: 1.2rem;
-  margin: 0;
-  padding: 0;
-  background-color: $light-primary;
-  .header{
-    margin: 0 auto;
-    width: 70vw;
-    max-width: 500px;
-    min-width: 300px;
-    text-align: center;
-    h2{
-        font-weight: $font-weight-bold;
-    }
-    h2.dark{
-        color: $dark-primary;
-    }
-    h2.light{
-        color: $light-primary;
-    }
-    div.dark{
-        height: 3px;
-        background-color: $dark-primary;
-    }
-    div.light{
-        height: 3px;
-        background-color: $light-primary;
+html{
+  body{
+    font-family: $font-family-primary;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    background-color: $light-primary;
+    .app{
+      .grad-line{
+        height: 4px;
+        background-image: radial-gradient($colorful-tertiary 40%, $colorful-primary 60%);
+      }
+      .body>div{
+        padding: 50px 10px;
+        &.grad-line{
+          padding: 0;
+          margin:0;
+          height: 2px;
+        }
+      }
+      .header{
+        margin: 0 auto;
+        width: 70%;
+        max-width: 500px;
+        min-width: 300px;
+        text-align: center;
+        h1{
+            padding-bottom: 30px;
+            border-bottom: solid 3px;
+        }
+        h2{
+            font-weight: $font-weight-bold;
+        }
+        &.dark{
+            color: $dark-primary;
+        }
+        &.light{
+            color: $light-primary;
+        }
+      }
     }
   }
 }
+

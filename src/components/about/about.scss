@@ -1,12 +1,46 @@
 @import '../common/variables';
 
 .about-main{
-
     p.dark{
         font-weight: $font-weigh-light;
         color: $dark-primary;
     }
-    .row{
-        margin: 50px 0;
+    .rows{
+
+        .row{
+            margin: 40px auto;
+            max-width: 1600px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .column{
+                flex-basis: 90%;
+                @media (min-width: 1200px){
+                    flex-basis: 40%;
+                }
+            }
+            #proficiencies{
+                flex-basis: 100%;
+                overflow: hidden;
+                @media (min-width: 1200px){
+                    flex-basis: 90%;
+                }
+            }
+            #image{
+                order: 1;
+                @media (min-width: 1200px){
+                    order: 2;
+                }
+            }
+            #intro{
+                order: 2;
+                @media (min-width: 1200px){
+                    order: 1;
+                }
+                
+            }
+        }
+
     }
 }

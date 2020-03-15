@@ -21,38 +21,52 @@
 }
 
 .contact-main h4 {
-  color: #ffee00;
+  color: #ECF1F1;
   text-align: center;
-  margin: 70px;
+}
+
+.contact-main h4 .colorful {
+  color: #ffee00;
 }
 
 .contact-main .media {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 70%;
   max-width: 700px;
-  margin: 100px auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin: 0 auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.contact-main .media svg {
-  margin-right: 10px;
+.contact-main .media a {
+  -ms-flex-preferred-size: 60px;
+      flex-basis: 60px;
+  margin: 0px 0 10px 0;
+}
+
+.contact-main .media a svg {
   fill: #ECF1F1;
-  height: 70px;
 }
 
-.contact-main .media svg .transparent {
+.contact-main .media a svg .transparent {
   fill: #2f3b4a;
 }
 
-.contact-main .media svg:hover:nth-child(odd) {
+.contact-main .media a svg:hover {
+  fill: inherit;
+}
+
+.contact-main .media a:hover:nth-child(odd) {
   fill: #4cf68f;
 }
 
-.contact-main .media svg:hover:nth-child(even) {
+.contact-main .media a:hover:nth-child(even) {
   fill: #55F2F2;
 }
 /*# sourceMappingURL=contact.css.map */

@@ -1,22 +1,21 @@
 @import '../common/variables';
 
 .proficiencies-main{
-    // max-width: 80vw;
-    // width: 400px;
     .proficiency-main{
-        padding: 5px;
+        margin-bottom: 5px;
         display: flex;
         border-radius: 5px 20px 20px 5px;
+        transform: translateX(20px);
         .title{
             color: $light-primary;
             background-color: $dark-primary;
             padding: 5px 15px 5px 10px;
             flex: 2;
-            height: 25px;
             z-index: 2;
             border-radius: inherit;
         }
         .scale{
+            // box-sizing: content-box;
             border-radius: inherit;
             transform: translateX(-20px);
             flex: 6;

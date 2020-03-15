@@ -1,29 +1,33 @@
 @import '../common/variables';
 
 .navbar-main{
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem;
-    background-color: $dark-primary;
-    .nav-link{
-        color: $light-primary;
-        margin: 0 1rem;
-        padding: 0.5rem;
-        text-decoration: none;
-        font-weight: $font-weight-bold;
-        &.resume{
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            background-color: $colorful-secondary;
-            color: $dark-primary;
+    &.sticky{
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .navbar-links{
+        padding: 15px;
+        background-color: $dark-primary;
+        overflow: auto;
+        white-space: nowrap;
+        text-align: center;
+        .nav-link{
+            color: $light-primary;
+            margin: 10px;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: $font-weight-bold;
+            &.resume{
+                padding: 10px 20px;
+                border-radius: 10px;
+                background-color: $colorful-secondary;
+                color: $dark-primary;
+            }
+            &.active{
+                color: $colorful-secondary;
+            }
         }
     }
-}
-
-
-.grad-line{
-    height: 4px;
-    background-color: red;
-    background-image: radial-gradient($colorful-tertiary 40%, $colorful-primary 60%)
 }
 

@@ -5,8 +5,8 @@ const Values = (props) => {
     
     return ( 
         <div className="values-main">
-            <div className="header">
-                <h2 className="dark">
+            <div className="header dark">
+                <h2>
                     What Makes Me a Good Fit?
                 </h2>
             </div>
@@ -122,8 +122,8 @@ export default Values;
         //     {title: 'Intellect'}
         // ];
     
-    {/* <div className="chart">
-        {values.map(value => <Value percent={1/values.length} key={value.title} {...value} style={{transform: values.indexOf(value)*360/values.length}}/>)}
-    </div> */}
-    {/* <Value title='Perseverant' percent='0.2'/> */}
-    {/* <Pie data={data} options={options} /> */}
+    // {/* <div className="chart">
+    //     {values.map(value => <Value percent={1/values.length} key={value.title} {...value} style={{transform: values.indexOf(value)*360/values.length}}/>)}
+    // </div> */}
+    // {/* <Value title='Perseverant' percent='0.2'/> */}
+    // {/* <Pie data={data} options={options} /> */}

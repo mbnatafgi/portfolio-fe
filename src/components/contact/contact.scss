@@ -4,28 +4,37 @@
     background-color: $dark-primary;
     padding: 50px 0;
     h4{
-        color: $colorful-secondary;
+        color: $light-secondary;
+        .colorful{
+            color: $colorful-secondary;
+        }
         text-align: center;
-        margin: 70px;
     }
     .media{
         display: flex;
-        width: 70%;
         max-width: 700px;
-        margin: 100px auto;
-        justify-content: space-between;
-        svg{
-            margin-right: 10px;
-            fill: $light-secondary;
-            .transparent{
-                fill: $dark-primary;
+        margin: 0 auto;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        a{
+            flex-basis: 60px;
+            margin: 0px 0 10px 0;
+            svg{
+                fill: $light-secondary;
+                .transparent{
+                    fill: $dark-primary;
+                }
             }
-            height: 70px;
+            svg:hover{
+                fill:inherit;
+            }
+            
         }
-        svg:hover:nth-child(odd){
+        a:hover:nth-child(odd){
             fill: $colorful-primary;
         }
-        svg:hover:nth-child(even){
+        a:hover:nth-child(even){
             fill: $colorful-tertiary;
         }
     }

@@ -4,16 +4,22 @@ import Hero from '../hero/hero';
 import NavBar from '../navbar/navbar';
 import About from '../about/about';
 import Contact from '../contact/contact';
+import Experience from '../experience/experience';
+import More from '../more/more';
 // import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
-    <React.Fragment>
+    <div className='app'>
       <Hero/>
       <NavBar/>
-      <About/>
-      <Contact/>
-    </React.Fragment>
+      <div className='body'>
+        <About/>
+        <Experience/>
+        <More/>
+        <Contact/>
+      </div>
+    </div>
   );
 }
 

@@ -15,35 +15,37 @@
   fontweightblack: 900;
 }
 
-.navbar-main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0.5rem;
-  background-color: #2f3b4a;
+.navbar-main.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.navbar-main .nav-link {
+.navbar-main .navbar-links {
+  padding: 15px;
+  background-color: #2f3b4a;
+  overflow: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.navbar-main .navbar-links .nav-link {
   color: white;
-  margin: 0 1rem;
-  padding: 0.5rem;
+  margin: 10px;
+  padding: 10px;
   text-decoration: none;
   font-weight: 700;
 }
 
-.navbar-main .nav-link.resume {
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+.navbar-main .navbar-links .nav-link.resume {
+  padding: 10px 20px;
+  border-radius: 10px;
   background-color: #ffee00;
   color: #2f3b4a;
 }
 
-.grad-line {
-  height: 4px;
-  background-color: red;
-  background-image: radial-gradient(#55F2F2 40%, #4cf68f 60%);
+.navbar-main .navbar-links .nav-link.active {
+  color: #ffee00;
 }
 /*# sourceMappingURL=navbar.css.map */

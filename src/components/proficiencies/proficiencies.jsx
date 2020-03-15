@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './proficiencies.css';
 
 const Proficiency = (props) => {
@@ -28,11 +28,10 @@ const Proficiencies = (props) => {
     return ( 
 
         <div className='proficiencies-main'>
-            <div className="header">
-                <h2 className="dark">What Am I Proficient In?</h2>
+            <div className="header dark">
+                <h2>What Am I Proficient In?</h2>
             </div>
-                {profs.map(prof => <Proficiency key={prof.title} {...prof}/>)}
-            <br/>           
+            {profs.map(prof => <Proficiency key={prof.title} {...prof}/>)}
         </div>
      );
 }

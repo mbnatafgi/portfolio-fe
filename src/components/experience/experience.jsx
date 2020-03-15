@@ -14,7 +14,8 @@ const Date = (props) => {
 const Description = (props) => {
     return (
         <div className="description">
-            <h3 className='title'>{props.title_first}<span> - {props.title_second} </span></h3>
+            <h3 className='title'>{props.title_first}</h3>
+            <h4 className="position">Position <span>{props.title_second}</span></h4>
             <h4 className="task">{props.task_first}<span> {props.task_second}</span></h4>
             <h4 className="stack">{props.stack_first}<span> {props.stack_second}</span></h4>
         </div>
@@ -173,7 +174,7 @@ const TwenetySeventeen = (props) => {
                         <path d="M216.183-7.189c-.366.913.274,1.329,2.147,1.412,2.6.125,2.833.042,2.65-.955-.137-.789-.457-.913-2.33-1C217.051-7.812,216.366-7.646,216.183-7.189Z" transform="translate(-121.885 124.113)"/>
                     </svg>
                 </div>
-                <Description title_first="AUB" title_second="Work-Study-Program Associate" task_first="Project" task_second="Email Templates - Full-Stack" stack_first="Stack" stack_second="C# - .NET MVC & Entity Framework - MS SQL Server - Team Foundation Server - HTML - CSS - JavaScript" />
+                <Description title_first="American University of Beirut" title_second="Work-Study-Program Associate" task_first="Project" task_second="Email Templates - Full-Stack" stack_first="Stack" stack_second="C# - .NET MVC & Entity Framework - MS SQL Server - Team Foundation Server - HTML - CSS - JavaScript" />
             </div>
         </div>
     )
@@ -181,26 +182,29 @@ const TwenetySeventeen = (props) => {
 
 const Experience = (props) => {
     return ( 
-        <div className="experience-main">
-            <div className="header">
-                <h2 className="light">Where & What Have I Worked On?</h2>
+        <React.Fragment>
+            <div id="experience" className="experience-main">
+                <div className="header light">
+                    <h2>Where & What Have I Worked On?</h2>
+                </div>
+                <br/>
+                <div className="timeline">
+                    <div className="entry">
+                        <Present/>
+                    </div>
+                    <div className="entry">
+                        <TwentyNineteen/>
+                    </div>
+                    <div className="entry">
+                        <TwentyEighteen/>
+                    </div>
+                    <div className="entry">
+                        <TwenetySeventeen/>
+                    </div>
+                </div>
             </div>
-            <br/>
-            <div className="timeline">
-                <div className="entry">
-                    <Present/>
-                </div>
-                <div className="entry">
-                    <TwentyNineteen/>
-                </div>
-                <div className="entry">
-                    <TwentyEighteen/>
-                </div>
-                <div className="entry">
-                    <TwenetySeventeen/>
-                </div>
-            </div>
-        </div>
+            <div className="grad-line"></div>
+        </React.Fragment>
      );
 }
  

@@ -15,32 +15,48 @@
   fontweightblack: 900;
 }
 
-.skills-main {
-  margin-bottom: 50px;
+.skills-main .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.skills-main .skill-main {
+.skills-main .skills .skill-main {
   text-align: center;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
 }
 
-.skills-main .skill-main svg {
+@media (min-width: 1200px) {
+  .skills-main .skills .skill-main {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+}
+
+.skills-main .skills .skill-main svg {
   width: 100px;
 }
 
-.skills-main .skill-main svg .polygon {
+.skills-main .skills .skill-main svg .polygon {
   fill: #55F2F2;
 }
 
-.skills-main .skill-main svg .icon, .skills-main .skill-main svg .icon * {
+.skills-main .skills .skill-main svg .icon, .skills-main .skills .skill-main svg .icon * {
   fill: white;
 }
 
-.skills-main .skill-main .title {
+.skills-main .skills .skill-main .title {
   color: #000;
   margin: 5px 0;
 }
 
-.skills-main .skill-main p {
+.skills-main .skills .skill-main p {
+  text-align: center;
   margin: 0 0 20px 0;
 }
 /*# sourceMappingURL=skills.css.map */
