@@ -7,7 +7,7 @@
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Roboto";
-  fontfamilysecondary: "Bungee Inline";
+  fontfamilysecondary: "Bungee";
   fontweighlight: 300;
   fontweightregular: 400;
   fontweightmedium: 500;
@@ -22,16 +22,21 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-clip-path: circle(154px at center);
-          clip-path: circle(154px at center);
-  background-color: #4cf68f;
-  height: 310px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#4cf68f), to(#55F2F2));
+  background-image: linear-gradient(to right, #4cf68f, #55F2F2);
+  height: 315px;
+  width: 315px;
+  margin: 0 auto;
 }
 
 .image-main .image-wrapper img {
-  -webkit-clip-path: circle(150px at center);
-          clip-path: circle(150px at center);
   width: 310px;
+  height: 310px;
+  border-radius: 50%;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   -o-object-fit: cover;

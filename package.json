@@ -17,6 +17,7 @@
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
+    "react-typed": "^1.2.0",
     "three": "^0.114.0",
     "vanta": "^0.5.10"
   },
