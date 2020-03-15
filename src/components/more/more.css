@@ -1,0 +1,36 @@
+:export {
+  colorfulprimary: #4cf68f;
+  colorfulsecondary: #ffee00;
+  colorfultertiary: #55F2F2;
+  darkprimary: #2f3b4a;
+  darksecondary: #000;
+  lightprimary: white;
+  lightsecondary: #ECF1F1;
+  fontfamilyprimary: "Roboto";
+  fontfamilysecondary: "Bungee Inline";
+  fontweighlight: 300;
+  fontweightregular: 400;
+  fontweightmedium: 500;
+  fontweightbold: 700;
+  fontweightblack: 900;
+}
+
+.more-main div.resume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.more-main div.resume a {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffee00;
+  color: #2f3b4a;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 16pt;
+}
+/*# sourceMappingURL=more.css.map */

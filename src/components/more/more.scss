@@ -1,0 +1,17 @@
+@import '../common/variables';
+
+.more-main{
+    div.resume{
+        display: flex;
+        justify-content: center;
+        a{
+            padding: 20px;
+            border-radius: 10px;
+            background-color: $colorful-secondary;
+            color: $dark-primary;
+            text-decoration: none;
+            font-weight: $font-weight-black;
+            font-size: 16pt;
+        }
+    }
+}

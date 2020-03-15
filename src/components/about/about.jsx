@@ -6,6 +6,7 @@ import Proficiencies from '../proficiencies/proficiencies';
 import Skills from '../skills/skills';
 import Values from '../values/values';
 import Experience from '../experience/experience';
+import More from '../more/more';
 
 const About = (props) => {
     return ( 
@@ -37,6 +38,11 @@ const About = (props) => {
             <div className="row">
                 <div className="column">
                     <Experience/>
+                </div>
+            </div>
+            <div className="row">
+                <div className="column">
+                    <More/>
                 </div>
             </div>
         </div>
