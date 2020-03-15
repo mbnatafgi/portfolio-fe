@@ -5,6 +5,7 @@ import Image from '../image/image';
 import Proficiencies from '../proficiencies/proficiencies';
 import Skills from '../skills/skills';
 import Values from '../values/values';
+import Experience from '../experience/experience';
 
 const About = (props) => {
     return ( 
@@ -24,11 +25,18 @@ const About = (props) => {
                 <div className="column">
                     <Proficiencies/>
                 </div>
+            </div>
+            <div className="row">
                 <div className="column">
                     <Skills/>
                 </div>
                 <div className="column">
                     <Values/>
+                </div>
+            </div>
+            <div className="row">
+                <div className="column">
+                    <Experience/>
                 </div>
             </div>
         </div>

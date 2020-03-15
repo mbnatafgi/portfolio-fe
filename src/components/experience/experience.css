@@ -1,0 +1,87 @@
+:export {
+  colorfulprimary: #4cf68f;
+  colorfulsecondary: #ffee00;
+  colorfultertiary: #55F2F2;
+  darkprimary: #2f3b4a;
+  darksecondary: #000;
+  lightprimary: white;
+  lightsecondary: #ECF1F1;
+  fontfamilyprimary: "Roboto";
+  fontfamilysecondary: "Bungee Inline";
+  fontweighlight: 300;
+  fontweightregular: 400;
+  fontweightmedium: 500;
+  fontweightbold: 700;
+  fontweightblack: 900;
+}
+
+.experience-main {
+  padding: 50px 0;
+  background-color: #2f3b4a;
+}
+
+.experience-main .timeline .entry {
+  color: #ECF1F1;
+  fill: #ECF1F1;
+  padding-bottom: 20px;
+  margin: 40px 0;
+}
+
+.experience-main .timeline .entry .job {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.experience-main .timeline .entry .job .date {
+  width: 250px;
+  margin-right: 50px;
+}
+
+.experience-main .timeline .entry .job .date svg text {
+  font-size: 30pt;
+  font-family: "Bungee Inline";
+}
+
+.experience-main .timeline .entry .job .info {
+  width: 50%;
+  max-width: 600px;
+}
+
+.experience-main .timeline .entry .job .info .description h3 {
+  margin: 10px 0;
+  border-bottom: solid 2px;
+}
+
+.experience-main .timeline .entry .job .info .description h4 {
+  margin: 5px 0;
+}
+
+.experience-main .timeline .entry .job .info .description span {
+  font-weight: 300;
+}
+
+.experience-main .timeline .entry:hover:nth-child(odd) {
+  color: #4cf68f;
+  fill: #4cf68f;
+}
+
+.experience-main .timeline .entry:hover:nth-child(even) {
+  color: #55F2F2;
+  fill: #55F2F2;
+}
+
+.experience-main .timeline .entry:nth-child(3) .date {
+  position: relative;
+}
+
+.experience-main .timeline .entry:nth-child(3) .date svg:nth-child(2) {
+  position: absolute;
+  left: 100px;
+  top: -40px;
+  height: 40px;
+}
+/*# sourceMappingURL=experience.css.map */

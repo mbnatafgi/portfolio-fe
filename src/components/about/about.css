@@ -18,13 +18,21 @@
 .about-main .header {
   margin: 0 auto;
   width: 70vw;
-  max-width: 300px;
+  max-width: 500px;
+  min-width: 300px;
   text-align: center;
+}
+
+.about-main .header h2 {
+  font-weight: 700;
 }
 
 .about-main .header h2.dark {
   color: #2f3b4a;
-  font-weight: 700;
+}
+
+.about-main .header h2.light {
+  color: white;
 }
 
 .about-main .header div.dark {
@@ -35,5 +43,9 @@
 .about-main p.dark {
   font-weight: 300;
   color: #2f3b4a;
+}
+
+.about-main .row {
+  margin: 50px 0;
 }
 /*# sourceMappingURL=about.css.map */

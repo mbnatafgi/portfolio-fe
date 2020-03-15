@@ -3,6 +3,7 @@ import './app.css';
 import Hero from '../hero/hero';
 import NavBar from '../navbar/navbar';
 import About from '../about/about';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (

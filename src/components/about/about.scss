@@ -4,11 +4,17 @@
     .header{
         margin: 0 auto;
         width: 70vw;
-        max-width: 300px;
+        max-width: 500px;
+        min-width: 300px;
         text-align: center;
+        h2{
+            font-weight: $font-weight-bold;
+        }
         h2.dark{
             color: $dark-primary;
-            font-weight: $font-weight-bold;
+        }
+        h2.light{
+            color: $light-primary;
         }
         div.dark{
             height: 3px;
@@ -18,5 +24,8 @@
     p.dark{
         font-weight: $font-weigh-light;
         color: $dark-primary;
+    }
+    .row{
+        margin: 50px 0;
     }
 }
