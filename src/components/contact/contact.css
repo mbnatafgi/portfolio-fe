@@ -45,8 +45,8 @@
 }
 
 .contact-main .media a {
-  -ms-flex-preferred-size: 60px;
-      flex-basis: 60px;
+  -ms-flex-preferred-size: 50px;
+      flex-basis: 50px;
   margin: 0px 0 10px 0;
 }
 

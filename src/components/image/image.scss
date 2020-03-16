@@ -1,19 +1,25 @@
 @import "../common/variables";
 
 .image-main {
-  
   .image-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-image: linear-gradient(to right, $colorful-primary, $colorful-tertiary);
-    height: 315px;
-    width: 315px;
+    background-image: linear-gradient(
+      to bottom,
+      $colorful-secondary,
+      $colorful-primary,
+      $colorful-tertiary,
+      $colorful-secondary,
+    );
+    height: 288px;
+    width: 288px;
     margin: 0 auto;
+    overflow: hidden;
     img {
-      width: 310px;
-      height: 310px;
+      width: 98%;
+      height: 98%;
       border-radius: 50%;
       transform: rotate(90deg);
       object-fit: cover;

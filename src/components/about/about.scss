@@ -1,46 +1,60 @@
-@import '../common/variables';
+@import "../common/variables";
 
-.about-main{
-    p.dark{
-        font-weight: $font-weigh-light;
-        color: $dark-primary;
+.about-main {
+  p.dark {
+    font-weight: $font-weigh-light;
+    color: $dark-primary;
+  }
+  .rows {
+    .row {
+			margin: 0px auto;
+			width: 100%;
+      max-width: 1600px;
+      display: flex;
+      justify-content: center;
+      // align-items: flex-start;
+      flex-wrap: wrap;
+
+			.column{
+				flex-basis: 90%;
+				margin: 20px 0;
+				@media (min-width: 1200px) {
+					// margin :0;
+				}
+			}
+			#intro {
+				order: 2;
+				@media (min-width: 1200px) {
+					order: 1;
+					flex-basis: 30%;
+				}
+			}
+			#image {
+				align-self: center;
+				order: 1;
+				@media (min-width: 1200px) {
+					order: 2;
+					flex-basis: 25%;
+				}
+			}
+			#proficiencies {
+				order: 3;
+				overflow: hidden;
+				@media (min-width: 1200px) {
+					flex-basis: 30%;
+				}
+			}
+			#skills{
+					@media (min-width: 1200px) {
+						flex-basis: 55%;
+					}
+			}
+			#values{
+				// margin-left: auto;
+				@media (min-width: 1200px) {
+					flex-basis: 30%;
+				}
+			}
     }
-    .rows{
-
-        .row{
-            margin: 40px auto;
-            max-width: 1600px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            .column{
-                flex-basis: 90%;
-                @media (min-width: 1200px){
-                    flex-basis: 40%;
-                }
-            }
-            #proficiencies{
-                flex-basis: 100%;
-                overflow: hidden;
-                @media (min-width: 1200px){
-                    flex-basis: 90%;
-                }
-            }
-            #image{
-                order: 1;
-                @media (min-width: 1200px){
-                    order: 2;
-                }
-            }
-            #intro{
-                order: 2;
-                @media (min-width: 1200px){
-                    order: 1;
-                }
-                
-            }
-        }
-
-    }
+  }
 }

@@ -5,7 +5,7 @@ const More = (props) => {
     return ( 
         <React.Fragment>
             <div id="more" className="more-main">
-                <div className="header dark">
+                <div className="header dark section">
                     <h2>Looking For More Details?</h2>
                 </div>
                 <br/>

@@ -26,15 +26,16 @@
 }
 
 .skills-main .skills .skill-main {
-  text-align: center;
+  margin: 10px 0 20px 0;
+  text-align: left;
   -ms-flex-preferred-size: 90%;
       flex-basis: 90%;
 }
 
 @media (min-width: 1200px) {
   .skills-main .skills .skill-main {
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
   }
 }
 
@@ -56,7 +57,7 @@
 }
 
 .skills-main .skills .skill-main p {
-  text-align: center;
-  margin: 0 0 20px 0;
+  text-align: left;
+  margin: 0 0 0px 0;
 }
 /*# sourceMappingURL=skills.css.map */

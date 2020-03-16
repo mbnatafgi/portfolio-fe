@@ -40,15 +40,7 @@ html body .app .body > div.grad-line {
 
 html body .app .header {
   margin: 0 auto;
-  width: 70%;
-  max-width: 500px;
-  min-width: 300px;
-  text-align: center;
-}
-
-html body .app .header h1 {
-  padding-bottom: 30px;
-  border-bottom: solid 3px;
+  width: 100%;
 }
 
 html body .app .header h2 {
@@ -61,5 +53,19 @@ html body .app .header.dark {
 
 html body .app .header.light {
   color: white;
+}
+
+html body .app .header.section {
+  text-align: center;
+}
+
+html body .app .header.underline {
+  margin-bottom: 30px;
+  border-bottom: solid 3px;
+  max-width: 250px;
+}
+
+html body .app .header.underline h2 {
+  margin-top: 0;
 }
 /*# sourceMappingURL=app.css.map */

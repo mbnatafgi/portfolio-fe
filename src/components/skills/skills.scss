@@ -6,10 +6,11 @@
         flex-wrap: wrap;
         justify-content: space-around;
         .skill-main{
-            text-align: center;
+            margin: 10px 0 20px 0;
+            text-align: left;
             flex-basis: 90%;
             @media (min-width: 1200px){
-                flex-basis: 40%;
+                flex-basis: 45%;
             }
             svg{
                 width: 100px;
@@ -25,8 +26,8 @@
                 margin: 5px 0;
             }
             p{
-                text-align: center;
-                margin: 0 0 20px 0;
+                text-align: left;
+                margin: 0 0 0px 0;
             }
         }
     }

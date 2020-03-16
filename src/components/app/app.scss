@@ -22,22 +22,28 @@ html{
       }
       .header{
         margin: 0 auto;
-        width: 70%;
-        max-width: 500px;
-        min-width: 300px;
-        text-align: center;
-        h1{
-            padding-bottom: 30px;
-            border-bottom: solid 3px;
-        }
+        width: 100%;
+        // max-width: 500px;
+        // min-width: 300px;
         h2{
-            font-weight: $font-weight-bold;
+          font-weight: $font-weight-bold;
         }
         &.dark{
-            color: $dark-primary;
+          color: $dark-primary;
         }
         &.light{
-            color: $light-primary;
+          color: $light-primary;
+        }
+        &.section{
+          text-align: center;
+        }
+        &.underline{
+          margin-bottom: 30px;
+          border-bottom: solid 3px;
+          max-width: 250px;
+          h2{
+            margin-top: 0;
+          }
         }
       }
     }

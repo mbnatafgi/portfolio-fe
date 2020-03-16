@@ -26,16 +26,17 @@
       -ms-flex-align: center;
           align-items: center;
   border-radius: 50%;
-  background-image: -webkit-gradient(linear, left top, right top, from(#4cf68f), to(#55F2F2));
-  background-image: linear-gradient(to right, #4cf68f, #55F2F2);
-  height: 315px;
-  width: 315px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffee00), color-stop(#4cf68f), color-stop(#55F2F2), to(#ffee00));
+  background-image: linear-gradient(to bottom, #ffee00, #4cf68f, #55F2F2, #ffee00);
+  height: 288px;
+  width: 288px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .image-main .image-wrapper img {
-  width: 310px;
-  height: 310px;
+  width: 98%;
+  height: 98%;
   border-radius: 50%;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);

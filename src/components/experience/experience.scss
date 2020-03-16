@@ -1,62 +1,70 @@
-@import '../common/variables';
+@import "../common/variables";
 
-.experience-main{
-    background-color: $dark-primary;
-    .timeline{
-        .entry{
-            color: $light-secondary;
-            fill: $light-secondary;
-            padding-bottom: 20px;
-            .job{
+.experience-main {
+  background-color: $dark-primary;
+  .timeline {
+    .entry {
+      color: $light-secondary;
+      fill: $light-secondary;
+      padding-bottom: 20px;
+      .job {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .date {
+          width: 250px;
+          svg {
+            text {
+              font-size: 30pt;
+              font-family: $font-family-secondary;
+            }
+          }
+        }
+        .info {
+          width: 600px;
+          margin: 0 20px 20px 20px;
+          .description {
+              h3{
+                margin: 10px 0;
+                border-bottom: solid 2px;
+              }
+              div {
                 display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                .date{  
-                    width: 250px;
-                    svg{
-                        text{
-                            font-size: 30pt;
-                            font-family: $font-family-secondary;
-                        }
-                    }
+                justify-content: space-between;
+                h4{
+                    flex: 2;
+                    margin: 5px 10px;
+                    flex-basis: 40px;
                 }
-                .info{
-                    width: 600px;
-                    margin: 0 20px 20px 20px;
-                    .description{
-                        h3{
-                            margin: 10px 0;
-                            border-bottom: solid 2px;
-                        }
-                        h4{
-                            margin: 5px 0;
-                        }
-                        span{
-                            font-weight: $font-weigh-light;
-                        }
-                    }
+                p{
+                    margin: 5px 0;
+                    flex: 9;
+                    font-weight: $font-weigh-light;
                 }
             }
-            margin: 40px 0;
+          }
         }
-        .entry:hover:nth-child(odd){
-            color: $colorful-primary;
-            fill: $colorful-primary;
-        }
-        .entry:hover:nth-child(even){
-            color: $colorful-tertiary;
-            fill: $colorful-tertiary;
-        }
-        .entry:nth-child(3){
-            .date{
-                position: relative;
-                svg:nth-child(2){
-                    position: absolute;
-                    left: 100px;
-                    top: -40px;
-                    height: 40px;
-                }
-            }
-        }
+      }
+      margin: 40px 0;
     }
+    .entry:hover:nth-child(1) {
+      color: $colorful-primary;
+      fill: $colorful-primary;
+    }
+    .entry:hover:nth-child(n+2) {
+      color: $colorful-tertiary;
+      fill: $colorful-tertiary;
+    }
+    .entry:nth-child(3) {
+      .date {
+        position: relative;
+        svg:nth-child(2) {
+          position: absolute;
+          left: 100px;
+          top: -40px;
+          height: 40px;
+        }
+      }
+    }
+  }
 }

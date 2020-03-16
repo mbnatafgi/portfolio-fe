@@ -11,8 +11,8 @@ const About = (props) => {
     return ( 
         <React.Fragment>
         <div id="about" className="about-main">
-            <div className="header dark">
-                <h1>About Me</h1>    
+            <div className="header dark underline section">
+                <h2>About</h2>    
             </div>
             <div className='rows'>
                 <div className="row">
@@ -22,11 +22,11 @@ const About = (props) => {
                     <div id="image" className="column">
                         <Image/>
                     </div>
-                </div>
-                <div className="row">
                     <div id="proficiencies" className="column">
                         <Proficiencies/>
                     </div>
+                </div>
+                <div className="row">
                 </div>
                 <div className="row">
                     <div id="skills" className="column">

@@ -30,12 +30,12 @@
 
 .intro-main .colorful {
   color: #4cf68f;
+  font-weight: 700;
 }
 
 .intro-main p {
   margin: 0;
   font-size: 18pt;
-  text-align: justify;
   line-height: 24pt;
 }
 /*# sourceMappingURL=intro.css.map */

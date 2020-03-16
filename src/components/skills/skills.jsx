@@ -91,8 +91,8 @@ const Skill = (props) => {
 const Skills = (props) => {
 
     const skills = [
-        {icon: QualityCode, title: 'Quality Code', description: 'Writing clean, readable, structured, and maintainable code is my highest priority.'},
-        {icon: Docs, title: 'Docs', description: 'Writing and maintaining API and CLI documentation for easy and smooth integration among team members.'},
+        {icon: QualityCode, title: 'Quality Code', description: 'Writing clean, readable, structured, maintainable, and abstract code is my highest priority.'},
+        {icon: Docs, title: 'Documentation', description: 'Writing and maintaining API and CLI documentation for easy and smooth integration among team members.'},
         {icon: Deployment, title: 'Deployment', description: 'Deploying containerized applications for ultimate portability and isolation using Docker engine and orchestration tools like Kubernetes.'},
         {icon: Automation, title: 'Automation', description: 'Writing bash scripts for automating repetitive tasks that are especially handy when developing microservice-based solutions.'},
     ]

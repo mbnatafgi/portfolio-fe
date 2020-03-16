@@ -1,16 +1,17 @@
-@import '../common/variables';
+@import "../common/variables";
 
-.intro-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    .colorful{
-        color: $colorful-primary;
-    }
-    p{
-        margin: 0;
-        font-size: 18pt;
-        text-align: justify;     
-        line-height: 24pt;
-    }
+.intro-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .colorful {
+    color: $colorful-primary;
+    font-weight: $font-weight-bold;
+  }
+  p {
+    margin: 0;
+    font-size: 18pt;
+    // text-align: justify;
+    line-height: 24pt;
+  }
 }

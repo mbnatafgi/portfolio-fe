@@ -56,20 +56,38 @@
   border-bottom: solid 2px;
 }
 
-.experience-main .timeline .entry .job .info .description h4 {
-  margin: 5px 0;
+.experience-main .timeline .entry .job .info .description div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.experience-main .timeline .entry .job .info .description span {
+.experience-main .timeline .entry .job .info .description div h4 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  margin: 5px 10px;
+  -ms-flex-preferred-size: 40px;
+      flex-basis: 40px;
+}
+
+.experience-main .timeline .entry .job .info .description div p {
+  margin: 5px 0;
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
   font-weight: 300;
 }
 
-.experience-main .timeline .entry:hover:nth-child(odd) {
+.experience-main .timeline .entry:hover:nth-child(1) {
   color: #4cf68f;
   fill: #4cf68f;
 }
 
-.experience-main .timeline .entry:hover:nth-child(even) {
+.experience-main .timeline .entry:hover:nth-child(n+2) {
   color: #55F2F2;
   fill: #55F2F2;
 }
