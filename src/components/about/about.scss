@@ -20,6 +20,7 @@
 				margin: 20px 0;
 				@media (min-width: 1200px) {
 					// margin :0;
+					margin: 10px;
 				}
 			}
 			#intro {
@@ -47,12 +48,14 @@
 			#skills{
 					@media (min-width: 1200px) {
 						flex-basis: 55%;
+						margin: 20px;
+						
 					}
-			}
-			#values{
-				// margin-left: auto;
-				@media (min-width: 1200px) {
-					flex-basis: 30%;
+				}
+				#values{
+					@media (min-width: 1200px) {
+						flex-basis: 30%;
+						margin: 20px;
 				}
 			}
     }

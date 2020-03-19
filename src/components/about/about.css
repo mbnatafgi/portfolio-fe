@@ -40,6 +40,12 @@
   margin: 20px 0;
 }
 
+@media (min-width: 1200px) {
+  .about-main .rows .row .column {
+    margin: 10px;
+  }
+}
+
 .about-main .rows .row #intro {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -93,6 +99,7 @@
   .about-main .rows .row #skills {
     -ms-flex-preferred-size: 55%;
         flex-basis: 55%;
+    margin: 20px;
   }
 }
 
@@ -100,6 +107,7 @@
   .about-main .rows .row #values {
     -ms-flex-preferred-size: 30%;
         flex-basis: 30%;
+    margin: 20px;
   }
 }
 /*# sourceMappingURL=about.css.map */

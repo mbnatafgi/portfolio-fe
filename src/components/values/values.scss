@@ -2,7 +2,6 @@
 
 .values-main{
     .chart{
-        // text-align: center;
         svg{
             width: 100%;
             max-width: 500px;
@@ -54,57 +53,6 @@
                     fill: $light-primary;
                 }
             }
-
-            // text.light{
-            //     fill: $light-primary;
-            // }
-            // text.dark{
-            //     fill: $dark-primary;
-            // }
         }
     }
-    // .chart{
-    //         background-color: lightblue;
-    //         position: relative;
-    //         height: 300px;
-    //         .pie{
-    //             // fill: transparent;
-    //             position: absolute;
-    //             .title{
-    //                 fill: red;
-    //                 stroke-width: 1px;
-    //                 // stroke: red;
-    //             }
-    //         }
-            // .container{
-            //     height: 100%;
-            //     position: relative;
-            //     .pie{
-            //         position: absolute;
-            //         left: 0;
-            //         top: 0;
-            //         height: 100%;
-            //         // height: 300px;
-            //     }
-            //     .title{
-            //         position: absolute;
-            //         left: 0;
-            //         top: 0;
-            //     }
-            // }
-            // .title{
-            //     display: inline-block;
-            // }
-            // .pie{
-            //     position: absolute;
-            //     z-index: 0;
-            // }
-            // .title{
-            //     position: absolute;
-            //     color: red;
-            //     top: 0;
-            //     left: 0;
-            //     z-index: 1;
-            // }
-    // }
 }
