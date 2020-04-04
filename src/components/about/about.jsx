@@ -5,7 +5,7 @@ import Image from '../image/image';
 import Proficiencies from '../proficiencies/proficiencies';
 import Skills from '../skills/skills';
 import Values from '../values/values';
-
+import 'bootstrap-grid-only-css/dist/css/bootstrap-grid.min.css';
 
 const About = (props) => {
     return ( 
@@ -14,25 +14,21 @@ const About = (props) => {
             <div className="header dark underline section">
                 <h2>About</h2>    
             </div>
-            <div className='rows'>
+            <div className='container'>
                 <div className="row">
-                    <div id='intro' className="column">
+                    <div id='intro' className="col col-md-7 col-12 order-md-first">
                         <Intro/>
                     </div>
-                    <div id="image" className="column">
+                    <div id="image" className="col col-md-5 col-12 order-first">
                         <Image/>
                     </div>
-                    <div id="proficiencies" className="column">
+                    <div id="proficiencies" className="col col-12">
                         <Proficiencies/>
                     </div>
-                </div>
-                <div className="row">
-                </div>
-                <div className="row">
-                    <div id="skills" className="column">
+                    <div id="skills" className="col col-lg-6 col-12">
                         <Skills/>
                     </div>
-                    <div id="values" className="column">
+                    <div id="values" className="col col-lg-6 col-12">
                         <Values/>
                     </div>
                 </div>

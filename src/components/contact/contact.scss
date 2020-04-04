@@ -11,31 +11,24 @@
         text-align: center;
     }
     .media{
-        display: flex;
-        max-width: 700px;
-        margin: 0 auto;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        align-items: center;
-        a{
-            flex-basis: 50px;
-            margin: 0px 0 10px 0;
-            svg{
-                fill: $light-secondary;
-                .transparent{
-                    fill: $dark-primary;
+        .row{
+            align-items: center;
+            a{
+                svg{
+                    max-height: 60px;
+                    fill: $light-secondary;
+                    .transparent{
+                        fill: $dark-primary;
+                    }
                 }
+                svg:hover{
+                    fill:inherit;
+                }
+                
             }
-            svg:hover{
-                fill:inherit;
+            a:hover{
+                fill: $colorful-secondary;
             }
-            
-        }
-        a:hover:nth-child(odd){
-            fill: $colorful-primary;
-        }
-        a:hover:nth-child(even){
-            fill: $colorful-tertiary;
         }
     }
 }

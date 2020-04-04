@@ -80,7 +80,7 @@ const Automation = (props) => {
 
 const Skill = (props) => {
     return (
-        <div className="skill-main">
+        <div className="skill-main col col-sm-6 col-12">
             {<props.icon/>}
             <h3 className="title">{props.title}</h3>
             <p className="description">{props.description}</p>
@@ -102,7 +102,7 @@ const Skills = (props) => {
             <div className="header dark">
                 <h2>What Am I Good At?</h2>
             </div>
-            <div className="skills">
+            <div className="skills row">
                 {skills.map(skill => <Skill key={skill.title} {...skill}/>)}
             </div>
         </div>

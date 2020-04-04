@@ -17,7 +17,7 @@
 
 html body {
   font-family: "Roboto";
-  font-size: 1.2rem;
+  font-size: 120%;
   margin: 0;
   padding: 0;
   background-color: white;
@@ -39,12 +39,14 @@ html body .app .body > div.grad-line {
 }
 
 html body .app .header {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
 }
 
 html body .app .header h2 {
   font-weight: 700;
+  margin-top: 0;
 }
 
 html body .app .header.dark {
@@ -60,12 +62,8 @@ html body .app .header.section {
 }
 
 html body .app .header.underline {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border-bottom: solid 3px;
   max-width: 250px;
-}
-
-html body .app .header.underline h2 {
-  margin-top: 0;
 }
 /*# sourceMappingURL=app.css.map */

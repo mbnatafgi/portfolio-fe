@@ -16,30 +16,19 @@
 }
 
 .image-main .image-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border-radius: 50%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffee00), color-stop(#4cf68f), color-stop(#55F2F2), to(#ffee00));
-  background-image: linear-gradient(to bottom, #ffee00, #4cf68f, #55F2F2, #ffee00);
-  height: 288px;
-  width: 288px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4cf68f), color-stop(#ffee00), to(#55F2F2));
+  background-image: linear-gradient(to bottom, #4cf68f, #ffee00, #55F2F2);
+  height: 270px;
+  width: 270px;
+  text-align: center;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .image-main .image-wrapper img {
   width: 98%;
   height: 98%;
   border-radius: 50%;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
   -o-object-fit: cover;
      object-fit: cover;
 }

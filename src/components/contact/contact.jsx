@@ -54,6 +54,15 @@ const GitHub = (props) => {
 }
   
 const Contact = (props) => {
+    
+    let media = [
+        {href:"https://www.linkedin.com/in/mohamad-belal-natafgi-7517b2137/", logo: <LinkedIn/>},
+        {href:"https://github.com/mbnatafgi", logo: <GitHub/>},
+        {href:"mailto:bilal.natafji@icloud.com", logo: <Email/>},
+        {href:"https://www.facebook.com/billo.natafji", logo: <Facebook/>},
+        {href:"https://www.instagram.com/billonatafji/", logo: <Instagram/>},
+    ]
+    
     return ( 
         <div id="contact" className="contact-main">
             <div className="header light underline section">
@@ -63,22 +72,16 @@ const Contact = (props) => {
             <h4>Liked what you saw and want to work together? <span className='colorful'>Get in touch!</span></h4>
             <br/>
             <br/>
-            <div className="media">
-                <a href="https://www.linkedin.com/in/mohamad-belal-natafgi-7517b2137/" target="_blank">
-                    <LinkedIn/>
-                </a>
-                <a href="https://github.com/mbnatafgi" target="_blank">
-                    <GitHub/>
-                </a>
-                <a href="mailto:bilal.natafji@icloud.com" target="_blank">
-                    <Email/>
-                </a>
-                <a href="https://www.facebook.com/billo.natafji" target="_blank">
-                    <Facebook/>
-                </a>
-                <a href="https://www.instagram.com/billonatafji/" target="_blank">
-                    <Instagram/>
-                </a>
+            <div className="media container">
+                <div className="row">
+                    {media.map(medium => 
+                        <div key={medium.href} className="col">
+                            <a href={medium.href} target="_blank">
+                                {medium.logo}
+                            </a>
+                        </div>
+                    )}
+                </div>
             </div>
             <br/>
         </div>

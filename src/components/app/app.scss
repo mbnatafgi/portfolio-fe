@@ -3,7 +3,7 @@
 html{
   body{
     font-family: $font-family-primary;
-    font-size: 1.2rem;
+    font-size: 120%;
     margin: 0;
     padding: 0;
     background-color: $light-primary;
@@ -21,12 +21,12 @@ html{
         }
       }
       .header{
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
         width: 100%;
-        // max-width: 500px;
-        // min-width: 300px;
         h2{
           font-weight: $font-weight-bold;
+          margin-top: 0;
         }
         &.dark{
           color: $dark-primary;
@@ -38,12 +38,9 @@ html{
           text-align: center;
         }
         &.underline{
-          margin-bottom: 30px;
+          margin-bottom: 20px;
           border-bottom: solid 3px;
           max-width: 250px;
-          h2{
-            margin-top: 0;
-          }
         }
       }
     }

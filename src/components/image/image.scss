@@ -2,26 +2,21 @@
 
 .image-main {
   .image-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 50%;
     background-image: linear-gradient(
       to bottom,
-      $colorful-secondary,
       $colorful-primary,
-      $colorful-tertiary,
       $colorful-secondary,
+      $colorful-tertiary,
     );
-    height: 288px;
-    width: 288px;
+    height: 270px;
+    width: 270px;
+    text-align: center;
     margin: 0 auto;
-    overflow: hidden;
     img {
       width: 98%;
       height: 98%;
       border-radius: 50%;
-      transform: rotate(90deg);
       object-fit: cover;
     }
   }

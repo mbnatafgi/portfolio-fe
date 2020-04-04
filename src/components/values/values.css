@@ -15,6 +15,10 @@
   fontweightblack: 900;
 }
 
+.values-main .chart {
+  text-align: center;
+}
+
 .values-main .chart svg {
   width: 100%;
   max-width: 500px;

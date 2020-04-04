@@ -6,11 +6,10 @@ import About from '../about/about';
 import Contact from '../contact/contact';
 import Experience from '../experience/experience';
 import More from '../more/more';
-// import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
-    <div className='app'>
+    <div className='app bootstrap-wrapper'>
       <Hero/>
       <NavBar/>
       <div className='body'>

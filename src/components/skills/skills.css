@@ -15,32 +15,12 @@
   fontweightblack: 900;
 }
 
-.skills-main .skills {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
 .skills-main .skills .skill-main {
   margin: 10px 0 20px 0;
-  text-align: left;
-  -ms-flex-preferred-size: 90%;
-      flex-basis: 90%;
-}
-
-@media (min-width: 1200px) {
-  .skills-main .skills .skill-main {
-    -ms-flex-preferred-size: 45%;
-        flex-basis: 45%;
-  }
 }
 
 .skills-main .skills .skill-main svg {
-  width: 100px;
+  width: 80px;
 }
 
 .skills-main .skills .skill-main svg .polygon {
@@ -57,7 +37,7 @@
 }
 
 .skills-main .skills .skill-main p {
-  text-align: left;
-  margin: 0 0 0px 0;
+  margin: 0;
+  font-weight: 300;
 }
 /*# sourceMappingURL=skills.css.map */

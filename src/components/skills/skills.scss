@@ -2,18 +2,19 @@
 
 .skills-main{
     .skills{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: space-around;
         .skill-main{
+            
             margin: 10px 0 20px 0;
-            text-align: left;
-            flex-basis: 90%;
+            // text-align: left;
+            // flex-basis: 90%;
             @media (min-width: 1200px){
-                flex-basis: 45%;
+                // flex-basis: 45%;
             }
             svg{
-                width: 100px;
+                width: 80px;
                 .polygon{
                     fill: $colorful-tertiary;
                 }
@@ -26,8 +27,9 @@
                 margin: 5px 0;
             }
             p{
-                text-align: left;
-                margin: 0 0 0px 0;
+                // text-align: left;
+                margin: 0;
+                font-weight: $font-weigh-light;
             }
         }
     }

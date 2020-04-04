@@ -3,36 +3,48 @@
 .proficiencies-main{
     .proficiency-main{
         margin-bottom: 5px;
-        display: flex;
         border-radius: 5px 20px 20px 5px;
-        // transform: translateX(20px);
+        position: relative;
+        width: 100%;
+        height: 35px;
         .title{
             color: $light-primary;
             background-color: $dark-primary;
             padding: 5px 15px 5px 10px;
-            flex: 2;
             z-index: 2;
             border-radius: inherit;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            
+            width: 25%;
+
+            @media (max-width: 767px){
+                width: 30%;
+            }
+
+            @media (max-width: 575px) { 
+                width: 35%;   
+            }
+
+
         }
-        .scale{
-            // box-sizing: content-box;
+        .active{
+            background-image: linear-gradient(to right, $colorful-primary 50%, $colorful-tertiary);
             border-radius: inherit;
-            transform: translateX(-20px);
-            flex: 6;
-            display: flex;
-            .active{
-                flex: 3;
-                background-image: linear-gradient(to right, $colorful-primary 30%, $colorful-tertiary);
-                border-radius: inherit;
-                z-index: 1;
-            }
-            .passive{
-                flex: 1;
-                border-radius: inherit;
-                background-color: $light-secondary;
-                transform: inherit;
-                z-index: 0;
-            }
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+        .passive{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            border-radius: inherit;
+            background-color: $light-secondary;
+            z-index: 0;
         }
     }
 }

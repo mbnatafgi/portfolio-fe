@@ -29,44 +29,26 @@
   color: #ffee00;
 }
 
-.contact-main .media {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 700px;
-  margin: 0 auto;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+.contact-main .media .row {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.contact-main .media a {
-  -ms-flex-preferred-size: 50px;
-      flex-basis: 50px;
-  margin: 0px 0 10px 0;
-}
-
-.contact-main .media a svg {
+.contact-main .media .row a svg {
+  max-height: 60px;
   fill: #ECF1F1;
 }
 
-.contact-main .media a svg .transparent {
+.contact-main .media .row a svg .transparent {
   fill: #2f3b4a;
 }
 
-.contact-main .media a svg:hover {
+.contact-main .media .row a svg:hover {
   fill: inherit;
 }
 
-.contact-main .media a:hover:nth-child(odd) {
-  fill: #4cf68f;
-}
-
-.contact-main .media a:hover:nth-child(even) {
-  fill: #55F2F2;
+.contact-main .media .row a:hover {
+  fill: #ffee00;
 }
 /*# sourceMappingURL=contact.css.map */

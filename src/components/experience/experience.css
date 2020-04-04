@@ -26,29 +26,9 @@
   margin: 40px 0;
 }
 
-.experience-main .timeline .entry .job {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.experience-main .timeline .entry .job .date {
-  width: 250px;
-}
-
 .experience-main .timeline .entry .job .date svg text {
   font-size: 30pt;
   font-family: "Bungee";
-}
-
-.experience-main .timeline .entry .job .info {
-  width: 600px;
-  margin: 0 20px 20px 20px;
 }
 
 .experience-main .timeline .entry .job .info .description h3 {
@@ -56,40 +36,23 @@
   border-bottom: solid 2px;
 }
 
-.experience-main .timeline .entry .job .info .description div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
 .experience-main .timeline .entry .job .info .description div h4 {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
   margin: 5px 10px;
-  -ms-flex-preferred-size: 40px;
-      flex-basis: 40px;
 }
 
 .experience-main .timeline .entry .job .info .description div p {
   margin: 5px 0;
-  -webkit-box-flex: 9;
-      -ms-flex: 9;
-          flex: 9;
   font-weight: 300;
 }
 
-.experience-main .timeline .entry:hover:nth-child(1) {
-  color: #4cf68f;
-  fill: #4cf68f;
-}
-
-.experience-main .timeline .entry:hover:nth-child(n+2) {
+.experience-main .timeline .entry:hover {
   color: #55F2F2;
   fill: #55F2F2;
+}
+
+.experience-main .timeline .entry:hover .date {
+  color: #4cf68f;
+  fill: #4cf68f;
 }
 
 .experience-main .timeline .entry:nth-child(3) .date {
@@ -98,8 +61,10 @@
 
 .experience-main .timeline .entry:nth-child(3) .date svg:nth-child(2) {
   position: absolute;
-  left: 100px;
-  top: -40px;
+  left: 50%;
   height: 40px;
+  top: -40px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 /*# sourceMappingURL=experience.css.map */

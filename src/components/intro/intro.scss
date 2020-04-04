@@ -1,17 +1,17 @@
 @import "../common/variables";
 
 .intro-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-end;
   .colorful {
     color: $colorful-primary;
     font-weight: $font-weight-bold;
   }
   p {
     margin: 0;
-    font-size: 18pt;
+    // font-size: 14pt;
     // text-align: justify;
-    line-height: 24pt;
+    // line-height: 14pt;
   }
 }
