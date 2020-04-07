@@ -46,13 +46,13 @@
 }
 
 .experience-main .timeline .entry:hover {
-  color: #55F2F2;
-  fill: #55F2F2;
+  color: white;
+  fill: white;
 }
 
-.experience-main .timeline .entry:hover .date {
-  color: #4cf68f;
-  fill: #4cf68f;
+.experience-main .timeline .entry:hover .date, .experience-main .timeline .entry:hover .logo {
+  color: #ffee00;
+  fill: #ffee00;
 }
 
 .experience-main .timeline .entry:nth-child(3) .date {

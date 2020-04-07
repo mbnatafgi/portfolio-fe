@@ -24,8 +24,8 @@ html body {
 }
 
 html body .app .grad-line {
-  height: 4px;
-  background-image: radial-gradient(#55F2F2 40%, #4cf68f 60%);
+  height: 2px;
+  background-color: #ffee00;
 }
 
 html body .app .body > div {
@@ -35,7 +35,6 @@ html body .app .body > div {
 html body .app .body > div.grad-line {
   padding: 0;
   margin: 0;
-  height: 2px;
 }
 
 html body .app .header {

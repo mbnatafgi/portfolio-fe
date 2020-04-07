@@ -38,22 +38,13 @@
     }
 
     .entry:hover{
-      .date{
-        color: $colorful-primary;
-        fill: $colorful-primary;
+      .date, .logo{
+        color: $colorful-secondary;
+        fill: $colorful-secondary;
       }
-      color: $colorful-tertiary;
-      fill: $colorful-tertiary;
+      color: $light-primary;
+      fill: $light-primary;
     }
-
-    // .entry:hover:nth-child(odd) {
-    //   color: $colorful-primary;
-    //   fill: $colorful-primary;
-    // }
-    // .entry:hover:nth-child(even) {
-    //   color: $colorful-tertiary;
-    //   fill: $colorful-tertiary;
-    // }
     .entry:nth-child(3) {
       .date {
         position: relative;

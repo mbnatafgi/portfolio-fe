@@ -9,15 +9,16 @@ html{
     background-color: $light-primary;
     .app{
       .grad-line{
-        height: 4px;
-        background-image: radial-gradient($colorful-tertiary 40%, $colorful-primary 60%);
+        height: 2px;
+        // background-image: linear-gradient(to bottom, $colorful-primary, $colorful-tertiary);
+        background-color: $colorful-secondary;
+        
       }
       .body>div{
         padding: 50px 10px;
         &.grad-line{
           padding: 0;
           margin:0;
-          height: 2px;
         }
       }
       .header{
