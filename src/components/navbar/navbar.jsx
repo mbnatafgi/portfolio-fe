@@ -39,7 +39,7 @@ class NavLink extends Component {
 const NavBar = () => {
     return ( 
         <div className='navbar-main sticky'>
-            <div className="navbar-links">
+            <div className="navbar-links container">
                 <NavLink title="About" href="/#about" className="nav-link"/>
                 <NavLink title="Experience" href="/#experience" className="nav-link"/>
                 {/* <NavLink title="Details" href="#more" className="nav-link"/> */}
