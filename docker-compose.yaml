@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  portfolio-fe:
+    build:
+      context: .
+    image: mbnatafgi/portfolio:fe
+    container_name: portfolio-fe
+    volumes:
+      - portfolio-fe:/build
+  portfolio-nginx:
+    build:
+      context: ./deployment/nginx
+    image: mbnatafgi/portfolio:nginx
+    container_name: portfolio-nginx
+    ports:
+    - 80:80
+    volumes:
+      - portfolio-fe:/portfolio-fe
+volumes:
+  portfolio-fe:
+    external: true
