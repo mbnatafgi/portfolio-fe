@@ -45,8 +45,10 @@ class XTerm extends Component {
     componentDidMount(){
         this.setup();
         window.addEventListener('resize', this.handleResize);
+        this.termRef.current.addEventListener('click', this.handleMouseClick)
     }
 
+    padding = '   '
 
     setup = () => {
 
@@ -73,7 +75,17 @@ class XTerm extends Component {
         this.cols = this.term.cols - 5;
         this.fitAddon.proposeDimensions({cols: this.cols});
         this.term.onData(this.dataInput);
+        
         this.reset();
+        this.prompt();
+        // this.writeResponse('Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, esse? Debitis fugit facilis totam velit aliquam, placeat assumenda porro cum minima rem ratione eveniet neque nobis et nostrum! Consequuntur, cupiditate?')
+    }
+
+    writeResponse = (response) => {
+        this.reset();
+        this.writeNewLine();
+        response.split('').forEach(char => this.writeChar(char));
+        this.writeNewLine();
         this.prompt();
     }
 
@@ -106,7 +118,7 @@ class XTerm extends Component {
         this.term.write(key);
         this.posx++;
         if(this.posx >= this.cols){
-            this.term.write('\r\n    ');
+            this.writeNewLine();
             this.posx = 0;
             this.posy++;
         }
@@ -129,8 +141,18 @@ class XTerm extends Component {
     }
 
     handleEnter = () => {
-        this.saveCommand(this.buffer.join(''));
+        const command = this.buffer.join('');
+        this.saveCommand(command);
+        this.handleCommand(command);
         this.prompt();
+    }
+
+    handleCommand = (command) => {
+
+    }
+
+    handleMouseClick = () => {
+        this.moveToBufferIndex(this.buffer.length);
     }
 
     getCommands = () => {
@@ -138,12 +160,9 @@ class XTerm extends Component {
     }
 
     saveCommand = (command) => {
-        if(this.commandsHistory[this.commandsHistory.length - 2] !== command){
-            if(this.commandsHistory[this.commandsHistory.length - 1] === ""){
-                this.commandsHistory[this.commandsHistory.length - 1] = command
-            }else{
-                this.commandsHistory.push(command);
-            }
+        this.commandsHistory.pop();
+        if(command.trim() !== "" && command !== this.commandsHistory[this.commandsHistory.length - 1]){
+            this.commandsHistory.push(command);
             localStorage.setItem('commands', JSON.stringify(this.commandsHistory));
         }
     }
@@ -179,6 +198,54 @@ class XTerm extends Component {
         this.writeCommandHistory(false);
     }
 
+    getFastForwaredIndex = (backwards=false) => {
+        const current = this.currentBufferIndex();
+        let index = undefined;
+        if(!backwards){
+            for(let i=current + 1; i < this.buffer.length; i++){
+                if(this.buffer[i] === ' ' || i === this.buffer.length - 1){
+                    index = i + (i === this.buffer.length - 1 ? 1 : 0);
+                    break;
+                }
+            }
+        }else{
+            this.handleArrowLeft();
+            for(let i=current - 2; i >= 0; i--){
+                if(this.buffer[i] === ' ' || i === 0){
+                    index = i + (i === 0 ? 0 : 1);
+                    break;
+                }
+            }
+            this.handleArrowRight();
+        }
+        return index;
+    }
+
+    handleFastForward = (key) => {
+
+        if(key === 'arrowLeft' || key === 'arrowRight'){
+            return () => {
+                const index = this.getFastForwaredIndex(key === 'arrowLeft' ? true: false)
+                if(index !== undefined){
+                    this.moveToBufferIndex(index);
+                }
+            }
+        }
+        else if(key === 'backspace'){
+            return () => {
+                const index = this.getFastForwaredIndex(true)
+                if(index !== undefined){
+                    while(this.currentBufferIndex() !== index){
+                        this.handleBackspace();
+                    }
+                }
+            }
+        }
+
+        return (key) => {
+        }
+    }
+
     writeCommandHistory = (increment) => {
         if((this.commandsHistoryIndex < this.commandsHistory.length -1 && increment) || (this.commandsHistoryIndex > 0 && !increment)){
             this.commandsHistoryIndex = this.commandsHistoryIndex + (increment ? +1 : -1);
@@ -188,34 +255,49 @@ class XTerm extends Component {
         this.writeBuffer();
     }
 
+    writeNewLine = () => {
+        this.term.writeln('');
+        this.term.write(this.padding);
+    }
+
     handleArrowDown = () => {
         this.writeCommandHistory(true);
     }
 
     dataInput = (data) => {
 
-        const key = data.split('').reduce((x, y) => x + 'key' + y.charCodeAt(0), '') 
-
-        console.log(key);
-
-        const keyMap = {
-            key127: this.handleBackspace,
-            key13: this.handleEnter,
-            key27key91key68: this.handleArrowLeft,
-            key27key91key67: this.handleArrowRight,
-            key27key91key51key126: this.handleDelete,
-            key27key91key65: this.handleArrowUp,
-            key27key91key66: this.handleArrowDown
-        }
+        const keys = data.split('');
         
-        if (keyMap[key]){
-            keyMap[key](data);
-        }else if (data.length === 1 && data.charCodeAt(0) >= 32 && data.charCodeAt(0) <= 126){
-            this.handleChar(data);
+        if(keys.length > 1 && keys[0].charCodeAt(0) >= 32 && data.charCodeAt(0) <= 126){
+            keys.forEach(key => this.dataInput(key))
+        }else{
+            const key = keys.reduce((x, y) => x + 'key' + y.charCodeAt(0), '') 
+    
+            console.log('trigger: ', key);
+    
+            const keyMap = {
+                key127: this.handleBackspace,
+                key13: this.handleEnter,
+                key27key91key68: this.handleArrowLeft,
+                key27key91key67: this.handleArrowRight,
+                key27key91key51key126: this.handleDelete,
+                key27key91key65: this.handleArrowUp,
+                key27key91key66: this.handleArrowDown,
+                key27key91key49key59key53key67: this.handleFastForward('arrowRight'),
+                key27key91key49key59key53key68: this.handleFastForward('arrowLeft'),
+                key27key127: this.handleFastForward('backspace'),
+            }
+            
+            if (keyMap[key]){
+                keyMap[key](data);
+            }else if (data.length === 1 && data.charCodeAt(0) >= 32 && data.charCodeAt(0) <= 126){
+                this.handleChar(data);
+            }
+    
+            console.log(this.buffer);
+            console.log(this.posx, this.posy);
         }
 
-        console.log(this.buffer);
-        console.log(this.posx, this.posy);
     }
     
     moveToBufferIndex(i){        
@@ -239,18 +321,13 @@ class XTerm extends Component {
         this.posy = 0;
         this.commandsHistory = this.getCommands();
         this.commandsHistory.push("");
-        this.commandsHistoryIndex = this.commandsHistory.length > 0 ? this.commandsHistory.length - 1: undefined;
-        console.log('index: ', this.commandsHistoryIndex)
+        this.commandsHistoryIndex = this.commandsHistory.length - 1;
     }
 
-    prompt = (comment=false) => {
-        this.term.write('\r\n');
-        if(comment){
-        }
-        else{
-            this.term.write(this.chalk.hex(variables.colorfulsecondary)('  $ ',));
-            this.reset();
-        }
+    prompt = () => {
+        this.term.writeln('');
+        this.term.write(this.chalk.hex(variables.colorfulsecondary)(this.padding.substr(0, this.padding.length - 2) + '$ '));
+        this.reset();
     }
 
 
