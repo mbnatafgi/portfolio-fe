@@ -44,25 +44,23 @@ class XTerm extends Component {
 
     componentDidMount(){
         this.setup();
-        window.addEventListener('resize', this.handleResize);
+        window.addEventListener('resize', () => {
+            clearTimeout(this.timer);
+            this.timer = setTimeout(this.handleResize, 200);
+        });
         this.termRef.current.addEventListener('click', this.handleMouseClick)
     }
 
     padding = '   '
 
-    setup = () => {
-
-        this.chalk = new chalk.Instance({enabled: true, level: 2});
-
-        this.theme = {
-            background: variables.darkprimary, 
-            foreground: variables.lightprimary,
-            cursor: variables.colorfulsecondary,
-        }
-
+    constructTerminal = () => {
         this.term = new Terminal({
             cursorBlink: true,
-            theme: this.theme,
+            theme: {
+                background: variables.darkprimary, 
+                foreground: variables.lightprimary,
+                cursor: variables.colorfulsecondary,
+            },
             fontSize: 16,
             rows: 30,
             cursorStyle: 'bar',
@@ -73,12 +71,153 @@ class XTerm extends Component {
         this.term.loadAddon(this.fitAddon);
         this.fitAddon.fit();
         this.cols = this.term.cols - 5;
-        this.fitAddon.proposeDimensions({cols: this.cols});
-        this.term.onData(this.dataInput);
-        
+        this.term.onData(this.handleData);    
+    }
+
+    setup = () => {
+        this.buffer = [];
+        this.chalk = new chalk.Instance({enabled: true, level: 2});
+        this.constructTerminal();
         this.reset();
         this.prompt();
         // this.writeResponse('Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, esse? Debitis fugit facilis totam velit aliquam, placeat assumenda porro cum minima rem ratione eveniet neque nobis et nostrum! Consequuntur, cupiditate?')
+    }
+
+    handleData = (data) => {
+
+        const keys = data.split('');
+        
+        if(keys.length > 1 && keys[0].charCodeAt(0) >= 32 && data.charCodeAt(0) <= 126){
+            keys.forEach(key => this.handleData(key))
+        }else{
+            const key = keys.reduce((x, y) => x + 'key' + y.charCodeAt(0), '')     
+            const keyMap = {
+                key127: this.handleBackspace,
+                key13: this.handleEnter,
+                key27key91key68: this.handleArrowLeft,
+                key27key91key67: this.handleArrowRight,
+                key27key91key51key126: this.handleDelete,
+                key27key91key65: this.handleArrowUp,
+                key27key91key66: this.handleArrowDown,
+                key27key91key49key59key53key67: this.handleFastForward('arrowRight'),
+                key27key91key49key59key53key68: this.handleFastForward('arrowLeft'),
+                key27key127: this.handleFastForward('backspace'),
+            }
+
+            if (keyMap[key]){
+                keyMap[key](data);
+            }else if (data.length === 1 && data.charCodeAt(0) >= 32 && data.charCodeAt(0) <= 126){
+                this.handleChar(data);
+            }
+            console.log(this.buffer);
+            console.log(this.posx, this.posy);
+        }
+
+    }
+
+    handleEnter = () => {
+        const command = this.buffer.join('');
+        this.saveCommand(command);
+        this.handleCommand(command);
+        this.prompt();
+    }
+
+    handleArrowUp = () => {
+        this.writeCommandHistory(false);
+    }
+
+    handleMouseClick = () => {
+        this.moveToBufferIndex(this.buffer.length);
+    }
+
+    handleResize = (event) => {
+        const buffer = [...this.buffer];
+        this.term.dispose();
+        this.fitAddon.dispose();
+        this.setup();
+        this.buffer = buffer;
+        this.writeBuffer();
+    }
+
+    handleChar = (key) => {
+        const current = this.currentBufferIndex();
+        this.buffer.splice(this.currentBufferIndex(), 0, key);
+        this.writeChar(key);
+        this.writeBuffer();
+        this.moveToBufferIndex(current + 1);
+        this.updateCommandHistory();
+    }
+
+    handleDelete = () => {
+        this.deleteChar(false);
+        this.updateCommandHistory()
+    }
+
+    deleteChar = (backwards=false) => {
+        if(this.buffer.length > 0){
+            if(backwards){
+                this.moveLeft();
+                this.deleteChar(false);
+            }else{
+                const current = this.currentBufferIndex();
+                this.buffer.splice(current, 1);
+                this.buffer.push(' ');
+                this.writeBuffer();
+                this.buffer.pop();
+                this.moveToBufferIndex(current);
+            }
+        }
+    }
+    
+    handleBackspace = () => {
+        this.deleteChar(true);
+        this.updateCommandHistory()
+    }
+
+    handleFastForward = (key) => {
+        if(key === 'arrowLeft' || key === 'arrowRight'){
+            return () => {
+                const index = this.getFastForwaredIndex(key === 'arrowLeft' ? true: false)
+                if(index !== undefined){
+                    this.moveToBufferIndex(index);
+                }
+            }
+        }
+        else if(key === 'backspace'){
+            return () => {
+                const index = this.getFastForwaredIndex(true)
+                if(index !== undefined){
+                    while(this.currentBufferIndex() !== index){
+                        this.deleteChar(true);
+                    }
+                }
+            }
+        }
+        return (key) => {
+        }
+    }
+
+    handleArrowDown = () => {
+        this.writeCommandHistory(true);
+    }
+
+    handleArrowRight = () => {
+        this.moveRight();
+    }
+
+    handleArrowLeft = () => {
+        this.moveLeft();
+    }
+
+    handleCommand = (command) => {
+
+    }
+
+    clearBuffer = () => {
+        while(this.buffer.length !== 0){
+            this.deleteChar(false);
+            this.deleteChar(true);
+        }
     }
 
     writeResponse = (response) => {
@@ -89,28 +228,9 @@ class XTerm extends Component {
         this.prompt();
     }
 
-    handleResize = (event) => {
-        this.fitAddon.fit();
-    }
-
-    handleChar = (key) => {
-        const current = this.currentBufferIndex();
-        this.buffer.splice(this.currentBufferIndex(), 0, key);
-        this.writeChar(key);
-        this.writeBuffer();
-        this.moveToBufferIndex(current + 1);
-    }
-
     writeBuffer = () => {
         while(this.currentBufferIndex() < this.buffer.length){
             this.writeChar(this.buffer[this.currentBufferIndex()]);
-        }
-    }
-
-    clearBuffer = () => {
-        while(this.buffer.length !== 0){
-            this.handleDelete();
-            this.handleBackspace();
         }
     }
 
@@ -124,35 +244,8 @@ class XTerm extends Component {
         }
     }
 
-    handleDelete = () => {
-        if(this.buffer.length > 0){
-            const current = this.currentBufferIndex();
-            this.buffer.splice(current, 1);
-            this.buffer.push(' ');
-            this.writeBuffer();
-            this.buffer.pop();
-            this.moveToBufferIndex(current);
-        }
-    }
-
-    handleBackspace = () => {
-        this.handleArrowLeft();
-        this.handleDelete();
-    }
-
-    handleEnter = () => {
-        const command = this.buffer.join('');
-        this.saveCommand(command);
-        this.handleCommand(command);
-        this.prompt();
-    }
-
-    handleCommand = (command) => {
-
-    }
-
-    handleMouseClick = () => {
-        this.moveToBufferIndex(this.buffer.length);
+    updateCommandHistory = () => {
+        this.commandsHistory[this.commandsHistory.length - 1] = this.buffer.join('');
     }
 
     getCommands = () => {
@@ -167,7 +260,7 @@ class XTerm extends Component {
         }
     }
 
-    handleArrowLeft = () => {
+    moveLeft = () => {
         if(this.posx > 0){
             this.term.write('\x1b[D');
             this.posx--;
@@ -175,12 +268,12 @@ class XTerm extends Component {
             this.term.write('\x1b[A');
             this.posy--;
             for(var i=0; i<this.cols-1; i++){
-                this.handleArrowRight()
+                this.moveRight()
             }
         }
     }
 
-    handleArrowRight = () => {
+    moveRight = () => {
         if(this.buffer.length > this.posx + this.posy*this.cols){
             if(this.posx < this.cols - 1){
                 this.writeChar('\x1b[C');
@@ -188,62 +281,30 @@ class XTerm extends Component {
                 this.term.write('\x1b[B');
                 this.posy++;
                 for(var i=this.posx; i>0; i--){
-                    this.handleArrowLeft();
+                    this.moveLeft();
                 }
             }
         }
     }
 
-    handleArrowUp = () => {
-        this.writeCommandHistory(false);
-    }
-
     getFastForwaredIndex = (backwards=false) => {
-        const current = this.currentBufferIndex();
         let index = undefined;
         if(!backwards){
-            for(let i=current + 1; i < this.buffer.length; i++){
+            for(let i=this.currentBufferIndex() + 1; i < this.buffer.length; i++){
                 if(this.buffer[i] === ' ' || i === this.buffer.length - 1){
                     index = i + (i === this.buffer.length - 1 ? 1 : 0);
                     break;
                 }
             }
         }else{
-            this.handleArrowLeft();
-            for(let i=current - 2; i >= 0; i--){
-                if(this.buffer[i] === ' ' || i === 0){
-                    index = i + (i === 0 ? 0 : 1);
+            for(let i=this.currentBufferIndex() - 2; i >= -1; i--){
+                if(this.buffer[i] === ' ' || i <= 0){
+                    index = i <= 0 ? 0 : i + 1;
                     break;
                 }
             }
-            this.handleArrowRight();
         }
         return index;
-    }
-
-    handleFastForward = (key) => {
-
-        if(key === 'arrowLeft' || key === 'arrowRight'){
-            return () => {
-                const index = this.getFastForwaredIndex(key === 'arrowLeft' ? true: false)
-                if(index !== undefined){
-                    this.moveToBufferIndex(index);
-                }
-            }
-        }
-        else if(key === 'backspace'){
-            return () => {
-                const index = this.getFastForwaredIndex(true)
-                if(index !== undefined){
-                    while(this.currentBufferIndex() !== index){
-                        this.handleBackspace();
-                    }
-                }
-            }
-        }
-
-        return (key) => {
-        }
     }
 
     writeCommandHistory = (increment) => {
@@ -260,53 +321,13 @@ class XTerm extends Component {
         this.term.write(this.padding);
     }
 
-    handleArrowDown = () => {
-        this.writeCommandHistory(true);
-    }
-
-    dataInput = (data) => {
-
-        const keys = data.split('');
-        
-        if(keys.length > 1 && keys[0].charCodeAt(0) >= 32 && data.charCodeAt(0) <= 126){
-            keys.forEach(key => this.dataInput(key))
-        }else{
-            const key = keys.reduce((x, y) => x + 'key' + y.charCodeAt(0), '') 
-    
-            console.log('trigger: ', key);
-    
-            const keyMap = {
-                key127: this.handleBackspace,
-                key13: this.handleEnter,
-                key27key91key68: this.handleArrowLeft,
-                key27key91key67: this.handleArrowRight,
-                key27key91key51key126: this.handleDelete,
-                key27key91key65: this.handleArrowUp,
-                key27key91key66: this.handleArrowDown,
-                key27key91key49key59key53key67: this.handleFastForward('arrowRight'),
-                key27key91key49key59key53key68: this.handleFastForward('arrowLeft'),
-                key27key127: this.handleFastForward('backspace'),
-            }
-            
-            if (keyMap[key]){
-                keyMap[key](data);
-            }else if (data.length === 1 && data.charCodeAt(0) >= 32 && data.charCodeAt(0) <= 126){
-                this.handleChar(data);
-            }
-    
-            console.log(this.buffer);
-            console.log(this.posx, this.posy);
-        }
-
-    }
-    
     moveToBufferIndex(i){        
         while(this.currentBufferIndex() !== i){
             const current = this.currentBufferIndex();
             if(current > i){
-                this.handleArrowLeft();
+                this.moveLeft();
             }else{
-                this.handleArrowRight();
+                this.moveRight();
             }
         }
     }
@@ -329,8 +350,6 @@ class XTerm extends Component {
         this.term.write(this.chalk.hex(variables.colorfulsecondary)(this.padding.substr(0, this.padding.length - 2) + '$ '));
         this.reset();
     }
-
-
 }
  
  
