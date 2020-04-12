@@ -33,4 +33,8 @@
   font-weight: 900;
   font-size: 16pt;
 }
+
+.more-main div.terminal .xterm .xterm-viewport {
+  overflow: visible;
+}
 /*# sourceMappingURL=more.css.map */

@@ -15,6 +15,9 @@
         }
     }
     div.terminal{
+        .xterm .xterm-viewport{
+            overflow: visible;
+        }
         // background-color: red;
         // box-sizing: border-box;
         // background-clip: content-box, padding-box;
