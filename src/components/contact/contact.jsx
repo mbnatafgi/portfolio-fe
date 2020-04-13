@@ -76,7 +76,7 @@ const Contact = (props) => {
                 <div className="row">
                     {media.map(medium => 
                         <div key={medium.href} className="col">
-                            <a href={medium.href} target="_blank">
+                            <a href={medium.href} target="_blank" rel="noopener noreferrer">
                                 {medium.logo}
                             </a>
                         </div>

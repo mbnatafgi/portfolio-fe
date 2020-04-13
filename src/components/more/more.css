@@ -34,7 +34,49 @@
   font-size: 16pt;
 }
 
-.more-main div.terminal .xterm .xterm-viewport {
-  overflow: visible;
+.more-main .terminal {
+  background-color: #2f3b4a;
+  overflow: hidden;
+}
+
+.more-main .terminal .no-scrollbars {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.more-main .terminal .no-scrollbars::-webkit-scrollbar {
+  display: none;
+}
+
+.more-main .terminal .myterminal-main {
+  cursor: text;
+  height: 500px;
+}
+
+.more-main .terminal .myterminal-main .input {
+  margin: 15px 0;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.more-main .terminal .myterminal-main .input .symbol {
+  max-width: 15px;
+  color: #ffee00;
+  font: inherit;
+}
+
+.more-main .terminal .myterminal-main .input .textarea {
+  word-break: break-all;
+  padding: 0;
+  color: white;
+  font: inherit;
+  caret-color: #ffee00;
+  outline: none;
 }
 /*# sourceMappingURL=more.css.map */
