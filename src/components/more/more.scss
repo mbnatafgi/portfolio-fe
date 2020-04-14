@@ -28,23 +28,27 @@
         .myterminal-main{
             cursor: text;
             height: 500px;
-            // padding: 20px 0;
-            .input{
+            .element{
                 margin: 15px 0;
                 font-family: monospace;
                 font-size: 16px;
                 font-weight: bold;
-                align-items: flex-start;
+                &.input{
+                    .textarea{
+                        color: $light-primary;
+                    }
+                }
+                &.output{
+                    .textarea{
+                        color: $light-secondary;
+                    }
+                }
                 .symbol{
-                    max-width: 15px;
                     color: $colorful-secondary;
-                    font: inherit;
+                    max-width: 15px;
                 }
                 .textarea{
                     word-break: break-all;
-                    padding: 0;
-                    color: $light-primary;
-                    font: inherit;
                     caret-color: $colorful-secondary;
                     outline: none;
                 }

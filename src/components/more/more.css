@@ -55,27 +55,28 @@
   height: 500px;
 }
 
-.more-main .terminal .myterminal-main .input {
+.more-main .terminal .myterminal-main .element {
   margin: 15px 0;
   font-family: monospace;
   font-size: 16px;
   font-weight: bold;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
-.more-main .terminal .myterminal-main .input .symbol {
-  max-width: 15px;
-  color: #ffee00;
-  font: inherit;
-}
-
-.more-main .terminal .myterminal-main .input .textarea {
-  word-break: break-all;
-  padding: 0;
+.more-main .terminal .myterminal-main .element.input .textarea {
   color: white;
-  font: inherit;
+}
+
+.more-main .terminal .myterminal-main .element.output .textarea {
+  color: #ECF1F1;
+}
+
+.more-main .terminal .myterminal-main .element .symbol {
+  color: #ffee00;
+  max-width: 15px;
+}
+
+.more-main .terminal .myterminal-main .element .textarea {
+  word-break: break-all;
   caret-color: #ffee00;
   outline: none;
 }

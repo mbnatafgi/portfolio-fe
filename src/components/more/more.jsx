@@ -56,10 +56,10 @@ class MyTerminal extends Component{
             <div className="myterminal-main no-scrollbars" ref={this.ref}>
                 {
                     this.state.elements.map(elem =>
-                        <div key={elem.id} className={`row ${elem.type} no-gutters`}>
-                            <div className="col symbol">$</div>
+                        <div key={elem.id} className={`row ${elem.type} no-gutters element`}>
+                            <div className="col symbol">{elem.type === 'input' ? '$' : ''}</div>
                             <div className="col">
-                                <div ref={elem.ref} className="textarea" onPaste={this.handlePaste.bind(null, elem)} onKeyDown={this.handleInput.bind(this, elem)} contentEditable suppressContentEditableWarning={true}>{elem.text}</div>
+                                <div ref={elem.ref} className="textarea" onPaste={this.handlePaste.bind(null, elem)} onKeyDown={this.handleInput.bind(this, elem)}  contentEditable={elem.type === 'input' ? true : false} suppressContentEditableWarning={true}>{elem.text}</div>
                             </div>
                         </div> 
                     )
