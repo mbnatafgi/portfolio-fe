@@ -18,18 +18,21 @@
         }
         .info {
           .description {
-              h3{
-                margin: 10px 0;
-                border-bottom: solid 2px;
+            .title{
+              font-family: $font-family-secondary;
+            }
+            h3{
+              margin: 10px 0;
+              border-bottom: solid 2px;
+            }
+            div {
+              h4{
+                  margin: 5px 10px;
               }
-              div {
-                h4{
-                    margin: 5px 10px;
-                }
-                p{
-                    margin: 5px 0;
-                    font-weight: $font-weigh-light;
-                }
+              p{
+                  margin: 5px 0;
+                  font-weight: $font-weigh-light;
+              }
             }
           }
         }
@@ -38,9 +41,9 @@
     }
 
     .entry:hover{
-      .date, .logo{
-        color: $colorful-secondary;
-        fill: $colorful-secondary;
+      .date, .logo, .title{
+        color: $colorful-primary;
+        fill: $colorful-primary;
       }
       color: $light-primary;
       fill: $light-primary;

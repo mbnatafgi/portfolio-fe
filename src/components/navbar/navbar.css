@@ -1,12 +1,12 @@
 :export {
-  colorfulprimary: #4cf68f;
-  colorfulsecondary: #ffee00;
+  colorfulprimary: #ffee00;
+  colorfulsecondary: #4cf68f;
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
   lightprimary: white;
   lightsecondary: #ECF1F1;
-  fontfamilyprimary: "Roboto";
+  fontfamilyprimary: "Lato", sans-serif;
   fontfamilysecondary: "Bungee";
   fontweighlight: 300;
   fontweightregular: 400;
@@ -16,44 +16,67 @@
 }
 
 .navbar-main {
-  background-color: #2f3b4a;
-}
-
-.navbar-main.sticky {
   -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
           box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  width: 100%;
+  background-color: #2f3b4a;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 0.9;
+}
+
+.navbar-main .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .navbar-main .navbar-links {
-  padding: 15px;
-  overflow: auto;
+  overflow-x: auto;
   white-space: nowrap;
+  margin-right: 20px;
 }
 
-.navbar-main .navbar-links .nav-link {
-  color: white;
-  margin: 10px;
-  padding: 7px 20px;
+.navbar-main .navbar-links .nav-link:last-child {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.navbar-main .nav-link {
+  height: 55px;
+  display: table-cell;
+  vertical-align: middle;
+  color: #ECF1F1;
+  margin: 0 10px;
+  padding: 0 20px;
   text-decoration: none;
-  font-weight: 700;
+  font-family: "Bungee";
+  font-size: 1.2em;
+  outline: none;
 }
 
-.navbar-main .navbar-links .nav-link.resume {
-  border-radius: 10px;
-  background-color: #ffee00;
+.navbar-main .nav-link.resume {
   color: #2f3b4a;
+  background-color: #ECF1F1;
 }
 
-.navbar-main .navbar-links .nav-link.active {
+.navbar-main .nav-link.resume:hover {
+  background-color: white;
+  color: #2f3b4a !important;
+}
+
+.navbar-main .nav-link.active {
   color: #ffee00;
 }
 
-.navbar-main .navbar-links .nav-link:nth-child(1) {
-  padding-left: 0;
-  margin-left: 0;
+.navbar-main .nav-link:hover:not(.active) {
+  color: white;
+}
+
+.navbar-main .nav-link:last-child {
+  margin-right: 0;
 }
 /*# sourceMappingURL=navbar.css.map */

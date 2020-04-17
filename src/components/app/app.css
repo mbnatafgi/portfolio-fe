@@ -1,12 +1,12 @@
 :export {
-  colorfulprimary: #4cf68f;
-  colorfulsecondary: #ffee00;
+  colorfulprimary: #ffee00;
+  colorfulsecondary: #4cf68f;
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
   lightprimary: white;
   lightsecondary: #ECF1F1;
-  fontfamilyprimary: "Roboto";
+  fontfamilyprimary: "Lato", sans-serif;
   fontfamilysecondary: "Bungee";
   fontweighlight: 300;
   fontweightregular: 400;
@@ -16,25 +16,33 @@
 }
 
 html body {
-  font-family: "Roboto";
-  font-size: 120%;
+  font-family: "Lato", sans-serif;
+  font-size: 110%;
   margin: 0;
   padding: 0;
   background-color: white;
+  line-height: 1.2;
 }
 
-html body .app .grad-line {
-  height: 2px;
-  background-color: #ffee00;
+html body .app .no-scrollbars {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+}
+
+html body .app .no-scrollbars::-webkit-scrollbar {
+  display: none;
 }
 
 html body .app .body > div {
-  padding: 50px 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 html body .app .body > div.grad-line {
   padding: 0;
   margin: 0;
+  height: 2px;
 }
 
 html body .app .header {
@@ -64,5 +72,17 @@ html body .app .header.underline {
   margin-bottom: 20px;
   border-bottom: solid 3px;
   max-width: 250px;
+}
+
+html body .app .nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 55px;
+  z-index: 100000;
+}
+
+html body .app .nav .navbar-main {
+  top: -55px;
+  position: absolute;
 }
 /*# sourceMappingURL=app.css.map */

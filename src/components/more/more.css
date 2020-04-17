@@ -1,12 +1,12 @@
 :export {
-  colorfulprimary: #4cf68f;
-  colorfulsecondary: #ffee00;
+  colorfulprimary: #ffee00;
+  colorfulsecondary: #4cf68f;
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
   lightprimary: white;
   lightsecondary: #ECF1F1;
-  fontfamilyprimary: "Roboto";
+  fontfamilyprimary: "Lato", sans-serif;
   fontfamilysecondary: "Bungee";
   fontweighlight: 300;
   fontweightregular: 400;
@@ -32,27 +32,23 @@
   text-decoration: none;
   font-weight: 900;
   font-size: 16pt;
+  opacity: 0.9;
+}
+
+.more-main div.resume a:hover {
+  opacity: 1;
 }
 
 .more-main .terminal {
-  background-color: #2f3b4a;
   overflow: hidden;
 }
 
-.more-main .terminal .no-scrollbars {
-  overflow-y: scroll;
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-}
-
-.more-main .terminal .no-scrollbars::-webkit-scrollbar {
-  display: none;
-}
-
 .more-main .terminal .myterminal-main {
+  background-color: #2f3b4a;
   cursor: text;
-  height: 500px;
+  height: 50vh;
+  overflow-y: auto;
+  padding: 20px;
 }
 
 .more-main .terminal .myterminal-main .element {

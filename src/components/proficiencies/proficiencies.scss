@@ -16,7 +16,7 @@
             top: 0;
             bottom: 0;
             position: absolute;
-            
+            font-family: $font-family-secondary;
             width: 25%;
 
             @media (max-width: 767px){
@@ -26,11 +26,14 @@
             @media (max-width: 575px) { 
                 width: 35%;   
             }
-
-
         }
         .active{
-            background-image: linear-gradient(to right, $colorful-primary 50%, $colorful-tertiary);
+            background-image: linear-gradient(
+                to right, 
+                $colorful-tertiary 20%,
+                $colorful-secondary , 
+                $colorful-primary , 
+            );
             border-radius: inherit;
             z-index: 1;
             position: absolute;

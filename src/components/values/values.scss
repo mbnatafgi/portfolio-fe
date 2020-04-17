@@ -16,7 +16,7 @@
             }
             g:nth-child(5n+1){
                 path{
-                    fill: $colorful-secondary;
+                    fill: $colorful-primary;
                 }
                 text{
                     fill: $dark-primary;
@@ -24,10 +24,10 @@
             }
             g:nth-child(5n+2){
                 path{
-                    fill: $dark-secondary;
+                    fill: $light-secondary;
                 }
                 text{
-                    fill: $light-primary;
+                    fill: $dark-primary;
                 }
             }
             g:nth-child(5n+3){
@@ -48,7 +48,7 @@
             }
             g:nth-child(5n+5){
                 path{
-                    fill: $colorful-primary;
+                    fill: $colorful-secondary;
                 }
                 text{
                     fill: $light-primary;

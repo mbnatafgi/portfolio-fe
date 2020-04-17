@@ -1,12 +1,12 @@
 :export {
-  colorfulprimary: #4cf68f;
-  colorfulsecondary: #ffee00;
+  colorfulprimary: #ffee00;
+  colorfulsecondary: #4cf68f;
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
   lightprimary: white;
   lightsecondary: #ECF1F1;
-  fontfamilyprimary: "Roboto";
+  fontfamilyprimary: "Lato", sans-serif;
   fontfamilysecondary: "Bungee";
   fontweighlight: 300;
   fontweightregular: 400;

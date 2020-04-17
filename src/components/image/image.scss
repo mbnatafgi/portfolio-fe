@@ -4,9 +4,9 @@
   .image-wrapper {
     border-radius: 50%;
     background-image: linear-gradient(
-      to bottom,
-      $colorful-primary,
-      $colorful-secondary,
+      to left,
+      $colorful-primary 30%,
+      $colorful-secondary 60%,
       $colorful-tertiary,
     );
     height: 270px;

@@ -27,20 +27,22 @@ class Hero extends Component {
   }
   render() {
     return (
-      <div ref={this.vantaRef} className="hero-main">
+      <div className="hero-main" id="hero">
+        <div className="vanta" ref={this.vantaRef}></div>
         <div className="hero-welcome">
-          <Typed
-            strings={[
-              "<p>Hello! I'm</p><p class='name'>Mohamad Belal Natafgi</p>",
-              "<p>A Software Engineer...</p>"
-            ]}
-            typeSpeed={60}
-            backSpeed={60}
-            backDelay={3000}
-            loop={true}
-            showCursor={false}
-          />
+            <Typed
+              strings={[
+                "<p>Hello! I'm</p><p class='name'>Mohamad Belal Natafgi</p>",
+                "<p>A Software Engineer...</p>"
+              ]}
+              typeSpeed={60}
+              backSpeed={60}
+              backDelay={3000}
+              loop={true}
+              showCursor={false}
+            />
         </div>
+        
       </div>
     );
   }

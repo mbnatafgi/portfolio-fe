@@ -11,7 +11,9 @@ function App() {
   return (
     <div className='app bootstrap-wrapper'>
       <Hero/>
-      <NavBar/>
+      <div className="nav">
+        <NavBar/>
+      </div>
       <div className='body'>
         <About/>
         <Experience/>

@@ -7,27 +7,25 @@
         a{
             padding: 20px;
             border-radius: 10px;
-            background-color: $colorful-secondary;
+            background-color: $colorful-primary;
             color: $dark-primary;
             text-decoration: none;
             font-weight: $font-weight-black;
             font-size: 16pt;
+            opacity: 0.9;
+            &:hover{
+                opacity: 1;
+            }
         }
     }
     .terminal{
-        background-color: $dark-primary;
         overflow: hidden;
-        .no-scrollbars{
-            overflow-y: scroll;
-            scrollbar-width: none;  /* Firefox */
-            -ms-overflow-style: none;
-            &::-webkit-scrollbar{
-                display: none;
-            }
-        }
         .myterminal-main{
+            background-color: $dark-primary;
             cursor: text;
-            height: 500px;
+            height: 50vh;
+            overflow-y: auto;
+            padding: 20px;
             .element{
                 margin: 15px 0;
                 font-family: monospace;
@@ -44,12 +42,12 @@
                     }
                 }
                 .symbol{
-                    color: $colorful-secondary;
+                    color: $colorful-primary;
                     max-width: 15px;
                 }
                 .textarea{
                     word-break: break-all;
-                    caret-color: $colorful-secondary;
+                    caret-color: $colorful-primary;
                     outline: none;
                 }
             }

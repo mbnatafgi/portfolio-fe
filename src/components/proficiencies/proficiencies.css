@@ -1,12 +1,12 @@
 :export {
-  colorfulprimary: #4cf68f;
-  colorfulsecondary: #ffee00;
+  colorfulprimary: #ffee00;
+  colorfulsecondary: #4cf68f;
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
   lightprimary: white;
   lightsecondary: #ECF1F1;
-  fontfamilyprimary: "Roboto";
+  fontfamilyprimary: "Lato", sans-serif;
   fontfamilysecondary: "Bungee";
   fontweighlight: 300;
   fontweightregular: 400;
@@ -32,6 +32,7 @@
   top: 0;
   bottom: 0;
   position: absolute;
+  font-family: "Bungee";
   width: 25%;
 }
 
@@ -48,8 +49,8 @@
 }
 
 .proficiencies-main .proficiency-main .active {
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #4cf68f), to(#55F2F2));
-  background-image: linear-gradient(to right, #4cf68f 50%, #55F2F2);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(20%, #55F2F2), color-stop(#4cf68f), to(#ffee00));
+  background-image: linear-gradient(to right, #55F2F2 20%, #4cf68f, #ffee00);
   border-radius: inherit;
   z-index: 1;
   position: absolute;

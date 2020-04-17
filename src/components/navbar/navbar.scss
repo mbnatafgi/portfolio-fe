@@ -1,36 +1,53 @@
 @import '../common/variables';
 
 .navbar-main{
-    &.sticky{
-        box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+
+    width: 100%;
     background-color: $dark-primary;
+    backdrop-filter: blur(10px);
+    opacity: 0.9;
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
     .navbar-links{
-        padding: 15px;
-        overflow: auto;
+        overflow-x: auto;
         white-space: nowrap;
-        // text-align: center;
-        .nav-link{
-            color: $light-primary;
-            margin: 10px;
-            padding: 7px 20px;
-            text-decoration: none;
-            font-weight: $font-weight-bold;
-            &.resume{
-                border-radius: 10px;
-                background-color: $colorful-secondary;
-                color: $dark-primary;
-            }
-            &.active{
-                color: $colorful-secondary;
-            }
-        }
-        .nav-link:nth-child(1){
+        margin-right: 20px;
+        .nav-link:last-child{
             padding-left: 0;
             margin-left: 0;
+        }
+    }
+    .nav-link{
+        height: 55px;
+        display: table-cell;
+        vertical-align: middle;
+        color: $light-secondary;
+        margin: 0 10px;
+        padding: 0 20px;
+        text-decoration: none;
+        font-family: $font-family-secondary;
+        font-size: 1.2em;
+        outline: none;
+        &.resume{
+            color: $dark-primary;
+            background-color: $light-secondary;
+            &:hover{
+                background-color: $light-primary;
+                color: $dark-primary !important;
+            }
+        }
+        &.active{
+            color: $colorful-primary;
+        }
+        &:hover:not(.active){
+            color: $light-primary;
+        }
+
+        &:last-child{
+            margin-right: 0;
         }
     }
 }

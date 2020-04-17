@@ -14,13 +14,13 @@ const Proficiency = (props) => {
 const Proficiencies = (props) => {
 
     const profs = [
-        {title: 'Python', value: 0.9, max: 1},
-        {title: 'Bash', value: 0.77, max: 1},
-        {title: 'Git', value: 0.79, max: 1},
-        {title: 'MongoDB', value: 0.82, max: 1},
-        {title: 'SQL', value: 0.79, max: 1},
-        {title: 'Docker', value: 0.85, max: 1},
-        {title: 'Kubernetes', value: 0.79, max: 1},
+        {title: 'Python', value: 0.92, max: 1},
+        {title: 'Bash', value: 0.79, max: 1},
+        {title: 'Git', value: 0.81, max: 1},
+        {title: 'MongoDB', value: 0.84, max: 1},
+        {title: 'SQL', value: 0.81, max: 1},
+        {title: 'Docker', value: 0.87, max: 1},
+        {title: 'Kubernetes', value: 0.81, max: 1},
     ]
     
     return ( 

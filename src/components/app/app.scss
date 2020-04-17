@@ -3,22 +3,26 @@
 html{
   body{
     font-family: $font-family-primary;
-    font-size: 120%;
+    font-size: 110%;
     margin: 0;
     padding: 0;
     background-color: $light-primary;
+    line-height: 1.2;
     .app{
-      .grad-line{
-        height: 2px;
-        // background-image: linear-gradient(to bottom, $colorful-primary, $colorful-tertiary);
-        background-color: $colorful-secondary;
-        
+      .no-scrollbars{
+        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar{
+            display: none;
+        }
       }
       .body>div{
-        padding: 50px 10px;
+        padding-top: 50px;
+        padding-bottom: 50px;
         &.grad-line{
           padding: 0;
           margin:0;
+          height: 2px;
         }
       }
       .header{
@@ -42,6 +46,15 @@ html{
           margin-bottom: 20px;
           border-bottom: solid 3px;
           max-width: 250px;
+        }
+      }
+      .nav{
+        position: sticky;
+        top: 55px;
+        z-index: 100000;
+        .navbar-main{
+          top: -55px;
+          position: absolute;
         }
       }
     }

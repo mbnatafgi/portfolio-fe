@@ -1,12 +1,12 @@
 :export {
-  colorfulprimary: #4cf68f;
-  colorfulsecondary: #ffee00;
+  colorfulprimary: #ffee00;
+  colorfulsecondary: #4cf68f;
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
   lightprimary: white;
   lightsecondary: #ECF1F1;
-  fontfamilyprimary: "Roboto";
+  fontfamilyprimary: "Lato", sans-serif;
   fontfamilysecondary: "Bungee";
   fontweighlight: 300;
   fontweightregular: 400;
@@ -16,48 +16,45 @@
 }
 
 .hero-main {
+  position: relative;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 20px;
+}
+
+.hero-main .vanta {
+  height: 100%;
 }
 
 .hero-main .hero-welcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -55%);
+          transform: translate(-50%, -55%);
   z-index: 10;
   font-family: "Bungee";
-  color: white;
-  max-width: 80%;
-  padding: 40px;
+  padding: 30px;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+  color: white;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .hero-main .hero-welcome p {
   margin: 0;
   font-size: 30pt;
-  line-height: 50pt;
+  line-height: 1.5;
 }
 
 @media (min-width: 900px) {
   .hero-main .hero-welcome p {
     font-size: 40pt;
-    line-height: 70pt;
   }
 }
 
 @media (min-width: 1200px) {
   .hero-main .hero-welcome p {
     font-size: 50pt;
-    line-height: 90pt;
   }
 }
 

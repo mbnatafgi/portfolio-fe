@@ -6,7 +6,7 @@
     h4{
         color: $light-secondary;
         .colorful{
-            color: $colorful-secondary;
+            color: $colorful-primary;
         }
         text-align: center;
     }
@@ -27,7 +27,7 @@
                 
             }
             a:hover{
-                fill: $colorful-secondary;
+                fill: $colorful-primary;
             }
         }
     }
