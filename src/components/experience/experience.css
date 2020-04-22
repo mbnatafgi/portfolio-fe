@@ -7,7 +7,7 @@
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
-  fontfamilysecondary: "Bungee";
+  fontfamilysecondary: "Bungee", cursive;
   fontweighlight: 300;
   fontweightregular: 400;
   fontweightmedium: 500;
@@ -28,11 +28,11 @@
 
 .experience-main .timeline .entry .job .date svg text {
   font-size: 30pt;
-  font-family: "Bungee";
+  font-family: "Bungee", cursive;
 }
 
 .experience-main .timeline .entry .job .info .description .title {
-  font-family: "Bungee";
+  font-family: "Bungee", cursive;
 }
 
 .experience-main .timeline .entry .job .info .description h3 {

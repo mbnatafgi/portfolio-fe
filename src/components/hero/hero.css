@@ -7,7 +7,7 @@
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
-  fontfamilysecondary: "Bungee";
+  fontfamilysecondary: "Bungee", cursive;
   fontweighlight: 300;
   fontweightregular: 400;
   fontweightmedium: 500;
@@ -31,7 +31,7 @@
   -webkit-transform: translate(-50%, -55%);
           transform: translate(-50%, -55%);
   z-index: 10;
-  font-family: "Bungee";
+  font-family: "Bungee", cursive;
   padding: 30px;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);

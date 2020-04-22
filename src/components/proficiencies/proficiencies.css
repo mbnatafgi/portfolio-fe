@@ -7,7 +7,7 @@
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
-  fontfamilysecondary: "Bungee";
+  fontfamilysecondary: "Bungee", cursive;
   fontweighlight: 300;
   fontweightregular: 400;
   fontweightmedium: 500;
@@ -32,7 +32,7 @@
   top: 0;
   bottom: 0;
   position: absolute;
-  font-family: "Bungee";
+  font-family: "Bungee", cursive;
   width: 25%;
 }
 

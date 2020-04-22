@@ -7,7 +7,7 @@
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
-  fontfamilysecondary: "Bungee";
+  fontfamilysecondary: "Bungee", cursive;
   fontweighlight: 300;
   fontweightregular: 400;
   fontweightmedium: 500;
@@ -53,9 +53,8 @@
 
 .more-main .terminal .myterminal-main .element {
   margin: 15px 0;
-  font-family: monospace;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: "CascadiaMono", monospace;
+  font-size: 12pt;
 }
 
 .more-main .terminal .myterminal-main .element.input .textarea {
@@ -63,6 +62,7 @@
 }
 
 .more-main .terminal .myterminal-main .element.output .textarea {
+  font-weight: 300;
   color: #ECF1F1;
 }
 
@@ -72,8 +72,29 @@
 }
 
 .more-main .terminal .myterminal-main .element .textarea {
+  white-space: pre-wrap;
   word-break: break-all;
   caret-color: #ffee00;
   outline: none;
+}
+
+.more-main .terminal .myterminal-main .element .textarea > div {
+  padding-left: 0 !important;
+}
+
+.more-main .terminal .myterminal-main .element .textarea .hyphen {
+  max-width: 10px;
+}
+
+.more-main .terminal .myterminal-main .element .textarea .data {
+  padding-left: 10px;
+}
+
+.more-main .terminal .myterminal-main .element .textarea .hyphen + .data > .data {
+  padding-left: 0;
+}
+
+.more-main .terminal .myterminal-main .element .textarea .object {
+  padding-left: 20px;
 }
 /*# sourceMappingURL=more.css.map */

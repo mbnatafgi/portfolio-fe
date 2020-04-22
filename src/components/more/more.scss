@@ -28,9 +28,8 @@
             padding: 20px;
             .element{
                 margin: 15px 0;
-                font-family: monospace;
-                font-size: 16px;
-                font-weight: bold;
+                font-family: $font-family-tertiary;
+                font-size: 12pt;
                 &.input{
                     .textarea{
                         color: $light-primary;
@@ -38,6 +37,7 @@
                 }
                 &.output{
                     .textarea{
+                        font-weight: $font-weigh-light;
                         color: $light-secondary;
                     }
                 }
@@ -46,9 +46,25 @@
                     max-width: 15px;
                 }
                 .textarea{
+                    white-space:pre-wrap;
                     word-break: break-all;
                     caret-color: $colorful-primary;
                     outline: none;
+                    & > div{
+                        padding-left: 0 !important;
+                    }
+                    .hyphen{
+                        max-width: 10px;
+                    }
+                    .data{
+                        padding-left: 10px
+                    }
+                    .hyphen + .data > .data{
+                        padding-left: 0;
+                    }
+                    .object{
+                        padding-left: 20px;
+                    }
                 }
             }
         }
