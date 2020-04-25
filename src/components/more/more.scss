@@ -26,6 +26,37 @@
             height: 50vh;
             overflow-y: auto;
             padding: 20px;
+            position: relative;
+            .loader-wrapper{
+                position: sticky;
+                top: 0;
+                .loader{
+                    top: 0px;
+                    right: 0px;
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                }
+                .loader:after {
+                    content: " ";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    border: 3px solid #fff;
+                    border-color: $colorful-primary transparent $colorful-primary transparent;
+                    animation: loader 1.2s linear infinite;
+                }
+                @keyframes loader{
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                  }
+            }
+              
             .element{
                 margin: 15px 0;
                 font-family: $font-family-tertiary;

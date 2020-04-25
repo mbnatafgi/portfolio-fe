@@ -37,9 +37,8 @@ class MyTerminal extends Component{
         this.state = {
             commandHistory: commandHistory,
             commandHistoryIndex: commandHistory.length - 1,
-            elements: [
-                this.createNewInput()
-            ]
+            elements: [],
+            isConnected: false
         }
     }
 
@@ -51,12 +50,24 @@ class MyTerminal extends Component{
     render() {
         return (
             <div className="myterminal-main no-scrollbars" ref={this.ref}>
+                <div className='loader-wrapper'>
+                    <div className={this.state.isConnected ? "" : "loader"} >
+                    </div>
+                </div>
                 {
-                    this.state.elements.map(elem =>
+                    this.state.elements.map((elem, index) =>
                         <div key={elem.id} className={`row ${elem.type} no-gutters element`}>
                             <div className="col symbol">{elem.type === 'input' ? '$' : ''}</div>
                             <div className="col">
-                                <div ref={elem.ref} className="textarea" onPaste={this.handlePaste.bind(null, elem)} onKeyDown={this.handleInput.bind(this, elem)}  contentEditable={elem.type === 'input'} suppressContentEditableWarning={true} dangerouslySetInnerHTML={{__html: elem.text}}></div>
+                                <div
+                                    ref={elem.ref}
+                                    className="textarea"
+                                    onPaste={this.handlePaste.bind(null, elem)}
+                                    onKeyDown={this.handleInput.bind(this, elem)}
+                                    contentEditable={elem.type === 'input' && this.state.isConnected && index === this.state.elements.length - 1}
+                                    suppressContentEditableWarning={true}
+                                    dangerouslySetInnerHTML={{__html: elem.text}}>
+                                </div>
                             </div>
                         </div> 
                     )
@@ -72,47 +83,49 @@ class MyTerminal extends Component{
             this.ws.addEventListener('message', this.handleWSMessage);
             this.ws.addEventListener('error', this.handleWSError);
             this.ws.addEventListener('close', this.handleWSClose);
-        }, 2000);
+        },  2000);
 
     }
 
     handleWSClose = (event) => {
         console.log('WS close');
-        this.connectWS();
+
+        this.setState({
+            isConnected: false,
+        }, this.connectWS);
     }
 
     handleWSError = (event) => {
         console.log('WS error');
-        this.connectWS();
     }
 
     handleWSOpen = (event) => {
         console.log('WS was opened');
         clearTimeout(this.timeOut);
+        this.setState({
+            isConnected: true
+        }, this.renderNewInput);
     }
 
     handleWSMessage = (event) => {
-        console.log('WS Message from server: ', event.data);
         const elements = [...this.state.elements];
-
-        let data = event.data; //.split('  -').map(x => `${x}`).join('</div>  -');
+        let data = event.data;
 
         try{
             data = JSON.parse(data);
             data = this.transformMessageToHTML(data)
         }catch (e) {
-            console.log(e)
         }
 
         elements.push(this.createNewOutput(data))
-        this.setState({elements: elements}, this.renderNewInput);
+        this.setState({elements: elements, isConnected: true}, this.renderNewInput);
     }
 
     transformMessageToHTML = (data, depth=0) => {
 
         if (Array.isArray(data)){
             return data.map(item =>
-                `<div class="row no-gutters array"> <div class="col hyphen">- </div><div class='col data'>${this.transformMessageToHTML(item, depth+1)}</div></div>`).reduce((x, y) => x+y, '')
+                `<div class="row no-gutters array"><div class="col hyphen">- </div><div class='col data'>${this.transformMessageToHTML(item, depth+1)}</div></div>`).reduce((x, y) => x+y, '')
         }
         else if (data === Object(data)){
             return Object.keys(data).map(key => `<div class='data object'>${key}: ${this.transformMessageToHTML(data[key], depth+1)}</div>`).reduce((x, y) => x+y, '')
@@ -123,7 +136,6 @@ class MyTerminal extends Component{
     sendWSMessage = (command) => {
         try {
             this.ws.send(command);
-            console.log('Sent "', command, '" to server');
         }catch (e) {
 
         }
@@ -192,7 +204,6 @@ class MyTerminal extends Component{
     }
 
     handleEnterKey = (elem) => {
-        elem.ref.current.contentEditable = false;
         const [commandHistory, commandHistoryIndex] = this.saveCommandToHistory(elem.ref.current.textContent)
 
         const elements = [...this.state.elements];
@@ -202,7 +213,8 @@ class MyTerminal extends Component{
         this.setState({
             elements: elements,
             commandHistory: commandHistory,
-            commandHistoryIndex: commandHistoryIndex
+            commandHistoryIndex: commandHistoryIndex,
+            isConnected: false
         }, () => {
             this.sendWSMessage(elements[elementIndex].text);
         });
@@ -212,10 +224,13 @@ class MyTerminal extends Component{
         if(!event || event.target === this.ref.current){
             if(event) event.preventDefault();
             const elem =  this.state.elements[this.state.elements.length - 1];
-            elem.ref.current.focus();
-            const data = elem.ref.current.textContent;
-            elem.ref.current.textContent = '';
-            document.execCommand('insertText', false, data);
+            if(elem && elem.type === 'input'){
+                elem.ref.current.contentEditable = this.ws.OPEN === this.ws.readyState;
+                elem.ref.current.focus();
+                const data = elem.ref.current.textContent;
+                elem.ref.current.textContent = '';
+                document.execCommand('insertText', false, data);
+            }
         }
     }
 
