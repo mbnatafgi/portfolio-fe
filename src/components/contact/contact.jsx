@@ -1,5 +1,6 @@
 import React from 'react';
 import './contact.css';
+import {context} from "../common/context";
 
 const Email = (props) => {
     return (
@@ -57,34 +58,37 @@ const Contact = (props) => {
     
     let media = [
         {href:"https://www.linkedin.com/in/mohamad-belal-natafgi-7517b2137/", logo: <LinkedIn/>},
-        {href:"https://github.com/mbnatafgi", logo: <GitHub/>},
         {href:"mailto:bilal.natafji@icloud.com", logo: <Email/>},
-        {href:"https://www.facebook.com/billo.natafji", logo: <Facebook/>},
-        {href:"https://www.instagram.com/billonatafji/", logo: <Instagram/>},
+        {href:"https://github.com/mbnatafgi", logo: <GitHub/>},
     ]
     
-    return ( 
-        <div id="contact" className="contact-main">
-            <div className="header light underline section">
-                <h2>Contact</h2>
-            </div>
-            <br/>
-            <h4>Liked what you saw and want to work together? <span className='colorful'>Get in touch!</span></h4>
-            <br/>
-            <br/>
-            <div className="media container">
-                <div className="row">
-                    {media.map(medium => 
-                        <div key={medium.href} className="col">
-                            <a href={medium.href} target="_blank" rel="noopener noreferrer">
-                                {medium.logo}
-                            </a>
+    return (
+        <context.Consumer>
+            {(context) => (
+                <div id="contact" className={`contact-main ${context.state.dark ? 'dark' : ''}`}>
+                    <div className="header light underline section">
+                        <h2>Contact</h2>
+                    </div>
+                    <br/>
+                    <h4>Liked what you saw and want to work together? <span className='colorful'>Get in touch!</span></h4>
+                    <br/>
+                    <br/>
+                    <div className="media container">
+                        <div className="row">
+                            {media.map(medium =>
+                                <div key={medium.href} className="col">
+                                    <a href={medium.href} target="_blank" rel="noopener noreferrer">
+                                        {medium.logo}
+                                    </a>
+                                </div>
+                            )}
                         </div>
-                    )}
+                    </div>
+                    <br/>
                 </div>
-            </div>
-            <br/>
-        </div>
+
+            )}
+        </context.Consumer>
      );
 }
  

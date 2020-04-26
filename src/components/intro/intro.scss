@@ -1,18 +1,21 @@
 @import "../common/variables";
 
 .intro-main {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-end;
-  .colorful {
-    color: $colorful-secondary;
-    font-weight: $font-weight-bold;
-  }
   p {
     margin: 0;
     font-size: 1.1em;
-    // font-size: 1em;
-    // text-align: justify;
-    // line-height: 14pt;
+    .colorful {
+      color: $colorful-secondary;
+      font-weight: $font-weight-bold;
+    }
+
+  }
+  &.dark{
+    p{
+      color: $light-secondary;
+      .colorful{
+        color: $colorful-primary;
+      }
+    }
   }
 }

@@ -23,7 +23,7 @@
         .myterminal-main{
             background-color: $dark-primary;
             cursor: text;
-            height: 50vh;
+            height: 60vh;
             overflow-y: auto;
             padding: 20px;
             position: relative;
@@ -97,6 +97,17 @@
                         padding-left: 20px;
                     }
                 }
+            }
+            &.dark{
+                background-color: $dark-secondary;
+            }
+        }
+    }
+    &.dark{
+        background-color: $dark-tertiary;
+        div.resume{
+            a{
+                color: $dark-secondary;
             }
         }
     }

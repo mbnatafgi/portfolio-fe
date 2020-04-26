@@ -4,6 +4,7 @@
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
+  darktertiary: #212121;
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
@@ -17,7 +18,7 @@
 
 .proficiencies-main .proficiency-main {
   margin-bottom: 5px;
-  border-radius: 5px 20px 20px 5px;
+  border-radius: 0px 20px 20px 0px;
   position: relative;
   width: 100%;
   height: 35px;
@@ -28,12 +29,14 @@
   background-color: #2f3b4a;
   padding: 5px 15px 5px 10px;
   z-index: 2;
+  border-radius: 0;
   border-radius: inherit;
   top: 0;
   bottom: 0;
   position: absolute;
   font-family: "Bungee", cursive;
   width: 25%;
+  min-width: 150px;
 }
 
 @media (max-width: 767px) {
@@ -66,5 +69,19 @@
   border-radius: inherit;
   background-color: #ECF1F1;
   z-index: 0;
+}
+
+.proficiencies-main .proficiency-main.dark .title {
+  background-color: #000;
+}
+
+.proficiencies-main .proficiency-main.dark .active {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ccc), color-stop(#ECF1F1), to(white));
+  background-image: linear-gradient(to right, #ccc, #ECF1F1, white);
+}
+
+.proficiencies-main .proficiency-main.dark .passive {
+  background-color: #000;
+  opacity: 0.1;
 }
 /*# sourceMappingURL=proficiencies.css.map */

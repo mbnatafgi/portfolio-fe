@@ -4,6 +4,7 @@
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
+  darktertiary: #212121;
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
@@ -17,8 +18,8 @@
 
 .image-main .image-wrapper {
   border-radius: 50%;
-  background-image: -webkit-gradient(linear, right top, left top, color-stop(30%, #ffee00), color-stop(60%, #4cf68f), to(#55F2F2));
-  background-image: linear-gradient(to left, #ffee00 30%, #4cf68f 60%, #55F2F2);
+  background-image: -webkit-gradient(linear, right top, left top, from(#ffee00), color-stop(#4cf68f), to(#55F2F2));
+  background-image: linear-gradient(to left, #ffee00, #4cf68f, #55F2F2);
   height: 270px;
   width: 270px;
   text-align: center;
@@ -26,10 +27,15 @@
 }
 
 .image-main .image-wrapper img {
-  width: 98%;
-  height: 98%;
+  width: 99%;
+  height: 99%;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.image-main.dark .image-wrapper {
+  background-image: -webkit-gradient(linear, right top, left top, from(white), to(white));
+  background-image: linear-gradient(to left, white, white);
 }
 /*# sourceMappingURL=image.css.map */

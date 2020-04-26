@@ -4,6 +4,7 @@
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
+  darktertiary: #212121;
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
@@ -46,7 +47,7 @@
 .more-main .terminal .myterminal-main {
   background-color: #2f3b4a;
   cursor: text;
-  height: 50vh;
+  height: 60vh;
   overflow-y: auto;
   padding: 20px;
   position: relative;
@@ -145,5 +146,17 @@
 
 .more-main .terminal .myterminal-main .element .textarea .object {
   padding-left: 20px;
+}
+
+.more-main .terminal .myterminal-main.dark {
+  background-color: #000;
+}
+
+.more-main.dark {
+  background-color: #212121;
+}
+
+.more-main.dark div.resume a {
+  color: #000;
 }
 /*# sourceMappingURL=more.css.map */

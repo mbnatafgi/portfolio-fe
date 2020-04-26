@@ -4,6 +4,7 @@
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
+  darktertiary: #212121;
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
@@ -72,5 +73,51 @@
 
 .values-main .chart svg g:nth-child(5n+5) text {
   fill: white;
+}
+
+.values-main .chart.dark g:nth-child(5n+1) path {
+  fill: #ECF1F1;
+}
+
+.values-main .chart.dark g:nth-child(5n+1) text {
+  fill: #000;
+}
+
+.values-main .chart.dark g:nth-child(5n+2) path {
+  fill: #000;
+  opacity: 0.2;
+}
+
+.values-main .chart.dark g:nth-child(5n+2) text {
+  fill: #ffee00;
+}
+
+.values-main .chart.dark g:nth-child(5n+3) path {
+  fill: #ECF1F1;
+}
+
+.values-main .chart.dark g:nth-child(5n+3) text {
+  fill: #000;
+}
+
+.values-main .chart.dark g:nth-child(5n+4) path {
+  fill: #000;
+  opacity: 0.2;
+}
+
+.values-main .chart.dark g:nth-child(5n+4) text {
+  fill: #ffee00;
+}
+
+.values-main .chart.dark g:nth-child(5n+5) path {
+  fill: #ECF1F1;
+}
+
+.values-main .chart.dark g:nth-child(5n+5) text {
+  fill: #000;
+}
+
+.values-main .chart.dark path {
+  stroke: #000;
 }
 /*# sourceMappingURL=values.css.map */

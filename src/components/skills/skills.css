@@ -4,6 +4,7 @@
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
+  darktertiary: #212121;
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
@@ -39,5 +40,22 @@
 .skills-main .skills .skill-main p {
   margin: 0;
   font-weight: 300;
+}
+
+.skills-main .skills .skill-main.dark .title {
+  color: #ffee00;
+}
+
+.skills-main .skills .skill-main.dark p {
+  color: #ECF1F1;
+}
+
+.skills-main .skills .skill-main.dark svg .polygon {
+  fill: #000;
+  opacity: 0.2;
+}
+
+.skills-main .skills .skill-main.dark svg .icon, .skills-main .skills .skill-main.dark svg .icon * {
+  fill: #ECF1F1;
 }
 /*# sourceMappingURL=skills.css.map */

@@ -2,7 +2,6 @@
 
 .navbar-main{
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
-
     width: 100%;
     background-color: $dark-primary;
     backdrop-filter: blur(10px);
@@ -10,11 +9,61 @@
     .wrapper{
         display: flex;
         justify-content: space-between;
+        padding: 0 !important;
+        .right{
+            div{
+                display: table-cell;
+                vertical-align: middle;
+                padding: 0 10px;
+            }
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+                input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                    &:checked + .slider {
+                        background-color: $dark-tertiary;
+                    }
+                    &:checked + .slider:before {
+                        transform: translateX(26px);
+                        background-color: $light-primary;
+                    }
+                }
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #ccc;
+                    -webkit-transition: .4s;
+                    transition: .2s;
+                    border-radius: 34px;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        height: 26px;
+                        width: 26px;
+                        left: 4px;
+                        bottom: 4px;
+                        background-color: $light-primary;
+                        -webkit-transition: .4s;
+                        transition: .3s;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
     }
     .navbar-links{
         overflow-x: auto;
         white-space: nowrap;
-        margin-right: 20px;
+        margin-right: 10px;
         .nav-link:last-child{
             padding-left: 0;
             margin-left: 0;
@@ -48,6 +97,16 @@
 
         &:last-child{
             margin-right: 0;
+        }
+    }
+    &.dark{
+        background-color: $dark-secondary;
+        opacity: 0.8;
+        .resume{
+            color: $dark-secondary;
+            &:hover{
+                color: $dark-secondary !important;
+            }
         }
     }
 }

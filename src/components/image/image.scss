@@ -5,8 +5,8 @@
     border-radius: 50%;
     background-image: linear-gradient(
       to left,
-      $colorful-primary 30%,
-      $colorful-secondary 60%,
+      $colorful-primary ,
+      $colorful-secondary,
       $colorful-tertiary,
     );
     height: 270px;
@@ -14,10 +14,19 @@
     text-align: center;
     margin: 0 auto;
     img {
-      width: 98%;
-      height: 98%;
+      width: 99%;
+      height: 99%;
       border-radius: 50%;
       object-fit: cover;
+    }
+  }
+  &.dark{
+    .image-wrapper{
+      background-image: linear-gradient(
+        to left,
+        $light-primary ,
+        $light-primary
+      );
     }
   }
 }

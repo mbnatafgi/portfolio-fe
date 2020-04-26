@@ -55,5 +55,53 @@
                 }
             }
         }
+        &.dark{
+            g:nth-child(5n+1){
+                path{
+                    fill: $light-secondary;
+                }
+                text{
+                    fill: $dark-secondary;
+                }
+            }
+            g:nth-child(5n+2){
+                path{
+                    fill: $dark-secondary;
+                    opacity: 0.2;
+                }
+                text{
+                    fill: $colorful-primary;
+                }
+            }
+            g:nth-child(5n+3){
+                path{
+                    fill: $light-secondary;
+                }
+                text{
+                    fill: $dark-secondary;
+                }
+            }
+            g:nth-child(5n+4){
+                path{
+                    fill: $dark-secondary;
+                    opacity: 0.2;
+                }
+                text{
+                    fill: $colorful-primary;
+                }
+            }
+            g:nth-child(5n+5){
+                path{
+                    fill: $light-secondary;
+                }
+                text{
+                    fill: $dark-secondary;
+                }
+            }
+            path{
+                stroke: $dark-secondary;
+                // stroke-width: 3px;
+            }
+        }
     }
 }

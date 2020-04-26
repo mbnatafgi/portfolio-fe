@@ -22,7 +22,8 @@ html{
         &.grad-line{
           padding: 0;
           margin:0;
-          height: 2px;
+          // height: 1px;
+          background-color: $colorful-primary;
         }
       }
       .header{

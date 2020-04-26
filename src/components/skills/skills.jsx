@@ -1,5 +1,6 @@
 import React from 'react';
 import './skills.css';
+import {context} from "../common/context";
 
 const Polygon = (props) => {
     return (
@@ -80,7 +81,7 @@ const Automation = (props) => {
 
 const Skill = (props) => {
     return (
-        <div className="skill-main col col-sm-6 col-12">
+        <div className={`skill-main ${props.dark ? 'dark' : ''} col col-sm-6 col-12`}>
             {<props.icon/>}
             <h3 className="title">{props.title}</h3>
             <p className="description">{props.description}</p>
@@ -97,15 +98,19 @@ const Skills = (props) => {
         {icon: Automation, title: 'Automation', description: 'Writing bash scripts for automating repetitive tasks that are especially handy when developing microservice-based solutions.'},
     ]
 
-    return ( 
-        <div className="skills-main">
-            <div className="header dark">
-                <h2>What Am I Good At?</h2>
-            </div>
-            <div className="skills row">
-                {skills.map(skill => <Skill key={skill.title} {...skill}/>)}
-            </div>
-        </div>
+    return (
+        <context.Consumer>
+            {(context) => (
+                <div className="skills-main">
+                    <div className={`header ${context.state.dark ? 'light': 'dark'}`}>
+                        <h2>What Am I Good At?</h2>
+                    </div>
+                    <div className="skills row">
+                        {skills.map(skill => <Skill key={skill.title} {...skill} dark={context.state.dark}/>)}
+                    </div>
+                </div>
+            )}
+        </context.Consumer>
      );
 }
  

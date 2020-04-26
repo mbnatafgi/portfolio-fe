@@ -13,6 +13,7 @@
     .media{
         .row{
             align-items: center;
+            text-align: center;
             a{
                 svg{
                     max-height: 60px;
@@ -29,6 +30,12 @@
             a:hover{
                 fill: $colorful-primary;
             }
+        }
+    }
+    &.dark{
+        background-color: $dark-secondary;
+        .media .row a svg .transparent{
+            fill: $dark-secondary;
         }
     }
 }

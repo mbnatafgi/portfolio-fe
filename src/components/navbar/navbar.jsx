@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {debounce} from '../common/helpers';
 import './navbar.css';
 import $ from 'jquery';
+import {context} from "../common/context";
 
 class NavLink extends Component {
 
@@ -64,6 +65,21 @@ class NavLink extends Component {
         );
     }
 }
+
+const ModeToggle = (props) => {
+    return (
+        <context.Consumer>
+            {
+                (context) => (
+                    <label className="switch">
+                        <input type="checkbox" checked={context.state.dark} onClick={context.handleModeChange.bind(null)}/>
+                        <span className="slider round"></span>
+                    </label>
+                )
+            }
+        </context.Consumer>
+    )
+}
         
 
 class NavBar extends Component {
@@ -84,7 +100,7 @@ class NavBar extends Component {
     }
 
     render() { 
-
+        
         const links = [
             {title: 'Home', href: '/#hero', classes: 'nav-link'},
             {title: 'About', href: '/#about', classes: 'nav-link'},
@@ -93,23 +109,32 @@ class NavBar extends Component {
             {title: 'Contact', href: '/#contact', classes: 'nav-link'},
         ];
         
-        const resume = {title: 'Resume', href: `${process.env.PUBLIC_URL}/media/CV.pdf`, classes: 'nav-link resume',  target:"_blank"}
+        const resume = {title: 'Resume', href: `${process.env.PUBLIC_URL}/media/CV${this.context.state.dark ? '-dark' : ''}.pdf`, classes: 'nav-link resume',  target:"_blank"}
 
-        return ( 
-            <div className='navbar-main sticky'  >
-                <div className="container wrapper">
-                    <div className="navbar-links no-scrollbars" id="navbar-links" ref={this.ref}>
-                        {links.map(link =>
-                            <NavLink key={link.href} title={link.title} href={link.href} className={link.classes} target={link.target} onUpdate={this.handleUpdate} />    
-                        )}
+        return (
+            <context.Consumer>
+                {(context) => (
+                    <div className={`navbar-main sticky ${context.state.dark ? 'dark' : ''}`}  >
+                        <div className="container wrapper">
+                            <div className="navbar-links no-scrollbars" id="navbar-links" ref={this.ref}>
+                                {links.map(link =>
+                                    <NavLink key={link.href} title={link.title} href={link.href} className={link.classes} target={link.target} onUpdate={this.handleUpdate} />
+                                )}
+                            </div>
+                            <div className="right">
+                                <div>
+                                    <ModeToggle />
+                                </div>
+                                <NavLink title={resume.title} href={resume.href} className={resume.classes} target={resume.target} onUpdate={this.handleUpdate} />
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <NavLink title={resume.title} href={resume.href} className={resume.classes} target={resume.target} onUpdate={this.handleUpdate} />
-                    </div>
-                </div>
-            </div>
+                )}
+            </context.Consumer>
          );
     }
 }
+
+NavBar.contextType = context;
  
 export default NavBar;

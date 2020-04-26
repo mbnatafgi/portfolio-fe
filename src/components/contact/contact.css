@@ -4,6 +4,7 @@
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
+  darktertiary: #212121;
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
@@ -33,6 +34,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
 
 .contact-main .media .row a svg {
@@ -50,5 +52,13 @@
 
 .contact-main .media .row a:hover {
   fill: #ffee00;
+}
+
+.contact-main.dark {
+  background-color: #000;
+}
+
+.contact-main.dark .media .row a svg .transparent {
+  fill: #000;
 }
 /*# sourceMappingURL=contact.css.map */

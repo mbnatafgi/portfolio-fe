@@ -5,6 +5,7 @@ import { ReactComponent as SAUGO } from './saugo.svg';
 import { ReactComponent as MUREX } from './murex.svg';
 import { ReactComponent as AUB } from './aub.svg';
 import { ReactComponent as GRAD } from './grad.svg';
+import {context} from "../common/context";
 
 const Date = props => {
   return (
@@ -91,7 +92,7 @@ const Experience = props => {
       task_first:"Project",
       task_second:"Network Configuration Manager",
       stack_first:"Stack",
-      stack_second:"Python - MongoDB - OpenAPI - Docker - Kubernetes",
+      stack_second:"Python - Bash - MongoDB - OpenAPI - Docker - Kubernetes",
       logo:<CGC />
     },
     {
@@ -128,23 +129,27 @@ const Experience = props => {
   ]
 
   return (
-    <React.Fragment>
-      <div id="experience" className="experience-main">
-        <div className="header light section">
-          <h2>Where & What Have I Worked On?</h2>
-        </div>
-        <br />
-        <div className="timeline container">
-          {
-          jobs.map(job => 
-            <div key={job.date} className="entry">
-              <Job {...job}/>
+    <context.Consumer>
+      {(context) => (
+        <React.Fragment>
+          <div id="experience" className={`experience-main ${context.state.dark ? 'dark' : ''}`}>
+            <div className="header light section">
+              <h2>Where & What Have I Worked On?</h2>
             </div>
-          )}
-        </div>
-      </div>
-      <div className="grad-line"></div>
-    </React.Fragment>
+            <br />
+            <div className="timeline container">
+              {
+              jobs.map(job =>
+                <div key={job.date} className="entry">
+                  <Job {...job}/>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="grad-line"></div>
+        </React.Fragment>
+      )}
+    </context.Consumer>
   );
 };
 

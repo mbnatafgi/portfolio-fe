@@ -4,6 +4,7 @@
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
+  darktertiary: #212121;
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
@@ -15,13 +16,21 @@
   fontweightblack: 900;
 }
 
-.intro-main .colorful {
+.intro-main p {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.intro-main p .colorful {
   color: #4cf68f;
   font-weight: 700;
 }
 
-.intro-main p {
-  margin: 0;
-  font-size: 1.1em;
+.intro-main.dark p {
+  color: #ECF1F1;
+}
+
+.intro-main.dark p .colorful {
+  color: #ffee00;
 }
 /*# sourceMappingURL=intro.css.map */

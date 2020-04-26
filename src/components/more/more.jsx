@@ -1,28 +1,38 @@
 import React, {Component} from 'react';
 import './more.css';
+import {context} from "../common/context";
 
 const More = (props) => {
-    return ( 
-        <React.Fragment>
-            <div id="more" className="more-main">
-                <div className="header dark section">
-                    <h2>Looking For More Details?</h2>
-                </div>
-                <br/>
-                <div className='resume'>
-                    <a href={`${process.env.PUBLIC_URL}/media/CV.pdf`} target="_blank" rel="noopener noreferrer">View My Resume</a>
-                </div>
-                <br/>
-                <div className="terminal container">
-                    <div className="row">
-                        <div className="col">
-                            <MyTerminal/>
+    return (
+        <context.Consumer>
+            {(context) => (
+                <React.Fragment>
+                    <div id="more" className={`more-main ${context.state.dark ? 'dark' : ''}`}>
+                        <div className={`header ${context.state.dark ? 'light' : 'dark'} section`}>
+                            <h2>Looking For More Details?</h2>
+                        </div>
+                        <br/>
+                        <div className='resume'>
+                            <a href={`${process.env.PUBLIC_URL}/media/CV${context.state.dark ? '-dark' : ''}.pdf`} target="_blank" rel="noopener noreferrer">View My Resume</a>
+                            <br/>
+                        </div>
+                        <br/>
+                        <div className={`header ${context.state.dark ? 'light' : 'dark'} section`}>
+                            <h3>Or use my CLI!</h3>
+                        </div>
+                        <div className="terminal container">
+                            <div className="row">
+                                <div className="col">
+                                    <MyTerminal dark={context.state.dark}/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div className="grad-line"></div>
-        </React.Fragment>
+                    <div className="grad-line"></div>
+                </React.Fragment>
+
+            )}
+        </context.Consumer>
      );
 }
 
@@ -38,8 +48,9 @@ class MyTerminal extends Component{
             commandHistory: commandHistory,
             commandHistoryIndex: commandHistory.length - 1,
             elements: [],
-            isConnected: false
+            isConnected: false,
         }
+        this.userDidInteract = false;
     }
 
     componentDidMount() {
@@ -49,7 +60,7 @@ class MyTerminal extends Component{
 
     render() {
         return (
-            <div className="myterminal-main no-scrollbars" ref={this.ref}>
+            <div className={`myterminal-main ${this.props.dark ? 'dark' : ''} no-scrollbars`} ref={this.ref}>
                 <div className='loader-wrapper'>
                     <div className={this.state.isConnected ? "" : "loader"} >
                     </div>
@@ -222,9 +233,12 @@ class MyTerminal extends Component{
 
     focusLastEelement = (event) => {
         if(!event || event.target === this.ref.current){
-            if(event) event.preventDefault();
+            if(event) {
+                event.preventDefault();
+                this.userDidInteract = true;
+            }
             const elem =  this.state.elements[this.state.elements.length - 1];
-            if(elem && elem.type === 'input'){
+            if(elem && elem.type === 'input' && this.userDidInteract){
                 elem.ref.current.contentEditable = this.ws.OPEN === this.ws.readyState;
                 elem.ref.current.focus();
                 const data = elem.ref.current.textContent;

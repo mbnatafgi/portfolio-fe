@@ -4,6 +4,7 @@
   colorfultertiary: #55F2F2;
   darkprimary: #2f3b4a;
   darksecondary: #000;
+  darktertiary: #212121;
   lightprimary: white;
   lightsecondary: #ECF1F1;
   fontfamilyprimary: "Lato", sans-serif;
@@ -42,7 +43,7 @@ html body .app .body > div {
 html body .app .body > div.grad-line {
   padding: 0;
   margin: 0;
-  height: 2px;
+  background-color: #ffee00;
 }
 
 html body .app .header {
