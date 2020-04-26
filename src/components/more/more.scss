@@ -61,9 +61,12 @@
                 margin: 15px 0;
                 font-family: $font-family-tertiary;
                 font-size: 12pt;
+                .colorful{
+                    color: $colorful-primary;
+                }
                 &.input{
                     .textarea{
-                        color: $light-primary;
+                        color: $colorful-primary;
                     }
                 }
                 &.output{

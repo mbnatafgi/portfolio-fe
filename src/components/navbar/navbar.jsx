@@ -56,7 +56,7 @@ class NavLink extends Component {
                 ref={this.ref}
                 href={this.props.href}
                 className={`${this.props.className} ${this.state.is_highlighted ? 'active' : ''}`} 
-                onClick={this.handleClick} 
+                onClick={this.handleClick}
                 target={this.props.target}
                 onWheel={this.props.onWheel}
             >
@@ -72,7 +72,7 @@ const ModeToggle = (props) => {
             {
                 (context) => (
                     <label className="switch">
-                        <input type="checkbox" checked={context.state.dark} onClick={context.handleModeChange.bind(null)}/>
+                        <input type="checkbox" checked={context.state.dark} onChange={context.handleModeChange.bind(null)}/>
                         <span className="slider round"></span>
                     </label>
                 )

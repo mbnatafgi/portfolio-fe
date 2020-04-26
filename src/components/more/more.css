@@ -107,8 +107,12 @@
   font-size: 12pt;
 }
 
+.more-main .terminal .myterminal-main .element .colorful {
+  color: #ffee00;
+}
+
 .more-main .terminal .myterminal-main .element.input .textarea {
-  color: white;
+  color: #ffee00;
 }
 
 .more-main .terminal .myterminal-main .element.output .textarea {

@@ -47,7 +47,7 @@ class MyTerminal extends Component{
         this.state = {
             commandHistory: commandHistory,
             commandHistoryIndex: commandHistory.length - 1,
-            elements: [],
+            elements: [this.createNewOutput('Welcome to my CLI!!!\n\nThis by no means is a terminal emulator, but for the purpose of getting more details about me, it\'s cool and it gets the job done :D\n\nGet started by typing: <spand class="colorful">mbnatafgi --help</spand>\n\nEnjoy!')],
             isConnected: false,
         }
         this.userDidInteract = false;
@@ -99,19 +99,15 @@ class MyTerminal extends Component{
     }
 
     handleWSClose = (event) => {
-        console.log('WS close');
-
         this.setState({
             isConnected: false,
         }, this.connectWS);
     }
 
     handleWSError = (event) => {
-        console.log('WS error');
     }
 
     handleWSOpen = (event) => {
-        console.log('WS was opened');
         clearTimeout(this.timeOut);
         this.setState({
             isConnected: true
@@ -129,7 +125,7 @@ class MyTerminal extends Component{
         }
 
         elements.push(this.createNewOutput(data))
-        this.setState({elements: elements, isConnected: true}, this.renderNewInput);
+        this.setState({elements: elements, isConnected: this.ws.readyState === this.ws.OPEN}, this.renderNewInput);
     }
 
     transformMessageToHTML = (data, depth=0) => {
@@ -215,11 +211,14 @@ class MyTerminal extends Component{
     }
 
     handleEnterKey = (elem) => {
-        const [commandHistory, commandHistoryIndex] = this.saveCommandToHistory(elem.ref.current.textContent)
+
+        const command = elem.ref.current.textContent.trim();
+
+        const [commandHistory, commandHistoryIndex] = this.saveCommandToHistory(command)
 
         const elements = [...this.state.elements];
         const elementIndex = this.state.elements.findIndex((x) => x.id === elem.id);
-        elements[elementIndex].text = elem.ref.current.textContent;
+        elements[elementIndex].text = command;
 
         this.setState({
             elements: elements,
@@ -227,8 +226,17 @@ class MyTerminal extends Component{
             commandHistoryIndex: commandHistoryIndex,
             isConnected: false
         }, () => {
-            this.sendWSMessage(elements[elementIndex].text);
+            if(command === 'clear'){
+                this.clearScreen();
+            }
+            else if(command){
+                this.sendWSMessage(elements[elementIndex].text);
+            }
         });
+    }
+
+    clearScreen = () => {
+        this.setState({elements: [], isConnected: this.ws.readyState === this.ws.OPEN}, this.renderNewInput)
     }
 
     focusLastEelement = (event) => {
