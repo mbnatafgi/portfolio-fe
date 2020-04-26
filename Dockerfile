@@ -14,6 +14,6 @@ FROM alpine
 
 COPY --from=builder /app/build/ /app/build/
 
-RUN echo -e "rm -rf /build/* \ncp -r /app/build/* /build" > copyBuild.sh
+RUN echo -e "rm -rf /build/* \ncp -r /app/build/* /build" > container_start.sh
 
-ENTRYPOINT [ "sh", "copyBuild.sh" ]
+ENTRYPOINT [ "sh", "container_start.sh" ]

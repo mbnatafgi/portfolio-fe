@@ -18,7 +18,7 @@ const More = (props) => {
                         </div>
                         <br/>
                         <div className={`header ${context.state.dark ? 'light' : 'dark'} section`}>
-                            <h3>Or use my CLI!</h3>
+                            <h3>Or use my CLI !</h3>
                         </div>
                         <div className="terminal container">
                             <div className="row">
@@ -47,7 +47,7 @@ class MyTerminal extends Component{
         this.state = {
             commandHistory: commandHistory,
             commandHistoryIndex: commandHistory.length - 1,
-            elements: [this.createNewOutput('Welcome to my CLI!!!\n\nThis by no means is a terminal emulator, but for the purpose of getting more details about me, it\'s cool and it gets the job done :D\n\nGet started by typing: <spand class="colorful">mbnatafgi --help</spand>\n\nEnjoy!')],
+            elements: [this.createNewOutput('Welcome to my CLI !!!\n\nThis by no means is a terminal emulator, but for the purpose of getting more details about me, it\'s cool and it gets the job done :D\n\nGet started by typing: <spand class="colorful">mbnatafgi --help</spand>\n\nEnjoy !')],
             isConnected: false,
         }
         this.userDidInteract = false;
@@ -89,7 +89,7 @@ class MyTerminal extends Component{
 
     connectWS = () => {
         this.timeOut = setTimeout(() => {
-            this.ws = new WebSocket(`ws://${window.location.hostname}:8000`);
+            this.ws = new WebSocket(`wss://${window.location.hostname}/core`);
             this.ws.addEventListener('open', this.handleWSOpen);
             this.ws.addEventListener('message', this.handleWSMessage);
             this.ws.addEventListener('error', this.handleWSError);
@@ -240,10 +240,12 @@ class MyTerminal extends Component{
     }
 
     focusLastEelement = (event) => {
+        if(event){
+            this.userDidInteract = true;
+        }
         if(!event || event.target === this.ref.current){
             if(event) {
                 event.preventDefault();
-                this.userDidInteract = true;
             }
             const elem =  this.state.elements[this.state.elements.length - 1];
             if(elem && elem.type === 'input' && this.userDidInteract){

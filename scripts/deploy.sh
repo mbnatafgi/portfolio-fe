@@ -1,9 +1,9 @@
-DEPLOYMENT_DIR="$(dirname "$(realpath "$0")")"
-ROOT_DIR="$(dirname "$DEPLOYMENT_DIR")"
+SCRIPTS_DIR="$(dirname "$(realpath "$0")")"
+ROOT_DIR="$(dirname "$SCRIPTS_DIR")"
 DOCKER_COMPOSE_FILE="docker-compose.yaml"
 INSTALL_DOCKER_FILE="install_docker.sh"
 
-"$DEPLOYMENT_DIR/$INSTALL_DOCKER_FILE"
+"$SCRIPTS_DIR/$INSTALL_DOCKER_FILE"
 
 sudo docker volume create portfolio-fe
 
