@@ -109,7 +109,7 @@ class NavBar extends Component {
             {title: 'Contact', href: '/#contact', classes: 'nav-link'},
         ];
         
-        const resume = {title: 'Resume', href: `${process.env.PUBLIC_URL}/media/CV${this.context.state.dark ? '-dark' : ''}.pdf`, classes: 'nav-link resume',  target:"_blank"}
+        const resume = {title: 'Resume', href: `${process.env.PUBLIC_URL}/media/resume${this.context.state.dark ? '-dark' : ''}.pdf`, classes: 'nav-link resume',  target:"_blank"}
 
         return (
             <context.Consumer>

@@ -13,7 +13,7 @@ const More = (props) => {
                         </div>
                         <br/>
                         <div className='resume'>
-                            <a href={`${process.env.PUBLIC_URL}/media/CV${context.state.dark ? '-dark' : ''}.pdf`} target="_blank" rel="noopener noreferrer">View My Resume</a>
+                            <a href={`${process.env.PUBLIC_URL}/media/resume${context.state.dark ? '-dark' : ''}.pdf`} target="_blank" rel="noopener noreferrer">View My Resume</a>
                             <br/>
                         </div>
                         <br/>
