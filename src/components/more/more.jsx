@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactGA from 'react-ga';
 import './more.css';
 import {context} from "../common/context";
 
@@ -89,7 +90,10 @@ class MyTerminal extends Component{
 
     connectWS = () => {
         this.timeOut = setTimeout(() => {
-            this.ws = new WebSocket(`wss://${window.location.hostname}/core`);
+            this.ws = new WebSocket(process.env.NODE_ENV === 'production' ?
+                `wss://${window.location.hostname}/core` :
+                `ws://${window.location.hostname}:8000`
+            );
             this.ws.addEventListener('open', this.handleWSOpen);
             this.ws.addEventListener('message', this.handleWSMessage);
             this.ws.addEventListener('error', this.handleWSError);
@@ -142,6 +146,11 @@ class MyTerminal extends Component{
 
     sendWSMessage = (command) => {
         try {
+            ReactGA.event({
+              category: 'User',
+              action: 'Used CLI',
+              label: command
+            });
             this.ws.send(command);
         }catch (e) {
 
