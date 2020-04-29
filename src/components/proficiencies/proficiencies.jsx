@@ -22,6 +22,7 @@ const Proficiencies = (props) => {
         {title: 'SQL', value: 0.81, max: 1},
         {title: 'Docker', value: 0.87, max: 1},
         {title: 'Kubernetes', value: 0.81, max: 1},
+        {title: 'HTML+CSS+JS', value: 0.78, max: 1},
     ]
     
     return ( 
