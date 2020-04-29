@@ -8,7 +8,9 @@ RUN npm install
 
 ADD . /app
 
-RUN npm run build
+ARG REACT_APP_GA_ID
+
+RUN REACT_APP_GA_ID=$REACT_APP_GA_ID npm run build
 
 FROM alpine
 

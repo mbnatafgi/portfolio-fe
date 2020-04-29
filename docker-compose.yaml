@@ -3,12 +3,14 @@ services:
   portfolio-fe:
     build:
       context: .
+      args:
+        REACT_APP_GA_ID: ${REACT_APP_GA_ID}
     image: mbnatafgi/portfolio:fe
     container_name: portfolio-fe
     volumes:
       - portfolio-fe:/build
     env_file:
-      - ./variables.env
+      - .env
 volumes:
   portfolio-fe:
     external: true
