@@ -1,3 +1,5 @@
+#!/bin/bash
+
  # Install docker if missing.
 
   if ! command -v docker &> /dev/null; then
