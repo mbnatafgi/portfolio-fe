@@ -3,6 +3,7 @@ import {debounce} from '../common/helpers';
 import './navbar.css';
 import $ from 'jquery';
 import {context} from "../common/context";
+import ReactGA from "react-ga";
 
 class NavLink extends Component {
 
@@ -43,11 +44,16 @@ class NavLink extends Component {
             event.preventDefault();
             var hash = this.ref.current.hash;
             $('html, body').animate(
-                {scrollTop: $(hash).offset().top - this.getBoundryWithOffset() + 2}, 
-                300, 
+                {scrollTop: $(hash).offset().top - this.getBoundryWithOffset() + 2},
+                300,
                 function(){}
             );
         }
+        ReactGA.event({
+            category: 'User',
+            action: 'Used Navigation',
+            label: this.props.href
+        });
     }
         
     render() { 

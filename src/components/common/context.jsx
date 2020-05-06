@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import ReactGA from 'react-ga';
 
 export const context = React.createContext();
 
@@ -14,7 +15,12 @@ class Provider extends Component {
 
     handleModeChange = (event) => {
         localStorage.setItem('dark', event.target.checked);
-        this.setState({dark: event.target.checked})
+        this.setState({dark: event.target.checked});
+        ReactGA.event({
+            category: 'User',
+            action: 'Used Theme Toggle',
+            label: event.target.checked ? 'dark' : 'light'
+        });
     }
 
     render() {

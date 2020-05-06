@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './contact.css';
 import {context} from "../common/context";
+import ReactGA from 'react-ga';
 
 const Email = (props) => {
     return (
         <svg viewBox="0 0 100.146 75.109">
-            <path d="M0,4V79.109H100.146V4Zm88.094,6.259L50.066,40.675,12.052,10.259ZM6.259,72.847v-59.2L50.066,48.684,93.883,13.642v59.2Z" transform="translate(0 -4)"/>
+            <path
+                d="M0,4V79.109H100.146V4Zm88.094,6.259L50.066,40.675,12.052,10.259ZM6.259,72.847v-59.2L50.066,48.684,93.883,13.642v59.2Z"
+                transform="translate(0 -4)"/>
         </svg>
 
     );
@@ -27,9 +30,15 @@ const Email = (props) => {
 const LinkedIn = (props) => {
     return (
         <svg id="Linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.34 75.333">
-            <path d="M18.659,0H56.681A18.659,18.659,0,0,1,75.34,18.659V56.673A18.659,18.659,0,0,1,56.681,75.333H18.659A18.659,18.659,0,0,1,0,56.673V18.659A18.659,18.659,0,0,1,18.659,0Z" transform="translate(75.34 75.333) rotate(180)"/>
-            <path className="transparent" d="M44.053,83.89V49.654H32.673V83.89ZM38.364,44.977c3.968,0,6.438-2.629,6.438-5.914-.074-3.359-2.47-5.915-6.363-5.915S32,35.7,32,39.062c0,3.285,2.469,5.914,6.288,5.914h.074Z" transform="translate(-19.947 -20.665)" />
-            <path className="transparent" d="M80.712,109.872H92.091V90.753a7.8,7.8,0,0,1,.374-2.777A6.229,6.229,0,0,1,98.3,83.815c4.118,0,5.765,3.14,5.765,7.742v18.316h11.379V90.241c0-10.516-5.614-15.409-13.1-15.409A11.335,11.335,0,0,0,92.016,80.6h.076V75.636H80.712c.149,3.212,0,34.236,0,34.236Z" transform="translate(-50.308 -46.647)"/>
+            <path
+                d="M18.659,0H56.681A18.659,18.659,0,0,1,75.34,18.659V56.673A18.659,18.659,0,0,1,56.681,75.333H18.659A18.659,18.659,0,0,1,0,56.673V18.659A18.659,18.659,0,0,1,18.659,0Z"
+                transform="translate(75.34 75.333) rotate(180)"/>
+            <path className="transparent"
+                  d="M44.053,83.89V49.654H32.673V83.89ZM38.364,44.977c3.968,0,6.438-2.629,6.438-5.914-.074-3.359-2.47-5.915-6.363-5.915S32,35.7,32,39.062c0,3.285,2.469,5.914,6.288,5.914h.074Z"
+                  transform="translate(-19.947 -20.665)"/>
+            <path className="transparent"
+                  d="M80.712,109.872H92.091V90.753a7.8,7.8,0,0,1,.374-2.777A6.229,6.229,0,0,1,98.3,83.815c4.118,0,5.765,3.14,5.765,7.742v18.316h11.379V90.241c0-10.516-5.614-15.409-13.1-15.409A11.335,11.335,0,0,0,92.016,80.6h.076V75.636H80.712c.149,3.212,0,34.236,0,34.236Z"
+                  transform="translate(-50.308 -46.647)"/>
         </svg>
 
     );
@@ -47,49 +56,58 @@ const LinkedIn = (props) => {
 // }
 
 const GitHub = (props) => {
-    return ( 
-        <svg viewBox="0 0 77.238 75.333">
-            <path d="M38.619,0A38.621,38.621,0,0,0,26.406,75.259c1.931.338,2.655-.821,2.655-1.834,0-.917-.048-3.958-.048-7.193-9.7,1.786-12.213-2.365-12.986-4.538-.434-1.11-2.317-4.538-3.958-5.455-1.352-.724-3.283-2.51-.048-2.559,3.041-.048,5.214,2.8,5.938,3.958,3.476,5.841,9.027,4.2,11.248,3.186a8.124,8.124,0,0,1,2.462-5.165c-8.593-.965-17.572-4.3-17.572-19.068a15.03,15.03,0,0,1,3.958-10.379,13.877,13.877,0,0,1,.386-10.234s3.234-1.014,10.62,3.958a36.41,36.41,0,0,1,19.309,0c7.386-5.02,10.62-3.958,10.62-3.958a13.877,13.877,0,0,1,.386,10.234,14.942,14.942,0,0,1,3.958,10.379c0,14.82-9.027,18.1-17.62,19.068,1.4,1.207,2.607,3.524,2.607,7.145,0,5.165-.048,9.317-.048,10.62,0,1.014.724,2.221,2.655,1.834A38.639,38.639,0,0,0,38.619,0Z" />
-        </svg>
-     );
-}
-  
-const Contact = (props) => {
-    
-    let media = [
-        {href:"https://www.linkedin.com/in/mohamad-belal-natafgi-7517b2137/", logo: <LinkedIn/>},
-        {href:"mailto:bilal.natafji@icloud.com", logo: <Email/>},
-        {href:"https://github.com/mbnatafgi", logo: <GitHub/>},
-    ]
-    
     return (
-        <context.Consumer>
-            {(context) => (
-                <div id="contact" className={`contact-main ${context.state.dark ? 'dark' : ''}`}>
-                    <div className="header light underline section">
-                        <h2>Contact</h2>
-                    </div>
-                    <br/>
-                    <h4>Liked what you saw and want to work together? <span className='colorful'>Get in touch!</span></h4>
-                    <br/>
-                    <br/>
-                    <div className="media container">
-                        <div className="row">
-                            {media.map(medium =>
-                                <div key={medium.href} className="col">
-                                    <a href={medium.href} target="_blank" rel="noopener noreferrer">
-                                        {medium.logo}
-                                    </a>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                    <br/>
-                </div>
-
-            )}
-        </context.Consumer>
-     );
+        <svg viewBox="0 0 77.238 75.333">
+            <path
+                d="M38.619,0A38.621,38.621,0,0,0,26.406,75.259c1.931.338,2.655-.821,2.655-1.834,0-.917-.048-3.958-.048-7.193-9.7,1.786-12.213-2.365-12.986-4.538-.434-1.11-2.317-4.538-3.958-5.455-1.352-.724-3.283-2.51-.048-2.559,3.041-.048,5.214,2.8,5.938,3.958,3.476,5.841,9.027,4.2,11.248,3.186a8.124,8.124,0,0,1,2.462-5.165c-8.593-.965-17.572-4.3-17.572-19.068a15.03,15.03,0,0,1,3.958-10.379,13.877,13.877,0,0,1,.386-10.234s3.234-1.014,10.62,3.958a36.41,36.41,0,0,1,19.309,0c7.386-5.02,10.62-3.958,10.62-3.958a13.877,13.877,0,0,1,.386,10.234,14.942,14.942,0,0,1,3.958,10.379c0,14.82-9.027,18.1-17.62,19.068,1.4,1.207,2.607,3.524,2.607,7.145,0,5.165-.048,9.317-.048,10.62,0,1.014.724,2.221,2.655,1.834A38.639,38.639,0,0,0,38.619,0Z"/>
+        </svg>
+    );
 }
- 
+
+class Contact extends Component {
+
+    handleClick = (href) => {
+        ReactGA.event({
+            category: 'User',
+            action: 'Used Contact Link',
+            label: href
+        });
+    }
+
+    render() {
+        let media = [
+            {href: "https://www.linkedin.com/in/mohamad-belal-natafgi-7517b2137/", logo: <LinkedIn/>},
+            {href: "mailto:mmn32@mail.aub.edu", logo: <Email/>},
+            {href: "https://github.com/mbnatafgi", logo: <GitHub/>},
+        ]
+
+        return (
+            <div id="contact" className={`contact-main ${this.context.state.dark ? 'dark' : ''}`}>
+                <div className="header light underline section">
+                    <h2>Contact</h2>
+                </div>
+                <br/>
+                <h4>Liked what you saw and want to work together? <span
+                    className='colorful'>Get in touch!</span></h4>
+                <br/>
+                <br/>
+                <div className="media container">
+                    <div className="row">
+                        {media.map(medium =>
+                            <div key={medium.href} className="col">
+                                <a href={medium.href} target="_blank" rel="noopener noreferrer" onClick={this.handleClick.bind(this, medium.href)}>
+                                    {medium.logo}
+                                </a>
+                            </div>
+                        )}
+                    </div>
+                </div>
+                <br/>
+            </div>
+        );
+    }
+}
+
+Contact.contextType = context;
+
 export default Contact;
