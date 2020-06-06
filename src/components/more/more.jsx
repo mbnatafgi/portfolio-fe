@@ -48,7 +48,7 @@ class MyTerminal extends Component{
         this.state = {
             commandHistory: commandHistory,
             commandHistoryIndex: commandHistory.length - 1,
-            elements: [this.createNewOutput('Welcome to my CLI !!!\n\nThis by no means is a terminal emulator, but for the purpose of getting more details about me, it\'s cool and it gets the job done :D\n\nGet started by typing: <spand class="colorful">mbnatafgi --help</spand>\n\nEnjoy !')],
+            elements: [this.createNewOutput('Welcome to my CLI !!!\n\nThis by no means is a terminal emulator, but for the purpose of getting more details about me, it\'s cool and it gets the job done :D\n\nGet started by typing: <spand class="colorful">mbnatafgi --help</spand>\n\n')],
             isConnected: false,
         }
         this.userDidInteract = false;
