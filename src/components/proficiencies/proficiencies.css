@@ -21,13 +21,13 @@
   border-radius: 0px 20px 20px 0px;
   position: relative;
   width: 100%;
-  height: 35px;
+  height: 30px;
 }
 
 .proficiencies-main .proficiency-main .title {
-  color: white;
-  background-color: #2f3b4a;
-  padding: 5px 15px 5px 10px;
+  color: #2f3b4a;
+  background-color: white;
+  padding: 0px 25px 0px 10px;
   z-index: 2;
   border-radius: 0;
   border-radius: inherit;
@@ -35,25 +35,30 @@
   bottom: 0;
   position: absolute;
   font-family: "Bungee", cursive;
-  width: 25%;
-  min-width: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 30px;
 }
 
-@media (max-width: 767px) {
-  .proficiencies-main .proficiency-main .title {
-    width: 30%;
-  }
+.proficiencies-main .proficiency-main .title .svg {
+  width: 40px;
 }
 
-@media (max-width: 575px) {
-  .proficiencies-main .proficiency-main .title {
-    width: 35%;
-  }
+.proficiencies-main .proficiency-main .title .svg svg {
+  fill: #2f3b4a;
+  margin-right: 10px;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.proficiencies-main .proficiency-main .title .svg svg .bash {
+  fill: white;
 }
 
 .proficiencies-main .proficiency-main .active {
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(20%, #55F2F2), color-stop(#4cf68f), to(#ffee00));
-  background-image: linear-gradient(to right, #55F2F2 20%, #4cf68f, #ffee00);
+  background-image: -webkit-gradient(linear, left top, right top, from(#3b5575), to(#2f3b4a));
+  background-image: linear-gradient(to right, #3b5575, #2f3b4a);
   border-radius: inherit;
   z-index: 1;
   position: absolute;
@@ -72,7 +77,17 @@
 }
 
 .proficiencies-main .proficiency-main.dark .title {
-  background-color: #000;
+  background-color: #212121;
+  opacity: 1;
+  color: white;
+}
+
+.proficiencies-main .proficiency-main.dark .title .svg svg {
+  fill: white;
+}
+
+.proficiencies-main .proficiency-main.dark .title .svg svg .bash {
+  fill: #212121;
 }
 
 .proficiencies-main .proficiency-main.dark .active {

@@ -55,8 +55,8 @@
 }
 
 .experience-main .timeline .entry:hover .date, .experience-main .timeline .entry:hover .logo, .experience-main .timeline .entry:hover .title {
-  color: #ffee00;
-  fill: #ffee00;
+  color: #4cf68f;
+  fill: #4cf68f;
 }
 
 .experience-main .timeline .entry:nth-child(3) .date {
@@ -74,5 +74,10 @@
 
 .experience-main.dark {
   background-color: #000;
+}
+
+.experience-main.dark .entry:hover .date, .experience-main.dark .entry:hover .logo, .experience-main.dark .entry:hover .title {
+  color: #ffee00;
+  fill: #ffee00;
 }
 /*# sourceMappingURL=experience.css.map */

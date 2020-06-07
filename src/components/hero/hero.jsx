@@ -46,11 +46,12 @@ class Vanta extends Component {
   }
 
   getColor1 = () => {
-    return this.props.dark ? variables.colorfulprimary : 0xff4a;
+    // return this.props.dark ? variables.colorfulprimary : 0xff4a;
+    return this.props.dark ? variables.colorfulprimary : variables.colorfulsecondary;
   }
 
   getColor2 = () => {
-    return this.props.dark ? variables.lightsecondary : 0x4bd4ff;
+    return variables.lightsecondary
   }
 
   render() {
@@ -68,7 +69,7 @@ class Hero extends Component {
 
   render() {
     return (
-      <div className="hero-main" id="hero">
+      <div className={`hero-main ${this.context.state.dark ? 'dark': ''}`} id="hero">
         <Vanta dark={this.context.state.dark}>
           <div className="hero-welcome">
               <Typed

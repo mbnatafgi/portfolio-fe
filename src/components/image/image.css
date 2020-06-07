@@ -18,8 +18,7 @@
 
 .image-main .image-wrapper {
   border-radius: 50%;
-  background-image: -webkit-gradient(linear, right top, left top, from(#ffee00), color-stop(#4cf68f), to(#55F2F2));
-  background-image: linear-gradient(to left, #ffee00, #4cf68f, #55F2F2);
+  background-color: #2f3b4a;
   height: 270px;
   width: 270px;
   text-align: center;
@@ -27,6 +26,10 @@
 }
 
 .image-main .image-wrapper img {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 99%;
   height: 99%;
   border-radius: 50%;
@@ -35,7 +38,6 @@
 }
 
 .image-main.dark .image-wrapper {
-  background-image: -webkit-gradient(linear, right top, left top, from(white), to(white));
-  background-image: linear-gradient(to left, white, white);
+  background-color: white;
 }
 /*# sourceMappingURL=image.css.map */

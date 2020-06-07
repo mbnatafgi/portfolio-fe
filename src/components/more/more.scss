@@ -7,7 +7,7 @@
         a{
             padding: 20px;
             border-radius: 10px;
-            background-color: $colorful-primary;
+            background-color: $colorful-secondary;
             color: $dark-primary;
             text-decoration: none;
             font-weight: $font-weight-black;
@@ -44,7 +44,7 @@
                     height: 100%;
                     border-radius: 50%;
                     border: 3px solid #fff;
-                    border-color: $colorful-primary transparent $colorful-primary transparent;
+                    border-color: $colorful-secondary transparent $colorful-secondary transparent;
                     animation: loader 1.2s linear infinite;
                 }
                 @keyframes loader{
@@ -62,11 +62,11 @@
                 font-family: $font-family-tertiary;
                 font-size: 12pt;
                 .colorful{
-                    color: $colorful-primary;
+                    color: $colorful-secondary;
                 }
                 &.input{
                     .textarea{
-                        color: $colorful-primary;
+                        color: $colorful-secondary;
                     }
                 }
                 &.output{
@@ -76,13 +76,13 @@
                     }
                 }
                 .symbol{
-                    color: $colorful-primary;
+                    color: $colorful-secondary;
                     max-width: 15px;
                 }
                 .textarea{
                     white-space:pre-wrap;
                     word-break: break-all;
-                    caret-color: $colorful-primary;
+                    caret-color: $colorful-secondary;
                     outline: none;
                     & > div{
                         padding-left: 0 !important;
@@ -111,6 +111,34 @@
         div.resume{
             a{
                 color: $dark-secondary;
+                background-color: $colorful-primary;
+            }
+        }
+        .terminal{
+            .myterminal-main{
+                .loader-wrapper{
+                    .loader:after{
+                        border-color: $colorful-primary transparent $colorful-primary transparent;
+                    }
+                }
+                .element{
+                    .colorful{
+                        color: $colorful-primary;
+
+                    }
+                    &.input{
+                        .textarea{
+                            color: $colorful-primary;
+                        }
+                    }
+                    .symbol{
+                        color: $colorful-primary;
+                    }
+                    .textarea{
+                        caret-color: $colorful-primary;
+
+                    }
+                }
             }
         }
     }

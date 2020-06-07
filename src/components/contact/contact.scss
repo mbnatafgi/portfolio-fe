@@ -6,7 +6,7 @@
     h4{
         color: $light-secondary;
         .colorful{
-            color: $colorful-primary;
+            color: $colorful-secondary;
         }
         text-align: center;
     }
@@ -28,14 +28,24 @@
                 
             }
             a:hover{
-                fill: $colorful-primary;
+                fill: $colorful-secondary;
             }
         }
     }
     &.dark{
         background-color: $dark-secondary;
-        .media .row a svg .transparent{
-            fill: $dark-secondary;
+        .media .row{
+            a svg .transparent{
+                fill: $dark-secondary;
+            }
+            a:hover{
+                fill: $colorful-primary;
+            }
+        } 
+        h4{
+            .colorful{
+                color: $colorful-primary;
+            }
         }
     }
 }

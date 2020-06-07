@@ -6,12 +6,11 @@
         border-radius: 0px 20px 20px 0px;
         position: relative;
         width: 100%;
-        height: 35px;
+        height: 30px;
         .title{
-            // height: 40px;
-            color: $light-primary;
-            background-color: $dark-primary;
-            padding: 5px 15px 5px 10px;
+            color: $dark-primary;
+            background-color: $light-primary;
+            padding: 0px 25px 0px 10px;
             z-index: 2;
             border-radius: 0;
             border-radius: inherit;
@@ -19,23 +18,27 @@
             bottom: 0;
             position: absolute;
             font-family: $font-family-secondary;
-            width: 25%;
-            min-width: 170px;
-
-            @media (max-width: 767px){
-                width: 30%;
-            }
-
-            @media (max-width: 575px) { 
-                width: 35%;   
+            display: flex;
+            line-height: 30px;
+            .svg{
+                width: 40px;
+                svg{
+                    fill: $dark-primary;
+                    margin-right: 10px;
+                    max-height: 100%;
+                    max-width: 100%;
+                    .bash{
+                        fill: $light-primary;
+                    }
+                }
             }
         }
         .active{
             background-image: linear-gradient(
                 to right, 
-                $colorful-tertiary 20%,
-                $colorful-secondary , 
-                $colorful-primary , 
+                // $light-secondary,
+                #3b5575,
+                $dark-primary,
             );
             border-radius: inherit;
             z-index: 1;
@@ -54,8 +57,17 @@
         }
         &.dark{
             .title{
-                background-color: $dark-secondary; 
-                // color: $colorful-primary;
+                background-color: $dark-tertiary;
+                opacity: 1; 
+                color: $light-primary;
+                .svg{
+                    svg{
+                        fill: $light-primary;
+                        .bash{
+                            fill: $dark-tertiary;
+                        }
+                    }
+                }
             }
             .active{
                 background-image: linear-gradient(
@@ -63,7 +75,6 @@
                     #ccc,
                     $light-secondary,
                     $light-primary,
-                    // $colorful-primary
                 );
             }
             .passive{

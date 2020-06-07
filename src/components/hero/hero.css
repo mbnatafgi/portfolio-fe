@@ -60,6 +60,10 @@
 }
 
 .hero-main .hero-welcome p.name {
+  color: #4cf68f;
+}
+
+.hero-main.dark .hero-welcome p.name {
   color: #ffee00;
 }
 /*# sourceMappingURL=hero.css.map */

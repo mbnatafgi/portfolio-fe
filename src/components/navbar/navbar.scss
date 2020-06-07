@@ -64,10 +64,10 @@
         overflow-x: auto;
         white-space: nowrap;
         margin-right: 10px;
-        .nav-link:last-child{
-            padding-left: 0;
-            margin-left: 0;
-        }
+        // .nav-link:last-child{
+        //     padding-left: 0;
+        //     margin-left: 0;
+        // }
     }
     .nav-link{
         height: 55px;
@@ -89,7 +89,7 @@
             }
         }
         &.active{
-            color: $colorful-primary;
+            color: $colorful-secondary;
         }
         &:hover:not(.active){
             color: $light-primary;
@@ -102,6 +102,9 @@
     &.dark{
         background-color: $dark-secondary;
         opacity: 0.8;
+        .nav-link.active{
+            color: $colorful-primary;
+        }
         .resume{
             color: $dark-secondary;
             &:hover{

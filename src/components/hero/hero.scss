@@ -29,6 +29,13 @@
                 font-size: 50pt;
             }
             &.name{
+                color: $colorful-secondary;
+            }
+        }
+    }
+    &.dark{
+        .hero-welcome{
+            p.name{
                 color: $colorful-primary;
             }
         }

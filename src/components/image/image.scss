@@ -3,17 +3,15 @@
 .image-main {
   .image-wrapper {
     border-radius: 50%;
-    background-image: linear-gradient(
-      to left,
-      $colorful-primary ,
-      $colorful-secondary,
-      $colorful-tertiary,
-    );
+    background-color: $dark-primary;
     height: 270px;
     width: 270px;
     text-align: center;
     margin: 0 auto;
     img {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
       width: 99%;
       height: 99%;
       border-radius: 50%;
@@ -22,11 +20,7 @@
   }
   &.dark{
     .image-wrapper{
-      background-image: linear-gradient(
-        to left,
-        $light-primary ,
-        $light-primary
-      );
+      background-color: $light-primary;
     }
   }
 }

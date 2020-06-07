@@ -36,11 +36,11 @@
 }
 
 .values-main .chart svg g:nth-child(5n+1) path {
-  fill: #ffee00;
+  fill: #2f3b4a;
 }
 
 .values-main .chart svg g:nth-child(5n+1) text {
-  fill: #2f3b4a;
+  fill: white;
 }
 
 .values-main .chart svg g:nth-child(5n+2) path {
@@ -60,7 +60,7 @@
 }
 
 .values-main .chart svg g:nth-child(5n+4) path {
-  fill: #55F2F2;
+  fill: #ECF1F1;
 }
 
 .values-main .chart svg g:nth-child(5n+4) text {
@@ -68,7 +68,7 @@
 }
 
 .values-main .chart svg g:nth-child(5n+5) path {
-  fill: #4cf68f;
+  fill: #2f3b4a;
 }
 
 .values-main .chart svg g:nth-child(5n+5) text {
@@ -89,7 +89,7 @@
 }
 
 .values-main .chart.dark g:nth-child(5n+2) text {
-  fill: #ffee00;
+  fill: white;
 }
 
 .values-main .chart.dark g:nth-child(5n+3) path {
@@ -106,7 +106,7 @@
 }
 
 .values-main .chart.dark g:nth-child(5n+4) text {
-  fill: #ffee00;
+  fill: white;
 }
 
 .values-main .chart.dark g:nth-child(5n+5) path {

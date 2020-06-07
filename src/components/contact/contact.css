@@ -27,7 +27,7 @@
 }
 
 .contact-main h4 .colorful {
-  color: #ffee00;
+  color: #4cf68f;
 }
 
 .contact-main .media .row {
@@ -51,7 +51,7 @@
 }
 
 .contact-main .media .row a:hover {
-  fill: #ffee00;
+  fill: #4cf68f;
 }
 
 .contact-main.dark {
@@ -60,5 +60,13 @@
 
 .contact-main.dark .media .row a svg .transparent {
   fill: #000;
+}
+
+.contact-main.dark .media .row a:hover {
+  fill: #ffee00;
+}
+
+.contact-main.dark h4 .colorful {
+  color: #ffee00;
 }
 /*# sourceMappingURL=contact.css.map */

@@ -16,10 +16,10 @@
             }
             g:nth-child(5n+1){
                 path{
-                    fill: $colorful-primary;
+                    fill: $dark-primary;
                 }
                 text{
-                    fill: $dark-primary;
+                    fill: $light-primary;
                 }
             }
             g:nth-child(5n+2){
@@ -40,7 +40,7 @@
             }
             g:nth-child(5n+4){
                 path{
-                    fill: $colorful-tertiary;
+                    fill: $light-secondary;
                 }
                 text{
                     fill: $dark-primary;
@@ -48,7 +48,7 @@
             }
             g:nth-child(5n+5){
                 path{
-                    fill: $colorful-secondary;
+                    fill: $dark-primary;
                 }
                 text{
                     fill: $light-primary;
@@ -70,7 +70,7 @@
                     opacity: 0.2;
                 }
                 text{
-                    fill: $colorful-primary;
+                    fill: $light-primary;
                 }
             }
             g:nth-child(5n+3){
@@ -87,7 +87,7 @@
                     opacity: 0.2;
                 }
                 text{
-                    fill: $colorful-primary;
+                    fill: $light-primary;
                 }
             }
             g:nth-child(5n+5){

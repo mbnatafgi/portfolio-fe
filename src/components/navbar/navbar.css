@@ -99,11 +99,6 @@
   margin-right: 10px;
 }
 
-.navbar-main .navbar-links .nav-link:last-child {
-  padding-left: 0;
-  margin-left: 0;
-}
-
 .navbar-main .nav-link {
   height: 55px;
   display: table-cell;
@@ -128,7 +123,7 @@
 }
 
 .navbar-main .nav-link.active {
-  color: #ffee00;
+  color: #4cf68f;
 }
 
 .navbar-main .nav-link:hover:not(.active) {
@@ -142,6 +137,10 @@
 .navbar-main.dark {
   background-color: #000;
   opacity: 0.8;
+}
+
+.navbar-main.dark .nav-link.active {
+  color: #ffee00;
 }
 
 .navbar-main.dark .resume {

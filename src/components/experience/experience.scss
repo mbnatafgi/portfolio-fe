@@ -41,8 +41,8 @@
 
     .entry:hover{
       .date, .logo, .title{
-        color: $colorful-primary;
-        fill: $colorful-primary;
+        color: $colorful-secondary;
+        fill: $colorful-secondary;
       }
       color: $light-primary;
       fill: $light-primary;
@@ -62,5 +62,11 @@
   }
   &.dark{
     background-color: $dark-secondary;
+    .entry:hover{
+      .date, .logo, .title{
+        color: $colorful-primary;
+        fill: $colorful-primary;
+      }
+    }
   }
 }

@@ -9,10 +9,10 @@
             svg{
                 width: 80px;
                 .polygon{
-                    fill: $colorful-tertiary;
+                    fill: $light-secondary;
                 }
                 .icon, .icon *{
-                    fill: $light-primary;
+                    fill: $dark-primary;
                 }
             }
             .title{
@@ -24,7 +24,8 @@
             }
             &.dark{
                 .title{
-                    color: $colorful-primary;
+                    // color: $colorful-primary;
+                    color: $light-primary;
                 }
                 p{
                     color: $light-secondary;

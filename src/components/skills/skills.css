@@ -25,11 +25,11 @@
 }
 
 .skills-main .skills .skill-main svg .polygon {
-  fill: #55F2F2;
+  fill: #ECF1F1;
 }
 
 .skills-main .skills .skill-main svg .icon, .skills-main .skills .skill-main svg .icon * {
-  fill: white;
+  fill: #2f3b4a;
 }
 
 .skills-main .skills .skill-main .title {
@@ -42,7 +42,7 @@
 }
 
 .skills-main .skills .skill-main.dark .title {
-  color: #ffee00;
+  color: white;
 }
 
 .skills-main .skills .skill-main.dark p {

@@ -28,7 +28,7 @@
 .more-main div.resume a {
   padding: 20px;
   border-radius: 10px;
-  background-color: #ffee00;
+  background-color: #4cf68f;
   color: #2f3b4a;
   text-decoration: none;
   font-weight: 900;
@@ -74,7 +74,7 @@
   height: 100%;
   border-radius: 50%;
   border: 3px solid #fff;
-  border-color: #ffee00 transparent #ffee00 transparent;
+  border-color: #4cf68f transparent #4cf68f transparent;
   -webkit-animation: loader 1.2s linear infinite;
           animation: loader 1.2s linear infinite;
 }
@@ -108,11 +108,11 @@
 }
 
 .more-main .terminal .myterminal-main .element .colorful {
-  color: #ffee00;
+  color: #4cf68f;
 }
 
 .more-main .terminal .myterminal-main .element.input .textarea {
-  color: #ffee00;
+  color: #4cf68f;
 }
 
 .more-main .terminal .myterminal-main .element.output .textarea {
@@ -121,14 +121,14 @@
 }
 
 .more-main .terminal .myterminal-main .element .symbol {
-  color: #ffee00;
+  color: #4cf68f;
   max-width: 15px;
 }
 
 .more-main .terminal .myterminal-main .element .textarea {
   white-space: pre-wrap;
   word-break: break-all;
-  caret-color: #ffee00;
+  caret-color: #4cf68f;
   outline: none;
 }
 
@@ -162,5 +162,26 @@
 
 .more-main.dark div.resume a {
   color: #000;
+  background-color: #ffee00;
+}
+
+.more-main.dark .terminal .myterminal-main .loader-wrapper .loader:after {
+  border-color: #ffee00 transparent #ffee00 transparent;
+}
+
+.more-main.dark .terminal .myterminal-main .element .colorful {
+  color: #ffee00;
+}
+
+.more-main.dark .terminal .myterminal-main .element.input .textarea {
+  color: #ffee00;
+}
+
+.more-main.dark .terminal .myterminal-main .element .symbol {
+  color: #ffee00;
+}
+
+.more-main.dark .terminal .myterminal-main .element .textarea {
+  caret-color: #ffee00;
 }
 /*# sourceMappingURL=more.css.map */
