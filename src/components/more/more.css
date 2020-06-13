@@ -28,16 +28,15 @@
 .more-main div.resume a {
   padding: 20px;
   border-radius: 10px;
-  background-color: #4cf68f;
+  background-color: rgba(76, 246, 143, 0.8);
   color: #2f3b4a;
   text-decoration: none;
   font-weight: 900;
   font-size: 16pt;
-  opacity: 0.9;
 }
 
 .more-main div.resume a:hover {
-  opacity: 1;
+  background-color: #4cf68f;
 }
 
 .more-main .terminal {
@@ -162,6 +161,10 @@
 
 .more-main.dark div.resume a {
   color: #000;
+  background-color: rgba(255, 238, 0, 0.95);
+}
+
+.more-main.dark div.resume a:hover {
   background-color: #ffee00;
 }
 

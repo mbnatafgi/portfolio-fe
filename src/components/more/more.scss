@@ -7,14 +7,13 @@
         a{
             padding: 20px;
             border-radius: 10px;
-            background-color: $colorful-secondary;
+            background-color: rgba($color: $colorful-secondary, $alpha: 0.8);
             color: $dark-primary;
             text-decoration: none;
             font-weight: $font-weight-black;
             font-size: 16pt;
-            opacity: 0.9;
             &:hover{
-                opacity: 1;
+                background-color: rgba($color: $colorful-secondary, $alpha: 1);
             }
         }
     }
@@ -111,7 +110,10 @@
         div.resume{
             a{
                 color: $dark-secondary;
-                background-color: $colorful-primary;
+                background-color: rgba($color: $colorful-primary, $alpha: 0.95);
+                &:hover{
+                    background-color: rgba($color: $colorful-primary, $alpha: 1);
+                }
             }
         }
         .terminal{
