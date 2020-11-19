@@ -4,6 +4,7 @@ import "./hero.css";
 import Typed from "react-typed";
 import variables from "../common/_variables.scss";
 import {context} from "../common/context";
+import * as THREE from 'three';
 
 
 class Vanta extends Component {
@@ -20,6 +21,7 @@ class Vanta extends Component {
   newVantaObject = () => {
     this.vantaEffect = BIRDS({
       el: this.vantaRef.current,
+      THREE: THREE,
       mouseControls: true,
       touchControls: true,
       scale: 1.0,
@@ -27,6 +29,7 @@ class Vanta extends Component {
       backgroundColor: this.getBackgroundColor(),
       color1: this.getColor1(),
       color2: this.getColor2(),
+      
       // colorMode: "lerpGradient"
 
     });

@@ -15,6 +15,7 @@
     "react-ga": "^2.7.0",
     "react-scripts": "^3.4.4",
     "react-typed": "^1.2.0",
+    "three": "^0.122.0",
     "vanta": "^0.5.14"
   },
   "scripts": {
