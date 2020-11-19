@@ -74,7 +74,7 @@ class Hero extends Component {
           <div className="hero-welcome">
               <Typed
                 strings={[
-                  "<p>Hello! I'm</p><p class='name'>Mohamad Belal Natafgi</p>",
+                  "<p>Hello! I'm</p><p class='name'>Belal Natafgi</p>",
                   "<p>A Software Engineer...</p>"
                 ]}
                 typeSpeed={60}

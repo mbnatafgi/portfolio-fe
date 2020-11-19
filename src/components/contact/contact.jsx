@@ -76,8 +76,8 @@ class Contact extends Component {
 
     render() {
         let media = [
-            {href: "https://www.linkedin.com/in/mohamad-belal-natafgi-7517b2137/", logo: <LinkedIn/>},
-            {href: "mailto:mmn32@mail.aub.edu", logo: <Email/>},
+            {href: "https://linkedin.com/in/belal-natafgi-7517b2137", logo: <LinkedIn/>},
+            {href: "mailto:belal.natafgi@icloud.com", logo: <Email/>},
             {href: "https://github.com/mbnatafgi", logo: <GitHub/>},
         ]
 
