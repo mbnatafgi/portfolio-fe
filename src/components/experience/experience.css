@@ -59,11 +59,11 @@
   fill: #4cf68f;
 }
 
-.experience-main .timeline .entry:nth-child(3) .date {
+.experience-main .timeline .entry:nth-child(4) .date {
   position: relative;
 }
 
-.experience-main .timeline .entry:nth-child(3) .date svg:nth-child(2) {
+.experience-main .timeline .entry:nth-child(4) .date svg:nth-child(2) {
   position: absolute;
   left: 50%;
   height: 40px;

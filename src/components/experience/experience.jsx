@@ -1,5 +1,6 @@
 import React from "react";
 import "./experience.css";
+import { ReactComponent as ADJUST } from './adjust.svg';
 import { ReactComponent as CGC } from './cgc.svg';
 import { ReactComponent as SAUGO } from './saugo.svg';
 import { ReactComponent as MUREX } from './murex.svg';
@@ -87,6 +88,16 @@ const Experience = props => {
   let jobs = [
     {
       date:"Present",
+      title_first:"Adjust GmbH",
+      title_second:"Backend Developer",
+      task_first:"Project",
+      task_second:"Adjust Automate Enterprise ~ Acquired.io",
+      stack_first:"Stack",
+      stack_second:"Python - Django/DRF - Flask - PostgresQL - Redis - Ansible - Jenkins",
+      logo:<ADJUST />
+    },
+    {
+      date:"2020",
       title_first:"CloudGate Consulting",
       title_second:"Backend Team Lead",
       task_first:"Project",
