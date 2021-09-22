@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {debounce} from '../common/helpers';
+import {resumeUrl, darkResumeUrl} from '../common/constants';
 import './navbar.css';
 import $ from 'jquery';
 import {context} from "../common/context";
@@ -114,8 +115,8 @@ class NavBar extends Component {
             {title: 'Details', href: '/#more', classes: 'nav-link'},
             {title: 'Contact', href: '/#contact', classes: 'nav-link'},
         ];
-        
-        const resume = {title: 'Resume', href: `${process.env.PUBLIC_URL}/media/resume${this.context.state.dark ? '-dark' : ''}.pdf`, classes: 'nav-link resume',  target:"_blank"}
+
+        const resume = {title: 'Resume', href: this.context.state.dark ? darkResumeUrl : resumeUrl, classes: 'nav-link resume',  target:"_blank"}
 
         return (
             <context.Consumer>

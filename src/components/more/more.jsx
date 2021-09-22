@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactGA from 'react-ga';
 import './more.css';
 import {context} from "../common/context";
+import {resumeUrl, darkResumeUrl} from '../common/constants';
 
 const More = (props) => {
     return (
@@ -14,7 +15,7 @@ const More = (props) => {
                         </div>
                         <br/>
                         <div className='resume'>
-                            <a href={`${process.env.PUBLIC_URL}/media/resume${context.state.dark ? '-dark' : ''}.pdf`} target="_blank" rel="noopener noreferrer">View My Resume</a>
+                            <a href={context.state.dark ? darkResumeUrl : resumeUrl} target="_blank" rel="noopener noreferrer">View My Resume</a>
                             <br/>
                         </div>
                         <br/>
