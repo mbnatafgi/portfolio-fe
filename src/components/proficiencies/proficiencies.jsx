@@ -27,7 +27,7 @@ const Proficiencies = (props) => {
 
     const profs = [
         {title: 'Python', value: 0.9, max: 1, icon: <PYTHON/>},
-        {title: 'Bash', value: 0.79, max: 1, icon: <BASH/>},
+        {title: 'Bash', value: 0.75, max: 1, icon: <BASH/>},
         {title: 'Git', value: 0.81, max: 1, icon: <GIT/>},
         {title: 'SQL', value: 0.81, max: 1, icon: <SQL/>},
         {title: 'Docker', value: 0.87, max: 1, icon: <DOCKER/>},

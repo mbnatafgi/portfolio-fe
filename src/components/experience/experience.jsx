@@ -91,9 +91,9 @@ const Experience = props => {
       title_first:"Adjust GmbH",
       title_second:"Backend Developer",
       task_first:"Project",
-      task_second:"Adjust Automate Enterprise ~ Acquired.io",
+      task_second:"Adjust Automate Ad Spend - Control Center Networks Service",
       stack_first:"Stack",
-      stack_second:"Python - Django/DRF - Flask - PostgresQL - Redis - Ansible - Jenkins",
+      stack_second:"Python - asyncio - RQ/Kafka - PostgresQL - Redis - Ansible - Github Actions",
       logo:<ADJUST />
     },
     {
