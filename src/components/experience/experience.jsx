@@ -26,7 +26,7 @@ const Date = props => {
 
 const Description = props => {
 
-  let bs_classes = "col col-sm-3 col-4"
+  let bs_classes = "col col-md-4 col-12"
 
   return (
     <div className="description">
@@ -67,7 +67,7 @@ const Job = props => {
         {props.grad}
       </div>
       <div className="info col offset-xl-1 col-xl-8 col-lg-9 col-md-8 col-12">
-        <div className="logo">
+        <div className="logo ">
           {props.logo}
         </div>
         <Description
@@ -89,9 +89,9 @@ const Experience = props => {
     {
       date:"Present",
       title_first:"Adjust GmbH",
-      title_second:"Backend Developer",
+      title_second:"Backend Developer - Automate Ad Spend Team",
       task_first:"Project",
-      task_second:"Adjust Automate Ad Spend - Control Center Networks Service",
+      task_second:"Control Center Networks Service",
       stack_first:"Stack",
       stack_second:"Python - asyncio - RQ/Kafka - PostgresQL - Redis - Ansible - Github Actions",
       logo:<ADJUST />
@@ -119,7 +119,7 @@ const Experience = props => {
     {
       date:"2018",
       title_first:"Murex Systems",
-      title_second:"Software Engineering Intern",
+      title_second:"Software Engineering Intern - MICE Team",
       task_first:"Research",
       task_second:"Cloud Services / AWS",
       stack_first:"Services",

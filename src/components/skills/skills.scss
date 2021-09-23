@@ -2,10 +2,12 @@
 
 .skills-main{
     .skills{
-        .skill-main{            
-            margin: 10px 0 20px 0;
-            @media (min-width: 1200px){
-            }
+        .skill-main{   
+            @media (max-width: 576px) {
+                padding-left: 20px !important;
+            }         
+            margin-top: 10px;
+            margin-bottom: 20px;
             svg{
                 width: 80px;
                 .polygon{
@@ -17,7 +19,8 @@
             }
             .title{
                 color: $dark-secondary;
-                margin: 5px 0;
+                margin-top: 5px;
+                margin-bottom: 5px;
             }
             p{
                 margin: 0;

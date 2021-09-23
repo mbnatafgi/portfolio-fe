@@ -8,7 +8,7 @@ import {ReactComponent as DOC} from "./doc.svg";
 
 const Skill = (props) => {
     return (
-        <div className={`skill-main ${props.dark ? 'dark' : ''} col col-sm-6 col-12`}>
+        <div className={`skill-main ${props.dark ? 'dark' : ''} col col-12 col-sm-6`}>
             {props.icon}
             <h3 className="title">{props.title}</h3>
             <p className="description">{props.description}</p>
